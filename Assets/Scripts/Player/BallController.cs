@@ -7,6 +7,8 @@ using Interactivity;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
 using Vertex_Displacement;
+using static UnityEngine.Object;
+using Random = UnityEngine.Random;
 
 namespace Player
 {
@@ -19,6 +21,8 @@ namespace Player
         private Rigidbody m_Rigidbody;
         private Camera _mainCamera;
         private SphereCollider _collider;
+
+
         [SerializeField] private Transform sphereModel;
         [SerializeField] private CinemachineFreeLook _cameraBehaivour;
         [SerializeField] private BallEnlarger ballEnlarger;
@@ -36,13 +40,13 @@ namespace Player
 
         private float m_CurrentMaxMovementSpeed;
         private Vector3 m_Input;
-     
 
 
         private float TrueSpeed => accelerationSpeed * 100f;
         private float MaxSpeed => m_CurrentMaxMovementSpeed * 100f;
         private float TotalJumpForce => jumpForce;
         private Vector3 GroundCollisionSize => new Vector3(_collider.radius, 0.1f, _collider.radius);
+
         private Vector3 BottomPositionOfCollider
         {
             get
@@ -97,17 +101,13 @@ namespace Player
             Debug.DrawRay(transform.position, m_Rigidbody.velocity, Color.green);
         }
 
-   
 
         private bool IsTouchingTheGround()
         {
             List<Collider> foundObjects = Physics.OverlapBox(BottomPositionOfCollider,
-                GroundCollisionSize, transform.rotation,collisionMask).ToList();
+                GroundCollisionSize, transform.rotation, collisionMask).ToList();
             return foundObjects.FindAll(c => c != _collider).Count != 0;
         }
-
-
-       
 
 
         private Vector3 ClampSpeed(Vector3 direction)
@@ -117,7 +117,6 @@ namespace Player
 
         private void OnDrawGizmos()
         {
-          
             if (_collider == null) return;
             Gizmos.color = Color.magenta;
             Gizmos.DrawCube(BottomPositionOfCollider, GroundCollisionSize);
@@ -131,10 +130,11 @@ namespace Player
     [Serializable]
     public class BallEnlarger
     {
+        private List<GameObject> m_CaughtObjects;
         private SphereCollider m_SphereCollider;
         private LayerMask m_GrabMask;
         private LayerMask m_HazardMask;
-        private Dictionary<int, GameObject> m_CapturedObjects;
+
         private float m_Radius;
         private float m_CurrentSize;
         private CinemachineFreeLook m_CinemachineFreeLook;
@@ -142,7 +142,6 @@ namespace Player
 
         private float m_TopOrbitHeight, m_MidOrbitRadius;
 
-        public Dictionary<int, GameObject> CurrentlyGrabbedObjects => m_CapturedObjects;
 
         public BallEnlarger(SphereCollider collider, float radius, LayerMask layerMask, LayerMask hazardMask,
             CinemachineFreeLook cinemachineFreeLook, Transform sphereModel)
@@ -151,13 +150,14 @@ namespace Player
             m_GrabMask = layerMask;
             m_HazardMask = hazardMask;
             m_Radius = radius;
-            m_CapturedObjects = new Dictionary<int, GameObject>();
             m_CinemachineFreeLook = cinemachineFreeLook;
 
             m_TopOrbitHeight = cinemachineFreeLook.m_Orbits[0].m_Height;
             m_MidOrbitRadius = cinemachineFreeLook.m_Orbits[1].m_Radius;
 
             m_SphereModel = sphereModel;
+
+            m_CaughtObjects = new List<GameObject>();
         }
 
 
@@ -172,13 +172,29 @@ namespace Player
                 BallAffector affector = foundObjects[i].GetComponent<BallAffector>();
                 if (affector != null && affector.information.scaleType == BallAffectorInformation.ScaleType.ScaleUp)
                 {
-                    foundObjects[i].gameObject.SetActive(false);
+                    GameObject obj = foundObjects[i].gameObject;
+                    m_CaughtObjects.Add(obj);
+                    Destroy(obj.GetComponent<Collider>());
                     m_CurrentSize += affector.information.scaleRate;
                 }
-                    
             }
 
+            OnPickupObject();
+
             SetCollisionSize(m_CinemachineFreeLook, m_SphereModel);
+        }
+
+        public void OnPickupObject()
+        {
+            foreach (GameObject obj in m_CaughtObjects)
+            {
+                if (obj.transform.parent != m_SphereCollider.transform)
+                {
+                    obj.transform.position = m_SphereCollider.transform.position + (Random.insideUnitSphere * m_SphereCollider.radius);
+                    obj.transform.SetParent(m_SphereCollider.transform);
+                    obj.transform.localScale = Vector3.one * Random.Range(0.25f, 1f);
+                }
+            }
         }
 
         public void DecreaseInSizeOnCondition()
@@ -190,9 +206,17 @@ namespace Player
             for (int i = 0; i < foundObjects.Length; i++)
             {
                 BallAffector affector = foundObjects[i].GetComponent<BallAffector>();
-                if (foundObjects[i] != null && affector != null && affector.information.scaleType == BallAffectorInformation.ScaleType.ScaleDown)
+                if (foundObjects[i] != null && affector != null &&
+                    affector.information.scaleType == BallAffectorInformation.ScaleType.ScaleDown)
                 {
                     m_CurrentSize -= affector.information.scaleRate;
+                    if (m_CaughtObjects.Count != 0)
+                    {
+                        GameObject obj = m_CaughtObjects[m_CaughtObjects.Count - 1];
+                        obj.transform.SetParent(null);
+                        m_CaughtObjects.Remove(obj);
+                        obj.SetActive(false);
+                    }
                 }
             }
 
@@ -213,7 +237,6 @@ namespace Player
                 m_MidOrbitRadius, float.MaxValue);
 
 
-          
             sphereModel.localScale = Vector3.one * (m_SphereCollider.radius * 2f);
             //sphereModel.localScale = Vector3.Min(Vector3.Max(sphereModel.localScale, Vector3.zero), sphereModel.localScale);
         }
