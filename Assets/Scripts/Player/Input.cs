@@ -40,11 +40,19 @@ namespace Player
             Interact
         }
 
-        public Vector2 GetInputMovementRaw()
-        {
-            
 
-            return movementActionRef.action.ReadValue<Vector2>();
+        public Vector3 GetInputMovementRaw(AxisType type)
+        {
+            switch (type)
+            {
+                case AxisType.Axis3D:
+                    Vector2 dir = movementActionRef.action.ReadValue<Vector2>();
+                    return new Vector3(dir.x, 0, dir.y);
+                case AxisType.Axis2D:
+                    return movementActionRef.action.ReadValue<Vector2>();
+            }
+
+            return default;
         }
 
         public bool GetButton(InputType inputType)
@@ -56,6 +64,7 @@ namespace Player
                 case InputType.Interact:
                     return interactionActionRef.action.ReadValue<float>() > 0;
             }
+
             return default;
         }
 
@@ -68,8 +77,14 @@ namespace Player
                 case InputType.Interact:
                     return interactionActionRef.action.ReadValue<float>() > 0 && jumpActionRef.action.triggered;
             }
+
             return default;
         }
-        
+    }
+
+    public enum AxisType
+    {
+        Axis3D,
+        Axis2D
     }
 }
