@@ -22,8 +22,11 @@ namespace Player
         [SerializeField] float accelerationSpeed = 4f;
         [SerializeField] private float defaultMaxMovementSpeed;
         [Space] [SerializeField] private float grabRadius;
+        
         [SerializeField] private LayerMask grabMask;
-        [SerializeField] private float scaleRate = 0.5f;
+        [SerializeField] private LayerMask hazardMask;
+        [SerializeField] private float scaleUpRate = 0.5f;
+        [SerializeField] private float scaleDownRate = 0.01f;
 
         private float m_CurrentMaxMovementSpeed;
         private Vector3 m_Input;
@@ -45,7 +48,7 @@ namespace Player
         {
             _mainCamera = Camera.main;
             _collider = GetComponent<SphereCollider>();
-            ballEnlarger = new BallEnlarger(_collider, grabRadius, grabMask);
+            ballEnlarger = new BallEnlarger(_collider, grabRadius, grabMask, hazardMask, _cameraBehaivour);
             m_InputComponent = GetComponent<Input>();
             m_Rigidbody = GetComponent<Rigidbody>();
 
@@ -55,7 +58,8 @@ namespace Player
         private void Update()
         {
             m_Input = m_InputComponent.GetInputMovementRaw(AxisType.Axis3D);
-            ballEnlarger.PickupNearbyObjectsAndEnlarge(scaleRate, _cameraBehaivour);
+            ballEnlarger.PickupNearbyObjectsAndEnlarge(scaleUpRate);
+            ballEnlarger.DecreaseInSizeOnCondition(scaleDownRate);
         }
 
         private Vector3 RelativeDirection =>
@@ -92,22 +96,32 @@ namespace Player
     {
         private SphereCollider m_SphereCollider;
         private LayerMask m_grabMask;
+        private LayerMask m_hazardMask;
         private Dictionary<int, GameObject> m_CapturedObjects;
         private float m_radius;
         private float currentSize;
+        private CinemachineFreeLook m_CinemachineFreeLook;
+
+        private float topOrbitHeight, midOrbitRadius;
 
         public Dictionary<int, GameObject> CurrentlyGrabbedObjects => m_CapturedObjects;
 
-        public BallEnlarger(SphereCollider collider, float radius, LayerMask layerMask)
+        public BallEnlarger(SphereCollider collider, float radius, LayerMask layerMask, LayerMask hazardMask,
+            CinemachineFreeLook cinemachineFreeLook)
         {
             m_SphereCollider = collider;
             m_grabMask = layerMask;
+            m_hazardMask = hazardMask;
             m_radius = radius;
             m_CapturedObjects = new Dictionary<int, GameObject>();
+            m_CinemachineFreeLook = cinemachineFreeLook;
+
+            topOrbitHeight = cinemachineFreeLook.m_Orbits[0].m_Height;
+            midOrbitRadius = cinemachineFreeLook.m_Orbits[1].m_Radius;
         }
 
 
-        public void PickupNearbyObjectsAndEnlarge(float sizeIncrement, CinemachineFreeLook cinemachineFreeLook)
+        public void PickupNearbyObjectsAndEnlarge(float sizeIncrement)
         {
             currentSize = 0;
             Collider[] foundObjects = Physics.OverlapSphere(m_SphereCollider.transform.position,
@@ -119,14 +133,35 @@ namespace Player
                 currentSize += sizeIncrement;
             }
 
-            SetCollisionSize(cinemachineFreeLook);
+            SetCollisionSize(m_CinemachineFreeLook);
         }
 
-        public void SetCollisionSize(CinemachineFreeLook cinemachineFreeLook)
+        public void DecreaseInSizeOnCondition(float sizeIncrement)
+        {
+            currentSize = 0;
+            Collider[] foundObjects = Physics.OverlapSphere(m_SphereCollider.transform.position,
+                m_SphereCollider.radius + 0.25f, m_hazardMask);
+
+            for (int i = 0; i < foundObjects.Length; i++)
+            {
+                currentSize -= sizeIncrement;
+            }
+
+            SetCollisionSize(m_CinemachineFreeLook);
+        }
+
+        private void SetCollisionSize(CinemachineFreeLook cinemachineFreeLook)
         {
             m_SphereCollider.radius += currentSize;
+            m_SphereCollider.radius = Mathf.Clamp(m_SphereCollider.radius, 1, float.MaxValue);
+
             cinemachineFreeLook.m_Orbits[0].m_Height += currentSize * 4f;
+            cinemachineFreeLook.m_Orbits[0].m_Height = Mathf.Clamp(cinemachineFreeLook.m_Orbits[0].m_Height,
+                topOrbitHeight, float.MaxValue);
+
             cinemachineFreeLook.m_Orbits[1].m_Radius += currentSize * 4f;
+            cinemachineFreeLook.m_Orbits[1].m_Radius = Mathf.Clamp(cinemachineFreeLook.m_Orbits[1].m_Radius,
+                midOrbitRadius, float.MaxValue);
         }
     }
 }
