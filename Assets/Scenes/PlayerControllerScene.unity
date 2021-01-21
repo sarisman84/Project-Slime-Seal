@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 8737448}
   - component: {fileID: 8737447}
   - component: {fileID: 8737446}
+  - component: {fileID: 8737449}
   m_Layer: 7
   m_Name: Lethal Ball of Death (27)
   m_TagString: Untagged
@@ -218,6 +219,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8737444}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &8737449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8737444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d34d65d4f33e86e4cbb95b6ffa1a2752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  information: {fileID: 11400000, guid: 348eff7ddaa40c94e9f4e66dd153c618, type: 2}
 --- !u!1001 &10812541
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -287,6 +301,7 @@ GameObject:
   - component: {fileID: 11019155}
   - component: {fileID: 11019154}
   - component: {fileID: 11019153}
+  - component: {fileID: 11019156}
   m_Layer: 7
   m_Name: Lethal Ball of Death (2)
   m_TagString: Untagged
@@ -370,6 +385,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 11019151}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &11019156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 11019151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d34d65d4f33e86e4cbb95b6ffa1a2752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  information: {fileID: 11400000, guid: 348eff7ddaa40c94e9f4e66dd153c618, type: 2}
 --- !u!1 &27503968
 GameObject:
   m_ObjectHideFlags: 0
@@ -382,6 +410,7 @@ GameObject:
   - component: {fileID: 27503972}
   - component: {fileID: 27503971}
   - component: {fileID: 27503970}
+  - component: {fileID: 27503973}
   m_Layer: 7
   m_Name: Lethal Ball of Death (32)
   m_TagString: Untagged
@@ -465,6 +494,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 27503968}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &27503973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 27503968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d34d65d4f33e86e4cbb95b6ffa1a2752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  information: {fileID: 11400000, guid: 348eff7ddaa40c94e9f4e66dd153c618, type: 2}
 --- !u!1 &35144082
 GameObject:
   m_ObjectHideFlags: 0
@@ -572,6 +614,7 @@ GameObject:
   - component: {fileID: 114042154}
   - component: {fileID: 114042153}
   - component: {fileID: 114042152}
+  - component: {fileID: 114042155}
   m_Layer: 7
   m_Name: Lethal Ball of Death (28)
   m_TagString: Untagged
@@ -655,6 +698,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 114042150}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &114042155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 114042150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d34d65d4f33e86e4cbb95b6ffa1a2752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  information: {fileID: 11400000, guid: 348eff7ddaa40c94e9f4e66dd153c618, type: 2}
 --- !u!1 &205034573
 GameObject:
   m_ObjectHideFlags: 0
@@ -667,6 +723,7 @@ GameObject:
   - component: {fileID: 205034577}
   - component: {fileID: 205034576}
   - component: {fileID: 205034575}
+  - component: {fileID: 205034578}
   m_Layer: 7
   m_Name: Lethal Ball of Death (17)
   m_TagString: Untagged
@@ -750,6 +807,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 205034573}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &205034578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 205034573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d34d65d4f33e86e4cbb95b6ffa1a2752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  information: {fileID: 11400000, guid: 348eff7ddaa40c94e9f4e66dd153c618, type: 2}
 --- !u!1 &210110171
 GameObject:
   m_ObjectHideFlags: 0
@@ -762,6 +832,7 @@ GameObject:
   - component: {fileID: 210110175}
   - component: {fileID: 210110174}
   - component: {fileID: 210110173}
+  - component: {fileID: 210110176}
   m_Layer: 7
   m_Name: Lethal Ball of Death (1)
   m_TagString: Untagged
@@ -845,6 +916,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 210110171}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &210110176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 210110171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d34d65d4f33e86e4cbb95b6ffa1a2752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  information: {fileID: 11400000, guid: 348eff7ddaa40c94e9f4e66dd153c618, type: 2}
 --- !u!1 &305843184
 GameObject:
   m_ObjectHideFlags: 0
@@ -902,6 +986,7 @@ GameObject:
   - component: {fileID: 329839579}
   - component: {fileID: 329839578}
   - component: {fileID: 329839577}
+  - component: {fileID: 329839580}
   m_Layer: 7
   m_Name: Lethal Ball of Death (24)
   m_TagString: Untagged
@@ -985,6 +1070,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 329839575}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &329839580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 329839575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d34d65d4f33e86e4cbb95b6ffa1a2752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  information: {fileID: 11400000, guid: 348eff7ddaa40c94e9f4e66dd153c618, type: 2}
 --- !u!1 &350589408
 GameObject:
   m_ObjectHideFlags: 0
@@ -997,6 +1095,7 @@ GameObject:
   - component: {fileID: 350589412}
   - component: {fileID: 350589411}
   - component: {fileID: 350589410}
+  - component: {fileID: 350589413}
   m_Layer: 7
   m_Name: Lethal Ball of Death (16)
   m_TagString: Untagged
@@ -1080,6 +1179,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 350589408}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &350589413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 350589408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d34d65d4f33e86e4cbb95b6ffa1a2752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  information: {fileID: 11400000, guid: 348eff7ddaa40c94e9f4e66dd153c618, type: 2}
 --- !u!1 &392822888
 GameObject:
   m_ObjectHideFlags: 0
@@ -1092,6 +1204,7 @@ GameObject:
   - component: {fileID: 392822892}
   - component: {fileID: 392822891}
   - component: {fileID: 392822890}
+  - component: {fileID: 392822893}
   m_Layer: 6
   m_Name: Grabable (6)
   m_TagString: Untagged
@@ -1175,6 +1288,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 392822888}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &392822893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 392822888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d34d65d4f33e86e4cbb95b6ffa1a2752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  information: {fileID: 11400000, guid: f91e7819e4cfd4a44ad4adfea915e7cc, type: 2}
 --- !u!1 &443308832
 GameObject:
   m_ObjectHideFlags: 0
@@ -1187,6 +1313,7 @@ GameObject:
   - component: {fileID: 443308836}
   - component: {fileID: 443308835}
   - component: {fileID: 443308834}
+  - component: {fileID: 443308837}
   m_Layer: 7
   m_Name: Lethal Ball of Death (14)
   m_TagString: Untagged
@@ -1270,6 +1397,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 443308832}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &443308837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 443308832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d34d65d4f33e86e4cbb95b6ffa1a2752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  information: {fileID: 11400000, guid: 348eff7ddaa40c94e9f4e66dd153c618, type: 2}
 --- !u!1 &499011824
 GameObject:
   m_ObjectHideFlags: 0
@@ -1282,6 +1422,7 @@ GameObject:
   - component: {fileID: 499011828}
   - component: {fileID: 499011827}
   - component: {fileID: 499011826}
+  - component: {fileID: 499011829}
   m_Layer: 7
   m_Name: Lethal Ball of Death (4)
   m_TagString: Untagged
@@ -1365,6 +1506,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 499011824}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &499011829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 499011824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d34d65d4f33e86e4cbb95b6ffa1a2752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  information: {fileID: 11400000, guid: 348eff7ddaa40c94e9f4e66dd153c618, type: 2}
 --- !u!1 &505387225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1377,6 +1531,7 @@ GameObject:
   - component: {fileID: 505387229}
   - component: {fileID: 505387228}
   - component: {fileID: 505387227}
+  - component: {fileID: 505387230}
   m_Layer: 7
   m_Name: Lethal Ball of Death (18)
   m_TagString: Untagged
@@ -1460,6 +1615,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 505387225}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &505387230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 505387225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d34d65d4f33e86e4cbb95b6ffa1a2752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  information: {fileID: 11400000, guid: 348eff7ddaa40c94e9f4e66dd153c618, type: 2}
 --- !u!1 &571126985
 GameObject:
   m_ObjectHideFlags: 0
@@ -1565,6 +1733,7 @@ GameObject:
   - component: {fileID: 572081561}
   - component: {fileID: 572081560}
   - component: {fileID: 572081559}
+  - component: {fileID: 572081562}
   m_Layer: 7
   m_Name: Lethal Ball of Death (31)
   m_TagString: Untagged
@@ -1648,6 +1817,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 572081557}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &572081562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 572081557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d34d65d4f33e86e4cbb95b6ffa1a2752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  information: {fileID: 11400000, guid: 348eff7ddaa40c94e9f4e66dd153c618, type: 2}
 --- !u!1 &593166557
 GameObject:
   m_ObjectHideFlags: 0
@@ -1690,6 +1872,7 @@ GameObject:
   - component: {fileID: 612150714}
   - component: {fileID: 612150713}
   - component: {fileID: 612150712}
+  - component: {fileID: 612150715}
   m_Layer: 7
   m_Name: Lethal Ball of Death (33)
   m_TagString: Untagged
@@ -1773,6 +1956,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 612150710}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &612150715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 612150710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d34d65d4f33e86e4cbb95b6ffa1a2752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  information: {fileID: 11400000, guid: 348eff7ddaa40c94e9f4e66dd153c618, type: 2}
 --- !u!1 &615087953
 GameObject:
   m_ObjectHideFlags: 0
@@ -1785,6 +1981,7 @@ GameObject:
   - component: {fileID: 615087957}
   - component: {fileID: 615087956}
   - component: {fileID: 615087955}
+  - component: {fileID: 615087958}
   m_Layer: 6
   m_Name: Grabable (8)
   m_TagString: Untagged
@@ -1868,6 +2065,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 615087953}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &615087958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 615087953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d34d65d4f33e86e4cbb95b6ffa1a2752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  information: {fileID: 11400000, guid: f91e7819e4cfd4a44ad4adfea915e7cc, type: 2}
 --- !u!1 &617864488
 GameObject:
   m_ObjectHideFlags: 0
@@ -1880,6 +2090,7 @@ GameObject:
   - component: {fileID: 617864492}
   - component: {fileID: 617864491}
   - component: {fileID: 617864490}
+  - component: {fileID: 617864493}
   m_Layer: 7
   m_Name: Lethal Ball of Death (15)
   m_TagString: Untagged
@@ -1963,6 +2174,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 617864488}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &617864493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 617864488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d34d65d4f33e86e4cbb95b6ffa1a2752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  information: {fileID: 11400000, guid: 348eff7ddaa40c94e9f4e66dd153c618, type: 2}
 --- !u!1 &647599799
 GameObject:
   m_ObjectHideFlags: 0
@@ -1975,6 +2199,7 @@ GameObject:
   - component: {fileID: 647599803}
   - component: {fileID: 647599802}
   - component: {fileID: 647599801}
+  - component: {fileID: 647599804}
   m_Layer: 7
   m_Name: Lethal Ball of Death (34)
   m_TagString: Untagged
@@ -2058,6 +2283,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 647599799}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &647599804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 647599799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d34d65d4f33e86e4cbb95b6ffa1a2752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  information: {fileID: 11400000, guid: 348eff7ddaa40c94e9f4e66dd153c618, type: 2}
 --- !u!1 &648333392
 GameObject:
   m_ObjectHideFlags: 0
@@ -2070,6 +2308,7 @@ GameObject:
   - component: {fileID: 648333396}
   - component: {fileID: 648333395}
   - component: {fileID: 648333394}
+  - component: {fileID: 648333397}
   m_Layer: 6
   m_Name: Grabable (7)
   m_TagString: Untagged
@@ -2153,6 +2392,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 648333392}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &648333397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 648333392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d34d65d4f33e86e4cbb95b6ffa1a2752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  information: {fileID: 11400000, guid: f91e7819e4cfd4a44ad4adfea915e7cc, type: 2}
 --- !u!1 &671990951
 GameObject:
   m_ObjectHideFlags: 0
@@ -2165,6 +2417,7 @@ GameObject:
   - component: {fileID: 671990955}
   - component: {fileID: 671990954}
   - component: {fileID: 671990953}
+  - component: {fileID: 671990956}
   m_Layer: 7
   m_Name: Lethal Ball of Death (19)
   m_TagString: Untagged
@@ -2248,6 +2501,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 671990951}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &671990956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 671990951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d34d65d4f33e86e4cbb95b6ffa1a2752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  information: {fileID: 11400000, guid: 348eff7ddaa40c94e9f4e66dd153c618, type: 2}
 --- !u!1 &719312517
 GameObject:
   m_ObjectHideFlags: 0
@@ -2260,6 +2526,7 @@ GameObject:
   - component: {fileID: 719312521}
   - component: {fileID: 719312520}
   - component: {fileID: 719312519}
+  - component: {fileID: 719312522}
   m_Layer: 7
   m_Name: Lethal Ball of Death (3)
   m_TagString: Untagged
@@ -2343,6 +2610,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 719312517}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &719312522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 719312517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d34d65d4f33e86e4cbb95b6ffa1a2752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  information: {fileID: 11400000, guid: 348eff7ddaa40c94e9f4e66dd153c618, type: 2}
 --- !u!1001 &747707204
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2432,11 +2712,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6890580876862670280, guid: 188081d5eb3bca74f9e4436312507afc, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.3321033
+      value: 0.33210328
       objectReference: {fileID: 0}
     - target: {fileID: 6890580876862670280, guid: 188081d5eb3bca74f9e4436312507afc, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.2988066
+      value: -0.29880658
       objectReference: {fileID: 0}
     - target: {fileID: 6890580876862670280, guid: 188081d5eb3bca74f9e4436312507afc, type: 3}
       propertyPath: m_LocalRotation.z
@@ -2492,6 +2772,7 @@ GameObject:
   - component: {fileID: 778689656}
   - component: {fileID: 778689655}
   - component: {fileID: 778689654}
+  - component: {fileID: 778689657}
   m_Layer: 7
   m_Name: Lethal Ball of Death (7)
   m_TagString: Untagged
@@ -2575,6 +2856,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 778689652}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &778689657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 778689652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d34d65d4f33e86e4cbb95b6ffa1a2752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  information: {fileID: 11400000, guid: 348eff7ddaa40c94e9f4e66dd153c618, type: 2}
 --- !u!1 &782424689
 GameObject:
   m_ObjectHideFlags: 0
@@ -2587,6 +2881,7 @@ GameObject:
   - component: {fileID: 782424693}
   - component: {fileID: 782424692}
   - component: {fileID: 782424691}
+  - component: {fileID: 782424694}
   m_Layer: 7
   m_Name: Lethal Ball of Death (8)
   m_TagString: Untagged
@@ -2670,6 +2965,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 782424689}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &782424694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 782424689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d34d65d4f33e86e4cbb95b6ffa1a2752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  information: {fileID: 11400000, guid: 348eff7ddaa40c94e9f4e66dd153c618, type: 2}
 --- !u!1 &878658498
 GameObject:
   m_ObjectHideFlags: 0
@@ -2682,6 +2990,7 @@ GameObject:
   - component: {fileID: 878658502}
   - component: {fileID: 878658501}
   - component: {fileID: 878658500}
+  - component: {fileID: 878658503}
   m_Layer: 7
   m_Name: Lethal Ball of Death (22)
   m_TagString: Untagged
@@ -2765,6 +3074,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 878658498}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &878658503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 878658498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d34d65d4f33e86e4cbb95b6ffa1a2752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  information: {fileID: 11400000, guid: 348eff7ddaa40c94e9f4e66dd153c618, type: 2}
 --- !u!1 &883618958
 GameObject:
   m_ObjectHideFlags: 0
@@ -2872,6 +3194,7 @@ GameObject:
   - component: {fileID: 912049314}
   - component: {fileID: 912049313}
   - component: {fileID: 912049312}
+  - component: {fileID: 912049315}
   m_Layer: 7
   m_Name: Lethal Ball of Death (21)
   m_TagString: Untagged
@@ -2955,6 +3278,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 912049310}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &912049315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 912049310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d34d65d4f33e86e4cbb95b6ffa1a2752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  information: {fileID: 11400000, guid: 348eff7ddaa40c94e9f4e66dd153c618, type: 2}
 --- !u!1 &971837562
 GameObject:
   m_ObjectHideFlags: 0
@@ -2967,6 +3303,7 @@ GameObject:
   - component: {fileID: 971837566}
   - component: {fileID: 971837565}
   - component: {fileID: 971837564}
+  - component: {fileID: 971837567}
   m_Layer: 7
   m_Name: Lethal Ball of Death (29)
   m_TagString: Untagged
@@ -3050,6 +3387,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 971837562}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &971837567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 971837562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d34d65d4f33e86e4cbb95b6ffa1a2752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  information: {fileID: 11400000, guid: 348eff7ddaa40c94e9f4e66dd153c618, type: 2}
 --- !u!1 &978178171
 GameObject:
   m_ObjectHideFlags: 0
@@ -3062,6 +3412,7 @@ GameObject:
   - component: {fileID: 978178175}
   - component: {fileID: 978178174}
   - component: {fileID: 978178173}
+  - component: {fileID: 978178176}
   m_Layer: 6
   m_Name: Grabable (11)
   m_TagString: Untagged
@@ -3145,6 +3496,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 978178171}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &978178176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 978178171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d34d65d4f33e86e4cbb95b6ffa1a2752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  information: {fileID: 11400000, guid: f91e7819e4cfd4a44ad4adfea915e7cc, type: 2}
 --- !u!1 &1001120464
 GameObject:
   m_ObjectHideFlags: 0
@@ -3157,6 +3521,7 @@ GameObject:
   - component: {fileID: 1001120468}
   - component: {fileID: 1001120467}
   - component: {fileID: 1001120466}
+  - component: {fileID: 1001120469}
   m_Layer: 7
   m_Name: Lethal Ball of Death (6)
   m_TagString: Untagged
@@ -3240,6 +3605,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1001120464}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1001120469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1001120464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d34d65d4f33e86e4cbb95b6ffa1a2752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  information: {fileID: 11400000, guid: 348eff7ddaa40c94e9f4e66dd153c618, type: 2}
 --- !u!1 &1102888792
 GameObject:
   m_ObjectHideFlags: 0
@@ -3252,6 +3630,7 @@ GameObject:
   - component: {fileID: 1102888796}
   - component: {fileID: 1102888795}
   - component: {fileID: 1102888794}
+  - component: {fileID: 1102888797}
   m_Layer: 7
   m_Name: Lethal Ball of Death (13)
   m_TagString: Untagged
@@ -3335,6 +3714,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1102888792}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1102888797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1102888792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d34d65d4f33e86e4cbb95b6ffa1a2752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  information: {fileID: 11400000, guid: 348eff7ddaa40c94e9f4e66dd153c618, type: 2}
 --- !u!1 &1176390138
 GameObject:
   m_ObjectHideFlags: 0
@@ -3347,6 +3739,7 @@ GameObject:
   - component: {fileID: 1176390142}
   - component: {fileID: 1176390141}
   - component: {fileID: 1176390140}
+  - component: {fileID: 1176390143}
   m_Layer: 6
   m_Name: Grabable (13)
   m_TagString: Untagged
@@ -3430,6 +3823,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1176390138}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1176390143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1176390138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d34d65d4f33e86e4cbb95b6ffa1a2752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  information: {fileID: 11400000, guid: f91e7819e4cfd4a44ad4adfea915e7cc, type: 2}
 --- !u!1 &1182685140
 GameObject:
   m_ObjectHideFlags: 0
@@ -3442,6 +3848,7 @@ GameObject:
   - component: {fileID: 1182685144}
   - component: {fileID: 1182685143}
   - component: {fileID: 1182685142}
+  - component: {fileID: 1182685145}
   m_Layer: 7
   m_Name: Lethal Ball of Death (10)
   m_TagString: Untagged
@@ -3525,6 +3932,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1182685140}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1182685145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1182685140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d34d65d4f33e86e4cbb95b6ffa1a2752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  information: {fileID: 11400000, guid: 348eff7ddaa40c94e9f4e66dd153c618, type: 2}
 --- !u!4 &1243432100 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6327060204098584043, guid: 15b4cfee8125e754fb5b37a01f082c9f, type: 3}
@@ -3542,6 +3962,7 @@ GameObject:
   - component: {fileID: 1329901858}
   - component: {fileID: 1329901857}
   - component: {fileID: 1329901856}
+  - component: {fileID: 1329901859}
   m_Layer: 7
   m_Name: Lethal Ball of Death (26)
   m_TagString: Untagged
@@ -3625,6 +4046,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1329901854}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1329901859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1329901854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d34d65d4f33e86e4cbb95b6ffa1a2752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  information: {fileID: 11400000, guid: 348eff7ddaa40c94e9f4e66dd153c618, type: 2}
 --- !u!1 &1371647185
 GameObject:
   m_ObjectHideFlags: 0
@@ -3637,6 +4071,7 @@ GameObject:
   - component: {fileID: 1371647189}
   - component: {fileID: 1371647188}
   - component: {fileID: 1371647187}
+  - component: {fileID: 1371647190}
   m_Layer: 7
   m_Name: Lethal Ball of Death (11)
   m_TagString: Untagged
@@ -3720,6 +4155,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1371647185}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1371647190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1371647185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d34d65d4f33e86e4cbb95b6ffa1a2752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  information: {fileID: 11400000, guid: 348eff7ddaa40c94e9f4e66dd153c618, type: 2}
 --- !u!1 &1393841880
 GameObject:
   m_ObjectHideFlags: 0
@@ -3732,6 +4180,7 @@ GameObject:
   - component: {fileID: 1393841884}
   - component: {fileID: 1393841883}
   - component: {fileID: 1393841882}
+  - component: {fileID: 1393841885}
   m_Layer: 6
   m_Name: Grabable (4)
   m_TagString: Untagged
@@ -3815,6 +4264,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1393841880}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1393841885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1393841880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d34d65d4f33e86e4cbb95b6ffa1a2752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  information: {fileID: 11400000, guid: f91e7819e4cfd4a44ad4adfea915e7cc, type: 2}
 --- !u!1 &1420753187
 GameObject:
   m_ObjectHideFlags: 0
@@ -3827,6 +4289,7 @@ GameObject:
   - component: {fileID: 1420753191}
   - component: {fileID: 1420753190}
   - component: {fileID: 1420753189}
+  - component: {fileID: 1420753192}
   m_Layer: 7
   m_Name: Lethal Ball of Death
   m_TagString: Untagged
@@ -3910,6 +4373,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1420753187}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1420753192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1420753187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d34d65d4f33e86e4cbb95b6ffa1a2752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  information: {fileID: 11400000, guid: 348eff7ddaa40c94e9f4e66dd153c618, type: 2}
 --- !u!1 &1501521303
 GameObject:
   m_ObjectHideFlags: 0
@@ -3922,6 +4398,7 @@ GameObject:
   - component: {fileID: 1501521307}
   - component: {fileID: 1501521306}
   - component: {fileID: 1501521305}
+  - component: {fileID: 1501521308}
   m_Layer: 6
   m_Name: Grabable (5)
   m_TagString: Untagged
@@ -4005,6 +4482,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1501521303}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1501521308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1501521303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d34d65d4f33e86e4cbb95b6ffa1a2752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  information: {fileID: 11400000, guid: f91e7819e4cfd4a44ad4adfea915e7cc, type: 2}
 --- !u!1 &1668544030
 GameObject:
   m_ObjectHideFlags: 0
@@ -4017,6 +4507,7 @@ GameObject:
   - component: {fileID: 1668544034}
   - component: {fileID: 1668544033}
   - component: {fileID: 1668544032}
+  - component: {fileID: 1668544035}
   m_Layer: 7
   m_Name: Lethal Ball of Death (25)
   m_TagString: Untagged
@@ -4100,6 +4591,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1668544030}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1668544035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1668544030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d34d65d4f33e86e4cbb95b6ffa1a2752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  information: {fileID: 11400000, guid: 348eff7ddaa40c94e9f4e66dd153c618, type: 2}
 --- !u!1 &1678442106
 GameObject:
   m_ObjectHideFlags: 0
@@ -4207,6 +4711,7 @@ GameObject:
   - component: {fileID: 1718548099}
   - component: {fileID: 1718548098}
   - component: {fileID: 1718548097}
+  - component: {fileID: 1718548100}
   m_Layer: 6
   m_Name: Grabable (3)
   m_TagString: Untagged
@@ -4290,6 +4795,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1718548095}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1718548100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1718548095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d34d65d4f33e86e4cbb95b6ffa1a2752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  information: {fileID: 11400000, guid: f91e7819e4cfd4a44ad4adfea915e7cc, type: 2}
 --- !u!1 &1757860012
 GameObject:
   m_ObjectHideFlags: 0
@@ -4302,6 +4820,7 @@ GameObject:
   - component: {fileID: 1757860016}
   - component: {fileID: 1757860015}
   - component: {fileID: 1757860014}
+  - component: {fileID: 1757860017}
   m_Layer: 6
   m_Name: Grabable (10)
   m_TagString: Untagged
@@ -4385,6 +4904,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1757860012}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1757860017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1757860012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d34d65d4f33e86e4cbb95b6ffa1a2752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  information: {fileID: 11400000, guid: f91e7819e4cfd4a44ad4adfea915e7cc, type: 2}
 --- !u!1 &1785786193
 GameObject:
   m_ObjectHideFlags: 0
@@ -4397,6 +4929,7 @@ GameObject:
   - component: {fileID: 1785786197}
   - component: {fileID: 1785786196}
   - component: {fileID: 1785786195}
+  - component: {fileID: 1785786198}
   m_Layer: 6
   m_Name: Grabable (12)
   m_TagString: Untagged
@@ -4480,6 +5013,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1785786193}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1785786198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1785786193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d34d65d4f33e86e4cbb95b6ffa1a2752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  information: {fileID: 11400000, guid: f91e7819e4cfd4a44ad4adfea915e7cc, type: 2}
 --- !u!1 &1790215455
 GameObject:
   m_ObjectHideFlags: 0
@@ -4492,6 +5038,7 @@ GameObject:
   - component: {fileID: 1790215459}
   - component: {fileID: 1790215458}
   - component: {fileID: 1790215457}
+  - component: {fileID: 1790215460}
   m_Layer: 7
   m_Name: Lethal Ball of Death (23)
   m_TagString: Untagged
@@ -4575,6 +5122,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1790215455}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1790215460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1790215455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d34d65d4f33e86e4cbb95b6ffa1a2752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  information: {fileID: 11400000, guid: 348eff7ddaa40c94e9f4e66dd153c618, type: 2}
 --- !u!1 &1822218955
 GameObject:
   m_ObjectHideFlags: 0
@@ -4587,6 +5147,7 @@ GameObject:
   - component: {fileID: 1822218959}
   - component: {fileID: 1822218958}
   - component: {fileID: 1822218957}
+  - component: {fileID: 1822218960}
   m_Layer: 7
   m_Name: Lethal Ball of Death (5)
   m_TagString: Untagged
@@ -4670,6 +5231,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1822218955}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1822218960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1822218955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d34d65d4f33e86e4cbb95b6ffa1a2752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  information: {fileID: 11400000, guid: 348eff7ddaa40c94e9f4e66dd153c618, type: 2}
 --- !u!1 &1836664350
 GameObject:
   m_ObjectHideFlags: 0
@@ -4682,6 +5256,7 @@ GameObject:
   - component: {fileID: 1836664354}
   - component: {fileID: 1836664353}
   - component: {fileID: 1836664352}
+  - component: {fileID: 1836664355}
   m_Layer: 6
   m_Name: Grabable (1)
   m_TagString: Untagged
@@ -4765,6 +5340,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1836664350}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1836664355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1836664350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d34d65d4f33e86e4cbb95b6ffa1a2752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  information: {fileID: 11400000, guid: f91e7819e4cfd4a44ad4adfea915e7cc, type: 2}
 --- !u!1 &1846854469
 GameObject:
   m_ObjectHideFlags: 0
@@ -4894,6 +5482,7 @@ GameObject:
   - component: {fileID: 1848504523}
   - component: {fileID: 1848504522}
   - component: {fileID: 1848504521}
+  - component: {fileID: 1848504524}
   m_Layer: 6
   m_Name: Grabable (14)
   m_TagString: Untagged
@@ -4977,6 +5566,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1848504519}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1848504524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1848504519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d34d65d4f33e86e4cbb95b6ffa1a2752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  information: {fileID: 11400000, guid: f91e7819e4cfd4a44ad4adfea915e7cc, type: 2}
 --- !u!1 &1853059763
 GameObject:
   m_ObjectHideFlags: 0
@@ -5026,6 +5628,7 @@ GameObject:
   - component: {fileID: 1857569116}
   - component: {fileID: 1857569115}
   - component: {fileID: 1857569114}
+  - component: {fileID: 1857569117}
   m_Layer: 7
   m_Name: Lethal Ball of Death (12)
   m_TagString: Untagged
@@ -5109,6 +5712,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1857569112}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1857569117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1857569112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d34d65d4f33e86e4cbb95b6ffa1a2752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  information: {fileID: 11400000, guid: 348eff7ddaa40c94e9f4e66dd153c618, type: 2}
 --- !u!1 &1869502596
 GameObject:
   m_ObjectHideFlags: 0
@@ -5121,6 +5737,7 @@ GameObject:
   - component: {fileID: 1869502600}
   - component: {fileID: 1869502599}
   - component: {fileID: 1869502598}
+  - component: {fileID: 1869502601}
   m_Layer: 7
   m_Name: Lethal Ball of Death (35)
   m_TagString: Untagged
@@ -5204,6 +5821,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1869502596}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1869502601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1869502596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d34d65d4f33e86e4cbb95b6ffa1a2752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  information: {fileID: 11400000, guid: 348eff7ddaa40c94e9f4e66dd153c618, type: 2}
 --- !u!1 &1911919112
 GameObject:
   m_ObjectHideFlags: 0
@@ -5216,6 +5846,7 @@ GameObject:
   - component: {fileID: 1911919116}
   - component: {fileID: 1911919115}
   - component: {fileID: 1911919114}
+  - component: {fileID: 1911919117}
   m_Layer: 7
   m_Name: Lethal Ball of Death (20)
   m_TagString: Untagged
@@ -5299,6 +5930,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1911919112}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1911919117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1911919112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d34d65d4f33e86e4cbb95b6ffa1a2752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  information: {fileID: 11400000, guid: 348eff7ddaa40c94e9f4e66dd153c618, type: 2}
 --- !u!1 &1918564200
 GameObject:
   m_ObjectHideFlags: 0
@@ -5311,6 +5955,7 @@ GameObject:
   - component: {fileID: 1918564204}
   - component: {fileID: 1918564203}
   - component: {fileID: 1918564202}
+  - component: {fileID: 1918564205}
   m_Layer: 6
   m_Name: Grabable
   m_TagString: Untagged
@@ -5394,6 +6039,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1918564200}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1918564205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1918564200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d34d65d4f33e86e4cbb95b6ffa1a2752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  information: {fileID: 11400000, guid: f91e7819e4cfd4a44ad4adfea915e7cc, type: 2}
 --- !u!1 &1928595622
 GameObject:
   m_ObjectHideFlags: 0
@@ -5406,6 +6064,7 @@ GameObject:
   - component: {fileID: 1928595626}
   - component: {fileID: 1928595625}
   - component: {fileID: 1928595624}
+  - component: {fileID: 1928595627}
   m_Layer: 6
   m_Name: Grabable (9)
   m_TagString: Untagged
@@ -5489,6 +6148,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1928595622}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1928595627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1928595622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d34d65d4f33e86e4cbb95b6ffa1a2752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  information: {fileID: 11400000, guid: f91e7819e4cfd4a44ad4adfea915e7cc, type: 2}
 --- !u!1 &1939155914
 GameObject:
   m_ObjectHideFlags: 0
@@ -5501,6 +6173,7 @@ GameObject:
   - component: {fileID: 1939155918}
   - component: {fileID: 1939155917}
   - component: {fileID: 1939155916}
+  - component: {fileID: 1939155919}
   m_Layer: 7
   m_Name: Lethal Ball of Death (9)
   m_TagString: Untagged
@@ -5584,6 +6257,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1939155914}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1939155919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1939155914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d34d65d4f33e86e4cbb95b6ffa1a2752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  information: {fileID: 11400000, guid: 348eff7ddaa40c94e9f4e66dd153c618, type: 2}
 --- !u!1 &1952362951
 GameObject:
   m_ObjectHideFlags: 0
@@ -5596,6 +6282,7 @@ GameObject:
   - component: {fileID: 1952362955}
   - component: {fileID: 1952362954}
   - component: {fileID: 1952362953}
+  - component: {fileID: 1952362956}
   m_Layer: 6
   m_Name: Grabable (2)
   m_TagString: Untagged
@@ -5679,6 +6366,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1952362951}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1952362956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1952362951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d34d65d4f33e86e4cbb95b6ffa1a2752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  information: {fileID: 11400000, guid: f91e7819e4cfd4a44ad4adfea915e7cc, type: 2}
 --- !u!1 &2021282689
 GameObject:
   m_ObjectHideFlags: 0
@@ -5691,6 +6391,7 @@ GameObject:
   - component: {fileID: 2021282693}
   - component: {fileID: 2021282692}
   - component: {fileID: 2021282691}
+  - component: {fileID: 2021282694}
   m_Layer: 7
   m_Name: Lethal Ball of Death (30)
   m_TagString: Untagged
@@ -5774,6 +6475,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2021282689}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2021282694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2021282689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d34d65d4f33e86e4cbb95b6ffa1a2752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  information: {fileID: 11400000, guid: 348eff7ddaa40c94e9f4e66dd153c618, type: 2}
 --- !u!1 &2087331149 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6890580877210601011, guid: 188081d5eb3bca74f9e4436312507afc, type: 3}

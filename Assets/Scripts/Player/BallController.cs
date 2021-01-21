@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
+using Interactivity;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
 
@@ -22,7 +23,7 @@ namespace Player
         [SerializeField] float accelerationSpeed = 4f;
         [SerializeField] private float defaultMaxMovementSpeed;
         [Space] [SerializeField] private float grabRadius;
-        
+
         [SerializeField] private LayerMask grabMask;
         [SerializeField] private LayerMask hazardMask;
         [SerializeField] private float scaleUpRate = 0.5f;
@@ -58,8 +59,8 @@ namespace Player
         private void Update()
         {
             m_Input = m_InputComponent.GetInputMovementRaw(AxisType.Axis3D);
-            ballEnlarger.PickupNearbyObjectsAndEnlarge(scaleUpRate);
-            ballEnlarger.DecreaseInSizeOnCondition(scaleDownRate);
+            ballEnlarger.PickupNearbyObjectsAndEnlarge();
+            ballEnlarger.DecreaseInSizeOnCondition();
         }
 
         private Vector3 RelativeDirection =>
@@ -121,7 +122,7 @@ namespace Player
         }
 
 
-        public void PickupNearbyObjectsAndEnlarge(float sizeIncrement)
+        public void PickupNearbyObjectsAndEnlarge()
         {
             currentSize = 0;
             Collider[] foundObjects = Physics.OverlapSphere(m_SphereCollider.transform.position,
@@ -129,14 +130,19 @@ namespace Player
             Debug.Log($"{foundObjects.Length} were found in {m_radius} radius.");
             for (int i = 0; i < foundObjects.Length; i++)
             {
-                foundObjects[i].gameObject.SetActive(false);
-                currentSize += sizeIncrement;
+                BallAffector affector = foundObjects[i].GetComponent<BallAffector>();
+                if (affector != null && affector.information.scaleType == BallAffectorInformation.ScaleType.ScaleUp)
+                {
+                    foundObjects[i].gameObject.SetActive(false);
+                    currentSize += affector.information.scaleRate;
+                }
+                    
             }
 
             SetCollisionSize(m_CinemachineFreeLook);
         }
 
-        public void DecreaseInSizeOnCondition(float sizeIncrement)
+        public void DecreaseInSizeOnCondition()
         {
             currentSize = 0;
             Collider[] foundObjects = Physics.OverlapSphere(m_SphereCollider.transform.position,
@@ -144,7 +150,11 @@ namespace Player
 
             for (int i = 0; i < foundObjects.Length; i++)
             {
-                currentSize -= sizeIncrement;
+                BallAffector affector = foundObjects[i].GetComponent<BallAffector>();
+                if (foundObjects[i] != null && affector != null && affector.information.scaleType == BallAffectorInformation.ScaleType.ScaleDown)
+                {
+                    currentSize -= affector.information.scaleRate;
+                }
             }
 
             SetCollisionSize(m_CinemachineFreeLook);
