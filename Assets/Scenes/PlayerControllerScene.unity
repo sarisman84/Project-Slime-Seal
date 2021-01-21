@@ -2712,15 +2712,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6890580876862670280, guid: 188081d5eb3bca74f9e4436312507afc, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.33210328
+      value: 0.3321033
       objectReference: {fileID: 0}
     - target: {fileID: 6890580876862670280, guid: 188081d5eb3bca74f9e4436312507afc, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.29880658
+      value: -0.29880664
       objectReference: {fileID: 0}
     - target: {fileID: 6890580876862670280, guid: 188081d5eb3bca74f9e4436312507afc, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.1117947
+      value: 0.111794695
       objectReference: {fileID: 0}
     - target: {fileID: 6890580877210601009, guid: 188081d5eb3bca74f9e4436312507afc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2742,6 +2742,14 @@ PrefabInstance:
       propertyPath: m_LookAt
       value: 
       objectReference: {fileID: 593166558}
+    - target: {fileID: 6890580877210601010, guid: 188081d5eb3bca74f9e4436312507afc, type: 3}
+      propertyPath: m_Orbits.Array.data[2].m_Height
+      value: -1.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 6890580877210601010, guid: 188081d5eb3bca74f9e4436312507afc, type: 3}
+      propertyPath: m_Orbits.Array.data[2].m_Radius
+      value: 4.46
+      objectReference: {fileID: 0}
     - target: {fileID: 6890580877830472507, guid: 188081d5eb3bca74f9e4436312507afc, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.89685684
@@ -3099,7 +3107,7 @@ GameObject:
   - component: {fileID: 883618962}
   - component: {fileID: 883618961}
   - component: {fileID: 883618960}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5404,6 +5412,7 @@ MonoBehaviour:
   _cameraBehaivour: {fileID: 2087331152}
   accelerationSpeed: 4
   defaultMaxMovementSpeed: 4
+  jumpForce: 1
   grabRadius: 3
   grabMask:
     serializedVersion: 2
@@ -5411,6 +5420,9 @@ MonoBehaviour:
   hazardMask:
     serializedVersion: 2
     m_Bits: 128
+  collisionMask:
+    serializedVersion: 2
+    m_Bits: 384
   scaleUpRate: 0.5
   scaleDownRate: 0.01
 --- !u!135 &1846854472

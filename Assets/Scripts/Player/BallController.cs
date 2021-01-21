@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Cinemachine;
 using Interactivity;
 using UnityEngine;
@@ -22,20 +23,32 @@ namespace Player
 
         [SerializeField] float accelerationSpeed = 4f;
         [SerializeField] private float defaultMaxMovementSpeed;
+        [SerializeField] private float jumpForce;
         [Space] [SerializeField] private float grabRadius;
 
         [SerializeField] private LayerMask grabMask;
         [SerializeField] private LayerMask hazardMask;
+        [SerializeField] private LayerMask collisionMask;
         [SerializeField] private float scaleUpRate = 0.5f;
         [SerializeField] private float scaleDownRate = 0.01f;
 
         private float m_CurrentMaxMovementSpeed;
         private Vector3 m_Input;
+     
 
 
         private float TrueSpeed => accelerationSpeed * 100f;
         private float MaxSpeed => m_CurrentMaxMovementSpeed * 100f;
-        public Vector3 MovementDirection => m_Rigidbody.velocity.normalized;
+        private float TotalJumpForce => jumpForce;
+        private Vector3 GroundCollisionSize => new Vector3(_collider.radius, 0.1f, _collider.radius);
+        private Vector3 BottomPositionOfCollider
+        {
+            get
+            {
+                var position = transform.position;
+                return new Vector3(position.x, position.y - (_collider.bounds.size.y / 2f), position.z);
+            }
+        }
 
         private void SetMaxMovementSpeed(float limit = 0)
         {
@@ -74,8 +87,24 @@ namespace Player
                 ForceMode.Force);
             m_Rigidbody.velocity = ClampSpeed(m_Rigidbody.velocity);
 
+            if (m_InputComponent.GetButton(Input.InputType.Jump) && IsTouchingTheGround())
+            {
+                m_Rigidbody.AddForce(Vector3.up * TotalJumpForce, ForceMode.Impulse);
+            }
+
             Debug.DrawRay(transform.position, m_Rigidbody.velocity, Color.green);
         }
+
+   
+
+        private bool IsTouchingTheGround()
+        {
+            List<Collider> foundObjects = Physics.OverlapBox(BottomPositionOfCollider,
+                GroundCollisionSize, transform.rotation,collisionMask).ToList();
+            return foundObjects.FindAll(c => c != _collider).Count != 0;
+        }
+
+       
 
         private Vector3 ClampSpeed(Vector3 direction)
         {
@@ -84,7 +113,10 @@ namespace Player
 
         private void OnDrawGizmos()
         {
+          
             if (_collider == null) return;
+            Gizmos.color = Color.magenta;
+            Gizmos.DrawCube(BottomPositionOfCollider, GroundCollisionSize);
             Gizmos.color = Color.red - new Color(0, 0, 0, 0.5f);
             Gizmos.DrawSphere(transform.position, _collider.radius);
             Gizmos.color = Color.green - new Color(0, 0, 0, 0.5f);
