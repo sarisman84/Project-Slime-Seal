@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
 
@@ -15,6 +16,7 @@ namespace Player
         private Rigidbody m_Rigidbody;
         private Camera _mainCamera;
         private SphereCollider _collider;
+        [SerializeField] private CinemachineFreeLook _cameraBehaivour;
         [SerializeField] private BallEnlarger ballEnlarger;
 
         [SerializeField] float accelerationSpeed = 4f;
@@ -53,7 +55,7 @@ namespace Player
         private void Update()
         {
             m_Input = m_InputComponent.GetInputMovementRaw(AxisType.Axis3D);
-            ballEnlarger.PickupNearbyObjectsAndEnlarge(scaleRate);
+            ballEnlarger.PickupNearbyObjectsAndEnlarge(scaleRate, _cameraBehaivour);
         }
 
         private Vector3 RelativeDirection =>
@@ -105,10 +107,11 @@ namespace Player
         }
 
 
-        public void PickupNearbyObjectsAndEnlarge(float sizeIncrement)
+        public void PickupNearbyObjectsAndEnlarge(float sizeIncrement, CinemachineFreeLook cinemachineFreeLook)
         {
             currentSize = 0;
-            Collider[] foundObjects = Physics.OverlapSphere(m_SphereCollider.transform.position, m_SphereCollider.radius +m_radius, m_grabMask);
+            Collider[] foundObjects = Physics.OverlapSphere(m_SphereCollider.transform.position,
+                m_SphereCollider.radius + m_radius, m_grabMask);
             Debug.Log($"{foundObjects.Length} were found in {m_radius} radius.");
             for (int i = 0; i < foundObjects.Length; i++)
             {
@@ -116,12 +119,14 @@ namespace Player
                 currentSize += sizeIncrement;
             }
 
-            SetCollisionSize();
+            SetCollisionSize(cinemachineFreeLook);
         }
 
-        public void SetCollisionSize()
+        public void SetCollisionSize(CinemachineFreeLook cinemachineFreeLook)
         {
             m_SphereCollider.radius += currentSize;
+            cinemachineFreeLook.m_Orbits[0].m_Height += currentSize * 4f;
+            cinemachineFreeLook.m_Orbits[1].m_Radius += currentSize * 4f;
         }
     }
 }
