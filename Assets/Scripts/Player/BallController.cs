@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Cinemachine;
+using DG.Tweening;
 using Interactivity;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
@@ -190,7 +191,10 @@ namespace Player
             {
                 if (obj.transform.parent != m_SphereCollider.transform)
                 {
-                    obj.transform.position = m_SphereCollider.transform.position + (Random.insideUnitSphere * m_SphereCollider.radius);
+                    obj.transform.DOMove(
+                        m_SphereCollider.transform.position + (Random.insideUnitSphere *
+                                                               Mathf.Clamp(m_SphereCollider.radius, 3f,
+                                                                   float.MaxValue)), 0.15f);
                     obj.transform.SetParent(m_SphereCollider.transform);
                     obj.transform.localScale = Vector3.one * Random.Range(0.25f, 1f);
                 }
@@ -213,9 +217,24 @@ namespace Player
                     if (m_CaughtObjects.Count != 0)
                     {
                         GameObject obj = m_CaughtObjects[m_CaughtObjects.Count - 1];
-                        obj.transform.SetParent(null);
-                        m_CaughtObjects.Remove(obj);
-                        obj.SetActive(false);
+                        if ((m_SphereCollider.transform.position - obj.transform.position).magnitude >
+                            m_SphereCollider.radius)
+                        {
+                            obj.transform.SetParent(null);
+                            m_CaughtObjects.Remove(obj);
+
+                            if (obj.gameObject.activeSelf)
+                            {
+                                obj.gameObject.transform
+                                    .DOMove(obj.gameObject.transform.position, Random.Range(0.2f, 0.5f)).OnComplete(
+                                        () =>
+                                        {
+                                            obj.gameObject.AddComponent<Rigidbody>();
+                                            obj.gameObject.AddComponent<BoxCollider>();
+                                            obj.gameObject.layer = 0;
+                                        });
+                            }
+                        }
                     }
                 }
             }
