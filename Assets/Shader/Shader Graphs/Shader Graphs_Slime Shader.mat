@@ -32,9 +32,13 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - VD_Size: 1.5
+    - VD_Speed: 1.32
+    - VD_Strength: 0.26
     - Vector1_7f44734b90aa483a97261488584c8847: 2.6
     - Vector1_bdfbbe5eb8a441718806372968633e94: 0.34
     - Vector1_caa8b29ac4724f2c9062dc8691d38172: 5
     m_Colors:
     - Color_63a7d09ca0ff47afaf0658097b544714: {r: 0.6525063, g: 7.464264, b: 0, a: 0.8666667}
+    - Slime_Color: {r: 0.02790567, g: 0.3135284, b: 0, a: 0.8666667}
   m_BuildTextureStacks: []

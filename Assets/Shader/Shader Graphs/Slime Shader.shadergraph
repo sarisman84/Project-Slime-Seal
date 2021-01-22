@@ -498,8 +498,8 @@
     ],
     "m_VertexContext": {
         "m_Position": {
-            "x": 791.0000610351563,
-            "y": -267.0000305175781
+            "x": 792.9999389648438,
+            "y": -384.0000305175781
         },
         "m_Blocks": [
             {
@@ -1706,7 +1706,7 @@
     },
     "m_Name": "Slime Color",
     "m_DefaultReferenceName": "Color_63a7d09ca0ff47afaf0658097b544714",
-    "m_OverrideReferenceName": "",
+    "m_OverrideReferenceName": "Slime_Color",
     "m_GeneratePropertyBlock": true,
     "m_Precision": 0,
     "overrideHLSLDeclaration": false,
@@ -2060,7 +2060,7 @@
     },
     "m_Name": "Vertex Displacement Speed",
     "m_DefaultReferenceName": "Vector1_7f44734b90aa483a97261488584c8847",
-    "m_OverrideReferenceName": "",
+    "m_OverrideReferenceName": "VD_Speed",
     "m_GeneratePropertyBlock": true,
     "m_Precision": 0,
     "overrideHLSLDeclaration": false,
@@ -2331,10 +2331,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": 481.00006103515627,
-            "y": -547.0,
-            "width": 208.0,
-            "height": 302.0
+            "x": 482.99993896484377,
+            "y": -516.9999389648438,
+            "width": 207.99998474121095,
+            "height": 301.9999694824219
         }
     },
     "m_Slots": [
@@ -2868,7 +2868,7 @@
     },
     "m_Name": "Vertex Displacement Strength",
     "m_DefaultReferenceName": "Vector1_bdfbbe5eb8a441718806372968633e94",
-    "m_OverrideReferenceName": "",
+    "m_OverrideReferenceName": "VD_Strength",
     "m_GeneratePropertyBlock": true,
     "m_Precision": 0,
     "overrideHLSLDeclaration": false,
@@ -2951,7 +2951,7 @@
     },
     "m_Name": "Vertex Dispacement Size",
     "m_DefaultReferenceName": "Vector1_caa8b29ac4724f2c9062dc8691d38172",
-    "m_OverrideReferenceName": "",
+    "m_OverrideReferenceName": "VD_Size",
     "m_GeneratePropertyBlock": true,
     "m_Precision": 0,
     "overrideHLSLDeclaration": false,

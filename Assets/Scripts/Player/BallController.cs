@@ -141,8 +141,21 @@ namespace Player
         private CinemachineFreeLook m_CinemachineFreeLook;
         private Transform m_SphereModel;
 
+        private MeshRenderer m_SphereModel_meshRenderer;
+        private Material m_SphereModel_material;
+
         private float m_TopOrbitHeight, m_MidOrbitRadius;
 
+        private float m_SphereModel_defaultVDSpeed, m_SphereModel_defaultVDSize, m_SphereModel_defaultVDStrength;
+
+        #region StaticDefinitions
+
+        private static readonly int SlimeColor = Shader.PropertyToID("Slime_Color");
+        private static readonly int VdSpeed = Shader.PropertyToID("VD_Speed");
+        private static readonly int VdSize = Shader.PropertyToID("VD_Size");
+        private static readonly int VdStrength = Shader.PropertyToID("VD_Strength");
+
+        #endregion
 
         public BallEnlarger(SphereCollider collider, float radius, LayerMask layerMask, LayerMask hazardMask,
             CinemachineFreeLook cinemachineFreeLook, Transform sphereModel)
@@ -159,6 +172,36 @@ namespace Player
             m_SphereModel = sphereModel;
 
             m_CaughtObjects = new List<GameObject>();
+            m_SphereModel_meshRenderer = m_SphereModel.GetComponent<MeshRenderer>();
+            m_SphereModel_material = m_SphereModel_meshRenderer.material;
+
+            m_SphereModel_defaultVDSpeed = SphereModel_VertexDisplacement_Speed;
+            m_SphereModel_defaultVDSize = SphereModel_VertexDisplacement_Size;
+            m_SphereModel_defaultVDStrength = SphereModel_VertexDisplacement_Strength;
+        }
+
+        private Color PSphereColor
+        {
+            get => m_SphereModel_material.GetColor(SlimeColor);
+            set => m_SphereModel_material.SetColor(SlimeColor, value);
+        }
+
+        private float SphereModel_VertexDisplacement_Speed
+        {
+            get => m_SphereModel_material.GetFloat(VdSpeed);
+            set => m_SphereModel_material.SetFloat(VdSpeed, value);
+        }
+
+        private float SphereModel_VertexDisplacement_Size
+        {
+            get => m_SphereModel_material.GetFloat(VdSize);
+            set => m_SphereModel_material.SetFloat(VdSize, value);
+        }
+
+        private float SphereModel_VertexDisplacement_Strength
+        {
+            get => m_SphereModel_material.GetFloat(VdStrength);
+            set => m_SphereModel_material.SetFloat(VdStrength, value);
         }
 
 
@@ -258,6 +301,9 @@ namespace Player
 
             sphereModel.localScale = Vector3.one * (m_SphereCollider.radius * 2f);
             //sphereModel.localScale = Vector3.Min(Vector3.Max(sphereModel.localScale, Vector3.zero), sphereModel.localScale);
+            SphereModel_VertexDisplacement_Size += m_CurrentSize;
+            SphereModel_VertexDisplacement_Size = Mathf.Clamp(SphereModel_VertexDisplacement_Size,
+                m_SphereModel_defaultVDSize, float.MaxValue);
         }
     }
 }
