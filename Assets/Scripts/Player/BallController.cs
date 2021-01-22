@@ -20,12 +20,12 @@ namespace Player
 
         private Input m_InputComponent;
         private Rigidbody m_Rigidbody;
-        private Camera _mainCamera;
-        private SphereCollider _collider;
+        private Camera m_MainCamera;
+        private SphereCollider m_Collider;
 
 
         [SerializeField] private Transform sphereModel;
-        [SerializeField] private CinemachineFreeLook _cameraBehaivour;
+        [SerializeField] private CinemachineFreeLook cameraBehaivour;
         [SerializeField] private BallEnlarger ballEnlarger;
 
         [SerializeField] float accelerationSpeed = 4f;
@@ -36,8 +36,6 @@ namespace Player
         [SerializeField] private LayerMask grabMask;
         [SerializeField] private LayerMask hazardMask;
         [SerializeField] private LayerMask collisionMask;
-        [SerializeField] private float scaleUpRate = 0.5f;
-        [SerializeField] private float scaleDownRate = 0.01f;
 
         private float m_CurrentMaxMovementSpeed;
         private Vector3 m_Input;
@@ -46,14 +44,14 @@ namespace Player
         private float TrueSpeed => accelerationSpeed * 100f;
         private float MaxSpeed => m_CurrentMaxMovementSpeed * 100f;
         private float TotalJumpForce => jumpForce;
-        private Vector3 GroundCollisionSize => new Vector3(_collider.radius, 0.1f, _collider.radius);
+        private Vector3 GroundCollisionSize => new Vector3(m_Collider.radius, 0.1f, m_Collider.radius);
 
         private Vector3 BottomPositionOfCollider
         {
             get
             {
                 var position = transform.position;
-                return new Vector3(position.x, position.y - (_collider.bounds.size.y / 2f), position.z);
+                return new Vector3(position.x, position.y - (m_Collider.bounds.size.y / 2f), position.z);
             }
         }
 
@@ -67,9 +65,9 @@ namespace Player
 
         void Awake()
         {
-            _mainCamera = Camera.main;
-            _collider = GetComponent<SphereCollider>();
-            ballEnlarger = new BallEnlarger(_collider, grabRadius, grabMask, hazardMask, _cameraBehaivour, sphereModel);
+            m_MainCamera = Camera.main;
+            m_Collider = GetComponent<SphereCollider>();
+            ballEnlarger = new BallEnlarger(m_Collider, grabRadius, grabMask, hazardMask, cameraBehaivour, sphereModel);
             m_InputComponent = GetComponent<Input>();
             m_Rigidbody = GetComponent<Rigidbody>();
 
@@ -84,13 +82,13 @@ namespace Player
         }
 
         private Vector3 RelativeDirection =>
-            _mainCamera.transform.right * m_Input.x + _mainCamera.transform.forward * m_Input.z;
+            m_MainCamera.transform.right * m_Input.x + m_MainCamera.transform.forward * m_Input.z;
 
         // Update is called once per frame
         void FixedUpdate()
         {
             m_Rigidbody.AddForce(ClampSpeed(RelativeDirection *
-                                            (TrueSpeed * Time.fixedDeltaTime)) + _mainCamera.transform.right,
+                                            (TrueSpeed * Time.fixedDeltaTime)) + m_MainCamera.transform.right,
                 ForceMode.Force);
             m_Rigidbody.velocity = ClampSpeed(m_Rigidbody.velocity);
 
@@ -107,7 +105,7 @@ namespace Player
         {
             List<Collider> foundObjects = Physics.OverlapBox(BottomPositionOfCollider,
                 GroundCollisionSize, transform.rotation, collisionMask).ToList();
-            return foundObjects.FindAll(c => c != _collider).Count != 0;
+            return foundObjects.FindAll(c => c != m_Collider).Count != 0;
         }
 
 
@@ -118,13 +116,13 @@ namespace Player
 
         private void OnDrawGizmos()
         {
-            if (_collider == null) return;
+            if (m_Collider == null) return;
             Gizmos.color = Color.magenta;
             Gizmos.DrawCube(BottomPositionOfCollider, GroundCollisionSize);
             Gizmos.color = Color.red - new Color(0, 0, 0, 0.5f);
-            Gizmos.DrawSphere(transform.position, _collider.radius);
+            Gizmos.DrawSphere(transform.position, m_Collider.radius);
             Gizmos.color = Color.green - new Color(0, 0, 0, 0.5f);
-            Gizmos.DrawSphere(transform.position, _collider.radius + grabRadius);
+            Gizmos.DrawSphere(transform.position, m_Collider.radius + grabRadius);
         }
     }
 
@@ -141,8 +139,21 @@ namespace Player
         private CinemachineFreeLook m_CinemachineFreeLook;
         private Transform m_SphereModel;
 
+        private MeshRenderer m_SphereModelMeshRenderer;
+        private Material m_SphereModelMaterial;
+
         private float m_TopOrbitHeight, m_MidOrbitRadius;
 
+        private float m_SphereModelDefaultVdSpeed, m_SphereModelDefaultVdSize, m_SphereModelDefaultVdStrength;
+
+        #region StaticDefinitions
+
+        private static readonly int SlimeColor = Shader.PropertyToID("Slime_Color");
+        private static readonly int VdSpeed = Shader.PropertyToID("VD_Speed");
+        private static readonly int VdSize = Shader.PropertyToID("VD_Size");
+        private static readonly int VdStrength = Shader.PropertyToID("VD_Strength");
+
+        #endregion
 
         public BallEnlarger(SphereCollider collider, float radius, LayerMask layerMask, LayerMask hazardMask,
             CinemachineFreeLook cinemachineFreeLook, Transform sphereModel)
@@ -159,6 +170,36 @@ namespace Player
             m_SphereModel = sphereModel;
 
             m_CaughtObjects = new List<GameObject>();
+            m_SphereModelMeshRenderer = m_SphereModel.GetComponent<MeshRenderer>();
+            m_SphereModelMaterial = m_SphereModelMeshRenderer.material;
+
+            m_SphereModelDefaultVdSpeed = SphereModelVertexDisplacementSpeed;
+            m_SphereModelDefaultVdSize = SphereModelVertexDisplacementSize;
+            m_SphereModelDefaultVdStrength = SphereModelVertexDisplacementStrength;
+        }
+
+        private Color PSphereColor
+        {
+            get => m_SphereModelMaterial.GetColor(SlimeColor);
+            set => m_SphereModelMaterial.SetColor(SlimeColor, value);
+        }
+
+        private float SphereModelVertexDisplacementSpeed
+        {
+            get => m_SphereModelMaterial.GetFloat(VdSpeed);
+            set => m_SphereModelMaterial.SetFloat(VdSpeed, value);
+        }
+
+        private float SphereModelVertexDisplacementSize
+        {
+            get => m_SphereModelMaterial.GetFloat(VdSize);
+            set => m_SphereModelMaterial.SetFloat(VdSize, value);
+        }
+
+        private float SphereModelVertexDisplacementStrength
+        {
+            get => m_SphereModelMaterial.GetFloat(VdStrength);
+            set => m_SphereModelMaterial.SetFloat(VdStrength, value);
         }
 
 
@@ -193,7 +234,7 @@ namespace Player
                 {
                     obj.transform.DOMove(
                         m_SphereCollider.transform.position + (Random.insideUnitSphere *
-                                                               Mathf.Clamp(m_SphereCollider.radius, 3f,
+                                                               Mathf.Clamp(m_SphereCollider.radius, 2.5f,
                                                                    float.MaxValue)), 0.15f);
                     obj.transform.SetParent(m_SphereCollider.transform);
                     obj.transform.localScale = Vector3.one * Random.Range(0.25f, 1f);
@@ -217,7 +258,7 @@ namespace Player
                     if (m_CaughtObjects.Count != 0)
                     {
                         GameObject obj = m_CaughtObjects[m_CaughtObjects.Count - 1];
-                        if ((m_SphereCollider.transform.position - obj.transform.position).magnitude >
+                        if ((m_SphereCollider.transform.position - obj.transform.position).sqrMagnitude >
                             m_SphereCollider.radius)
                         {
                             obj.transform.SetParent(null);
@@ -258,6 +299,9 @@ namespace Player
 
             sphereModel.localScale = Vector3.one * (m_SphereCollider.radius * 2f);
             //sphereModel.localScale = Vector3.Min(Vector3.Max(sphereModel.localScale, Vector3.zero), sphereModel.localScale);
+            SphereModelVertexDisplacementSize += m_CurrentSize;
+            SphereModelVertexDisplacementSize = Mathf.Clamp(SphereModelVertexDisplacementSize,
+                m_SphereModelDefaultVdSize, float.MaxValue);
         }
     }
 }
