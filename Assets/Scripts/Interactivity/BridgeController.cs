@@ -1,5 +1,6 @@
 ﻿using System;
 using Player;
+using Unity.Mathematics;
 using UnityEngine;
 
 namespace Interactivity
@@ -10,7 +11,7 @@ namespace Interactivity
         public float bridgeWidthSize = 3f;
         public GameObject bridgeModelPrefab;
 
-        [HideInInspector] public Vector3 waypointA, waypointB;
+        public Vector3 waypointA, waypointB;
 
         public void BuildBridge(Collider col)
         {
@@ -21,7 +22,7 @@ namespace Interactivity
             Debug.Log($"Current Ball Size: {ballController.CurrentSize}");
             if (ballController.CurrentSize >= minSizeRequirement)
             {
-                AddBridgeModel((waypointA - waypointB) / 2f, bridgeWidthSize);
+                AddBridgeModel(MidPoint, bridgeWidthSize);
                 GetComponent<Collider>().enabled = false;
             }
         }
@@ -29,17 +30,26 @@ namespace Interactivity
         private void AddBridgeModel(Vector3 midPoint, float width)
         {
             var transform2 = transform;
-            GameObject obj = Instantiate(bridgeModelPrefab, transform2.position - midPoint, transform2.rotation,
-                transform2);
-            obj.transform.localScale = obj.transform.localScale + (transform2.forward * midPoint.sqrMagnitude / 2f) +
+            GameObject obj = Instantiate(bridgeModelPrefab, transform);
+            obj.transform.position = waypointA + (midPoint);
+            obj.transform.localRotation = quaternion.LookRotation(midPoint.normalized, Vector3.up);
+            obj.transform.localScale = obj.transform.localScale + (transform2.forward * midPoint.magnitude * 2f) +
                                        transform2.right * width;
         }
 
 
         private void OnDrawGizmosSelected()
         {
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawCube(waypointA + MidPoint, Vector3.one / 2f);
+
             Gizmos.color = Color.green - new Color(0, 0, 0, 0.7f);
             Gizmos.DrawSphere(transform.position - transform.forward.normalized * 5f, minSizeRequirement);
+
+            Gizmos.color = Color.cyan - new Color(0, 0, 0, 0.7f);
+            Gizmos.DrawCube(transform.position, GetComponent<Collider>().bounds.size);
         }
+
+        private Vector3 MidPoint => (waypointB - waypointA) / 2f;
     }
 }

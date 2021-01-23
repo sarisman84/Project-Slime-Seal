@@ -154,7 +154,7 @@ namespace Player
         private float m_TopOrbitHeight, m_MidOrbitRadius;
 
         private float m_SphereModelDefaultVdSpeed, m_SphereModelDefaultVdSize, m_SphereModelDefaultVdStrength;
-        private float m_SizeOffset;
+
         #region StaticDefinitions
 
         private static readonly int SlimeColor = Shader.PropertyToID("Slime_Color");
@@ -186,8 +186,6 @@ namespace Player
             m_SphereModelDefaultVdSpeed = SphereModelVertexDisplacementSpeed;
             m_SphereModelDefaultVdSize = SphereModelVertexDisplacementSize;
             m_SphereModelDefaultVdStrength = SphereModelVertexDisplacementStrength;
-
-            m_SizeOffset = 3f;
         }
 
         private Color PSphereColor
