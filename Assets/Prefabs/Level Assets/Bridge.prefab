@@ -73,18 +73,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Player.BallController, Assembly-CSharp
-        m_MethodName: ChangeBallSize
-        m_Mode: 4
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: -1
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &8970945488757845441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,10 +85,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93bb4406d60649f8bdf1e9143e427b02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minSizeRequirement: 2.5
-  bridgeWidthSize: 3.91
+  minSizeRequirement: 1
+  bridgeWidthSize: 10.36
   bridgeSpawnSpeed: 2
-  bridgeModelPrefab: {fileID: 2974815323099778788, guid: a1ddca30f796f0941bd747eb72761132, type: 3}
-  bridgeEaseType: 0
-  waypointA: {x: 38.53, y: 4.5144615, z: 26.10552}
-  waypointB: {x: 38.53, y: 4.4800987, z: 9.665561}
+  bridgeModelPrefab: {fileID: 0}
+  bridgeEaseType: 1
+  waypointA: {x: -16.257223, y: -7.2987237, z: 119.389854}
+  waypointB: {x: -17.053387, y: -5.296664, z: 72.490746}
