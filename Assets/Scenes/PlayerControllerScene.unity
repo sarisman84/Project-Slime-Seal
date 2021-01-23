@@ -1636,6 +1636,62 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8970945488757845440, guid: 8604311f98be11e438852cc6e50a5fca, type: 3}
   m_PrefabInstance: {fileID: 8970945488582556244}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
+=======
+  m_GameObject: {fileID: 513202067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93bb4406d60649f8bdf1e9143e427b02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minSizeRequirement: 2.5
+  bridgeWidthSize: 3.91
+  bridgeSpawnSpeed: 2
+  bridgeModelPrefab: {fileID: 2974815323099778788, guid: a1ddca30f796f0941bd747eb72761132, type: 3}
+  bridgeEaseType: 2
+  waypointA: {x: 38.606834, y: 4.20302, z: 26.214066}
+  waypointB: {x: 38.5544, y: 4.3441963, z: 10.096281}
+--- !u!114 &513202070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 513202067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0917a2336d4343a28368eadbf3039026, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onInteractCallback:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 513202069}
+        m_TargetAssemblyTypeName: Interactivity.BridgeController, Assembly-CSharp
+        m_MethodName: BuildBridge
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!65 &513202071
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 513202067}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5, y: 5, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+>>>>>>> playerController
 --- !u!1 &571126985
 GameObject:
   m_ObjectHideFlags: 0
