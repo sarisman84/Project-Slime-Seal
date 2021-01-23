@@ -132,7 +132,12 @@ namespace Player
         public void ChangeBallSize(float value)
         {
             Debug.Log("Changing Ball's size!");
-            ballEnlarger.SetBallSize(value);
+            ballEnlarger.ChangeBallSize(value);
+        }
+
+        public void SetBallSize(float size)
+        {
+            ballEnlarger.SetBallSize(size);
         }
     }
 
@@ -237,7 +242,7 @@ namespace Player
 
             OnPickupObject();
 
-            SetCollisionSize(m_CinemachineFreeLook, m_SphereModel);
+            ChangeCollisionSize(m_CinemachineFreeLook, m_SphereModel);
         }
 
         public void OnPickupObject()
@@ -251,7 +256,7 @@ namespace Player
                                                                Mathf.Clamp(m_SphereCollider.radius, 2.5f,
                                                                    float.MaxValue)), 0.15f);
                     obj.transform.SetParent(m_SphereCollider.transform);
-                    obj.transform.localScale = Vector3.one * Random.Range(0.25f, 1f);
+                    // obj.transform.localScale = Vector3.one * Random.Range(0.25f, 1f);
                 }
             }
         }
@@ -273,7 +278,7 @@ namespace Player
                 }
             }
 
-            SetCollisionSize(m_CinemachineFreeLook, m_SphereModel);
+            ChangeCollisionSize(m_CinemachineFreeLook, m_SphereModel);
         }
     
         public void UpdateCaughtObjectsList()
@@ -302,13 +307,13 @@ namespace Player
             }
         }
 
-        public void SetBallSize(float value)
+        public void ChangeBallSize(float value)
         {
             m_CurrentSize = value;
-            SetCollisionSize(m_CinemachineFreeLook, m_SphereModel);
+            ChangeCollisionSize(m_CinemachineFreeLook, m_SphereModel);
         }
 
-        private void SetCollisionSize(CinemachineFreeLook cinemachineFreeLook, Transform sphereModel)
+        private void ChangeCollisionSize(CinemachineFreeLook cinemachineFreeLook, Transform sphereModel)
         {
             var radius = m_SphereCollider.radius;
 
@@ -334,6 +339,36 @@ namespace Player
             m_PreviousSize = m_CurrentSize;
             m_CurrentSize = 0;
             
+        }
+        
+        private void SetCollisionSize(float size,CinemachineFreeLook cinemachineFreeLook, Transform sphereModel)
+        {
+            var radius = m_SphereCollider.radius;
+
+            radius = size;
+            m_SphereCollider.radius = radius;
+            m_SphereCollider.radius = Mathf.Clamp(radius, 1, float.MaxValue);
+
+            cinemachineFreeLook.m_Orbits[0].m_Height = size * 4f;
+            cinemachineFreeLook.m_Orbits[0].m_Height = Mathf.Clamp(cinemachineFreeLook.m_Orbits[0].m_Height,
+                m_TopOrbitHeight, float.MaxValue);
+
+            cinemachineFreeLook.m_Orbits[1].m_Radius = size * 4f;
+            cinemachineFreeLook.m_Orbits[1].m_Radius = Mathf.Clamp(cinemachineFreeLook.m_Orbits[1].m_Radius,
+                m_MidOrbitRadius, float.MaxValue);
+
+
+            sphereModel.localScale = Vector3.one * (m_SphereCollider.radius * 2f);
+            //sphereModel.localScale = Vector3.Min(Vector3.Max(sphereModel.localScale, Vector3.zero), sphereModel.localScale);
+            SphereModelVertexDisplacementSize = size;
+            SphereModelVertexDisplacementSize = Mathf.Clamp(SphereModelVertexDisplacementSize,
+                m_SphereModelDefaultVdSize, float.MaxValue);
+            
+        }
+
+        public void SetBallSize(float size)
+        {
+            SetCollisionSize(size, m_CinemachineFreeLook, m_SphereModel);
         }
     }
 }
