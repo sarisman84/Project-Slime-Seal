@@ -57,7 +57,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8876804568747561266, guid: e70368bb04ffd9141a23e29558c4ccc3, type: 3}
       propertyPath: m_Name
-      value: Bike_Orange
+      value: Bike_Orange Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 8988741484102611940, guid: e70368bb04ffd9141a23e29558c4ccc3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 17ab82a424f30f047810f353e0821b59, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e70368bb04ffd9141a23e29558c4ccc3, type: 3}
