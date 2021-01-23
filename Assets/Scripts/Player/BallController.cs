@@ -251,7 +251,7 @@ namespace Player
                                                                Mathf.Clamp(m_SphereCollider.radius, 2.5f,
                                                                    float.MaxValue)), 0.15f);
                     obj.transform.SetParent(m_SphereCollider.transform);
-                    obj.transform.localScale = Vector3.one * Random.Range(0.25f, 1f);
+                    // obj.transform.localScale = Vector3.one * Random.Range(0.25f, 1f);
                 }
             }
         }
