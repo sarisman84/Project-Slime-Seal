@@ -12,5 +12,6 @@ namespace Interactivity
 
         public ScaleType scaleType;
         public float scaleRate;
+        public float minSizeToGrab = 0;
     }
 }

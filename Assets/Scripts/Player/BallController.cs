@@ -224,7 +224,7 @@ namespace Player
             for (int i = 0; i < foundObjects.Length; i++)
             {
                 BallAffector affector = foundObjects[i].GetComponent<BallAffector>();
-                if (affector != null && affector.information.scaleType == BallAffectorInformation.ScaleType.ScaleUp)
+                if (affector != null && affector.information.scaleType == BallAffectorInformation.ScaleType.ScaleUp && affector.information.minSizeToGrab <= m_SphereCollider.radius)
                 {
                     GameObject obj = foundObjects[i].gameObject;
                     m_CaughtObjects.Add(obj);
