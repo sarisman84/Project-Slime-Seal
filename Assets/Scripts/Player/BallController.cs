@@ -79,6 +79,7 @@ namespace Player
             m_Input = m_InputComponent.GetInputMovementRaw(AxisType.Axis3D);
             ballEnlarger.PickupNearbyObjectsAndEnlarge();
             ballEnlarger.DecreaseInSizeOnCondition();
+            ballEnlarger.UpdateCaughtObjectsList();
         }
 
         private Vector3 RelativeDirection =>
@@ -145,6 +146,7 @@ namespace Player
 
         private float m_Radius;
         private float m_CurrentSize;
+        private float m_PreviousSize;
         private CinemachineFreeLook m_CinemachineFreeLook;
         private Transform m_SphereModel;
 
@@ -267,32 +269,37 @@ namespace Player
                     affector.information.scaleType == BallAffectorInformation.ScaleType.ScaleDown)
                 {
                     m_CurrentSize -= affector.information.scaleRate;
-                    if (m_CaughtObjects.Count != 0)
-                    {
-                        GameObject obj = m_CaughtObjects[m_CaughtObjects.Count - 1];
-                        if ((m_SphereCollider.transform.position - obj.transform.position).sqrMagnitude >
-                            m_SphereCollider.radius)
-                        {
-                            obj.transform.SetParent(null);
-                            m_CaughtObjects.Remove(obj);
-
-                            if (obj.gameObject.activeSelf)
-                            {
-                                obj.gameObject.transform
-                                    .DOMove(obj.gameObject.transform.position, Random.Range(0.2f, 0.5f)).OnComplete(
-                                        () =>
-                                        {
-                                            obj.gameObject.AddComponent<Rigidbody>();
-                                            obj.gameObject.AddComponent<BoxCollider>();
-                                            obj.gameObject.layer = 0;
-                                        });
-                            }
-                        }
-                    }
+                    UpdateCaughtObjectsList();
                 }
             }
 
             SetCollisionSize(m_CinemachineFreeLook, m_SphereModel);
+        }
+    
+        public void UpdateCaughtObjectsList()
+        {
+            if (m_CaughtObjects.Count != 0 && Mathf.Sign(m_CurrentSize) == -1)
+            {
+                GameObject obj = m_CaughtObjects[m_CaughtObjects.Count - 1];
+                if ((m_SphereCollider.transform.position - obj.transform.position).sqrMagnitude >
+                    m_SphereCollider.radius)
+                {
+                    obj.transform.SetParent(null);
+                    m_CaughtObjects.Remove(obj);
+
+                    if (obj.gameObject.activeSelf)
+                    {
+                        obj.gameObject.transform
+                            .DOMove(obj.gameObject.transform.position, Random.Range(0.2f, 0.5f)).OnComplete(
+                                () =>
+                                {
+                                    obj.gameObject.AddComponent<Rigidbody>();
+                                    obj.gameObject.AddComponent<BoxCollider>();
+                                    obj.gameObject.layer = 0;
+                                });
+                    }
+                }
+            }
         }
 
         public void SetBallSize(float value)
@@ -324,7 +331,9 @@ namespace Player
             SphereModelVertexDisplacementSize = Mathf.Clamp(SphereModelVertexDisplacementSize,
                 m_SphereModelDefaultVdSize, float.MaxValue);
 
+            m_PreviousSize = m_CurrentSize;
             m_CurrentSize = 0;
+            
         }
     }
 }

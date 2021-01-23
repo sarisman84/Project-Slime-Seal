@@ -1678,9 +1678,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minSizeRequirement: 2.5
   bridgeWidthSize: 3.91
+  bridgeSpawnSpeed: 2
   bridgeModelPrefab: {fileID: 2974815323099778788, guid: a1ddca30f796f0941bd747eb72761132, type: 3}
-  waypointA: {x: 38.53, y: 4.5144615, z: 26.04574}
-  waypointB: {x: 38.53, y: 4.4800987, z: 10.195294}
+  bridgeEaseType: 2
+  waypointA: {x: 38.606834, y: 4.20302, z: 26.214066}
+  waypointB: {x: 38.5544, y: 4.3441963, z: 10.096281}
 --- !u!114 &513202070
 MonoBehaviour:
   m_ObjectHideFlags: 0
