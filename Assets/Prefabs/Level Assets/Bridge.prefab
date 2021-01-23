@@ -102,5 +102,5 @@ MonoBehaviour:
   bridgeSpawnSpeed: 2
   bridgeModelPrefab: {fileID: 2974815323099778788, guid: a1ddca30f796f0941bd747eb72761132, type: 3}
   bridgeEaseType: 0
-  waypointA: {x: 38.53, y: 4.5144615, z: 26.10552}
-  waypointB: {x: 38.53, y: 4.4800987, z: 9.665561}
+  waypointA: {x: 38.53, y: 4.367223, z: 26.952824}
+  waypointB: {x: 38.53, y: 4.627857, z: 8.891579}
