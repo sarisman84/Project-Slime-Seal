@@ -1,8 +1,11 @@
 ﻿using System;
+using System.Collections;
 using DG.Tweening;
 using Player;
 using Unity.Mathematics;
+using UnityEditor;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Interactivity
 {
@@ -14,7 +17,7 @@ namespace Interactivity
         public GameObject bridgeModelPrefab;
         [SerializeField] private Ease bridgeEaseType;
         public Vector3 waypointA, waypointB;
-       
+
 
         public void BuildBridge(Collider col)
         {
@@ -25,10 +28,31 @@ namespace Interactivity
             Debug.Log($"Current Ball Size: {ballController.CurrentSize}");
             if (ballController.CurrentSize >= minSizeRequirement)
             {
-                AddBridgeModel(MidPoint, bridgeWidthSize);
-                GetComponent<Collider>().enabled = false;
+                StartCoroutine(BeginApplyingBridge(col));
             }
         }
+
+        private IEnumerator BeginApplyingBridge(Collider col)
+        {
+            AnimationController animationController = col.GetComponent<AnimationController>();
+            Vector3 startPos = Vector3.zero;
+            float dot = -1;
+            int attempts = 0;
+            while (Mathf.Sign(dot) == -1 && attempts <= 500 )
+            {
+                startPos = col.transform.position + Random.insideUnitSphere;
+                dot = Vector3.Dot((animationController.transform.position - waypointB).normalized,
+                    startPos * col.bounds.size.x);
+                attempts++;
+            }
+
+            yield return animationController.PlayGrabAnimation(startPos, waypointA);
+            AddBridgeModel(MidPoint, bridgeWidthSize);
+            GetComponent<Collider>().enabled = false;
+            yield return new WaitForSeconds(1f);
+            yield return animationController.DisableGrabModels();
+        }
+
 
         private void AddBridgeModel(Vector3 midPoint, float width)
         {

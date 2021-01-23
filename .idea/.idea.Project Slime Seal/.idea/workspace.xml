@@ -2,7 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="71a1ccbe-5d07-4fa5-a2ba-87c32939b4c2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Arm.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Arm.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Start_End Points.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Start_End Points.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Player/AnimationController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Player/AnimationController.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Project Slime Seal/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Project Slime Seal/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Project Slime Seal/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Project Slime Seal/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/PlayerControllerScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/PlayerControllerScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interactivity/BridgeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interactivity/BridgeController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,6 +50,7 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Editor/BridgeCustomEditor.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/BallController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Interactivity/BridgeController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/AnimationController.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1nNxgmNAPVYzVuGw2vBq6TT7Bib" />
@@ -93,7 +102,7 @@
       <workItem from="1611244475036" duration="20358000" />
       <workItem from="1611328493216" duration="2400000" />
       <workItem from="1611336229762" duration="1515000" />
-      <workItem from="1611390736433" duration="9047000" />
+      <workItem from="1611390736433" duration="9757000" />
     </task>
     <servers />
   </component>
