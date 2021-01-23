@@ -6,7 +6,7 @@ namespace Interactivity
 {
     public class DetectionArea : MonoBehaviour
     {
-        private BoxCollider m_BoxCollider;
+        public BoxCollider m_BoxCollider;
 
         public UnityEvent<Collider> onTriggerEnter, onTriggerStay, onTriggerExit;
         public Color triggerBoxColor;
