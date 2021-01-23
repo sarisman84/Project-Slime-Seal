@@ -47,7 +47,7 @@ Material:
     - _Opacity: 0.67
     - _Size: 2.36
     m_Colors:
-    - _DarkFoamColor: {r: 0.010435283, g: 0.4433962, b: 0, a: 1}
-    - _LightFoamColor: {r: 0.2045105, g: 0.735849, b: 0, a: 1}
-    - _WaterColor: {r: 0.23940991, g: 1, b: 0.20784312, a: 1}
+    - _DarkFoamColor: {r: 0.15566039, g: 0.60271126, b: 1, a: 1}
+    - _LightFoamColor: {r: 1, g: 1, b: 1, a: 1}
+    - _WaterColor: {r: 0.10849059, g: 0.81292605, b: 1, a: 1}
   m_BuildTextureStacks: []

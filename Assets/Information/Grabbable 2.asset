@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30bf3f7042bf405d8c1819b66b0f07af, type: 3}
-  m_Name: Grabbable 1
+  m_Name: Grabbable 2
   m_EditorClassIdentifier: 
   scaleType: 1
-  scaleRate: 0.1
-  minSizeToGrab: 2
+  scaleRate: 0.05
+  minSizeToGrab: 0
