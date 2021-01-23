@@ -199,9 +199,13 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
+          <e p="Editor" t="Include">
+            <e p="BridgeCustomEditor.cs" t="Include" />
+          </e>
           <e p="Interactivity" t="Include">
             <e p="BallAffector.cs" t="Include" />
             <e p="BallAffectorInformation.cs" t="Include" />
+            <e p="BridgeController.cs" t="Include" />
             <e p="Interactable.cs" t="Include" />
           </e>
           <e p="Player" t="Include">

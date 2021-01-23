@@ -84,6 +84,8 @@ namespace Player
         private Vector3 RelativeDirection =>
             m_MainCamera.transform.right * m_Input.x + m_MainCamera.transform.forward * m_Input.z;
 
+        public float CurrentSize => ballEnlarger.CurSize;
+
         // Update is called once per frame
         void FixedUpdate()
         {
@@ -211,6 +213,8 @@ namespace Player
             get => m_SphereModelMaterial.GetFloat(VdStrength);
             set => m_SphereModelMaterial.SetFloat(VdStrength, value);
         }
+
+        public float CurSize => m_SphereCollider.radius;
 
 
         public void PickupNearbyObjectsAndEnlarge()
