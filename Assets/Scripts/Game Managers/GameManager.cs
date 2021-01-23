@@ -62,7 +62,9 @@ namespace Game_Managers
                 {
                     affector.Value.GetComponent<Collider>().enabled = true;
                     affector.Value.transform.position = affector.Key;
+                    affector.Value.gameObject.layer = 9;
                     Destroy(affector.Value.GetComponent<Rigidbody>());
+                    
                 }
             }
         }
