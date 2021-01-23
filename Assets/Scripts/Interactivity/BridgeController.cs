@@ -31,6 +31,8 @@ namespace Interactivity
                 StartCoroutine(BeginApplyingBridge(col));
             }
         }
+        
+        
 
         private IEnumerator BeginApplyingBridge(Collider col)
         {

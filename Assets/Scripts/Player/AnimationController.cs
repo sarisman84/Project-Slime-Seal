@@ -3,19 +3,76 @@ using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Player
 {
+    [RequireComponent(typeof(Animator))]
     public class AnimationController : MonoBehaviour
     {
         [Header("Tentacle Grab Variables")] public List<GameObject> tentaclePrefabs;
+        public float grabDuration = 1f;
+        
+       
+       
         private GameObject m_StartingPos;
         private GameObject m_ArmPos;
         private GameObject m_EndingPos;
+        private Collider m_Collider;
+
+        private Vector3 m_CurrentPos;
+
+        private Animator m_Animator;
 
         private void Awake()
         {
+            m_Collider = GetComponent<Collider>();
+            m_Animator = GetComponent<Animator>();
             SetupModels();
+        }
+
+        public void SetAnimatorBooleanStateToTrue(string state)
+        {
+            m_Animator.SetBool(state, true);
+        }
+        public void SetAnimatorBooleanStateToFalse(string state)
+        {
+            m_Animator.SetBool(state, false);
+        }
+
+        public void TriggerAnimatorTrigger(string state)
+        {
+            m_Animator.SetTrigger(state);
+        }
+        
+        
+        private void Update()
+        {
+            m_CurrentPos = transform.position;
+        }
+
+        public void GrabOntoObject(GameObject targetPos)
+        {
+            StartCoroutine(Grab(targetPos.transform.position));
+        }
+
+        private IEnumerator Grab(Vector3 waypointB)
+        {
+            Vector3 startPos = Vector3.zero;
+            float dot = -1;
+            int attempts = 0;
+            while (Mathf.Sign(dot) == -1 && attempts <= 500)
+            {
+                startPos = m_CurrentPos + Random.insideUnitSphere;
+                dot = Vector3.Dot((
+                        m_CurrentPos - waypointB).normalized,
+                    startPos * m_Collider.bounds.size.x);
+                attempts++;
+            }
+
+            yield return PlayGrabAnimation(startPos, waypointB);
+            yield return new WaitForSeconds(grabDuration);
+            yield return DisableGrabModels();
         }
 
         public IEnumerator PlayGrabAnimation(Vector3 startPos, Vector3 targetGrabPosition)
@@ -50,22 +107,20 @@ namespace Player
 
         public IEnumerator DisableGrabModels()
         {
-            yield return m_ArmPos.transform.DOScale(Vector3.one *0.01f, 0.2f).OnStart(() =>
+            yield return m_ArmPos.transform.DOScale(Vector3.one * 0.01f, 0.2f).OnStart(() =>
             {
-                m_StartingPos.transform.DOScale(Vector3.one *0.01f, 0.3f).OnComplete(() =>
+                m_StartingPos.transform.DOScale(Vector3.one * 0.01f, 0.3f).OnComplete(() =>
                 {
                     m_StartingPos.SetActive(false);
                 });
-              
-                m_EndingPos.transform.DOScale(Vector3.one *0.01f, 0.4f).OnComplete(() =>
+
+                m_EndingPos.transform.DOScale(Vector3.one * 0.01f, 0.4f).OnComplete(() =>
                 {
                     m_EndingPos.SetActive(false);
                 });
-              
+
                 m_ArmPos.SetActive(false);
             }).WaitForCompletion();
-          
-            
         }
 
         private void SetupModels()

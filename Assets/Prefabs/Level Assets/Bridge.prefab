@@ -88,7 +88,7 @@ MonoBehaviour:
   minSizeRequirement: 1
   bridgeWidthSize: 10.36
   bridgeSpawnSpeed: 2
-  bridgeModelPrefab: {fileID: 0}
-  bridgeEaseType: 1
-  waypointA: {x: -16.257223, y: -7.2987237, z: 119.389854}
-  waypointB: {x: -17.053387, y: -5.296664, z: 72.490746}
+  bridgeModelPrefab: {fileID: 2974815323099778788, guid: a1ddca30f796f0941bd747eb72761132, type: 3}
+  bridgeEaseType: 0
+  waypointA: {x: 38.53, y: 4.367223, z: 26.952824}
+  waypointB: {x: 38.53, y: 4.627857, z: 8.891579}

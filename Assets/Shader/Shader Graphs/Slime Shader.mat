@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Slime Shader
-  m_Shader: {fileID: -6465566751694194690, guid: b54fee9fb1f214a4685e362bfcf04cd4, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 0bf997035691c3246989d1e32217a70a, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -40,6 +40,9 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - VD_Size: 60.34
+    - VD_Speed: 0.43
+    - VD_Strength: 0.4
     - _Choppiness: 0.1
     - _FlowSpeed: 0.01
     - _FlowStrength: 0.0075
@@ -47,6 +50,7 @@ Material:
     - _Opacity: 0.8
     - _Size: 2
     m_Colors:
+    - Slime_Color: {r: 0.011546725, g: 0.10153155, b: 0, a: 1}
     - _DarkFoamColor: {r: 0.37764624, g: 0.87058824, b: 0.18039216, a: 1}
     - _LightFoamColor: {r: 0.8784549, g: 0.9716981, b: 0.875445, a: 1}
     - _WaterColor: {r: 0.32238063, g: 1, b: 0.2783019, a: 1}

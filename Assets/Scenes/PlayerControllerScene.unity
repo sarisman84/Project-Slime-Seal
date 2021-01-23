@@ -1636,62 +1636,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8970945488757845440, guid: 8604311f98be11e438852cc6e50a5fca, type: 3}
   m_PrefabInstance: {fileID: 8970945488582556244}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
-=======
-  m_GameObject: {fileID: 513202067}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93bb4406d60649f8bdf1e9143e427b02, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  minSizeRequirement: 2.5
-  bridgeWidthSize: 3.91
-  bridgeSpawnSpeed: 2
-  bridgeModelPrefab: {fileID: 2974815323099778788, guid: a1ddca30f796f0941bd747eb72761132, type: 3}
-  bridgeEaseType: 2
-  waypointA: {x: 38.606834, y: 4.20302, z: 26.214066}
-  waypointB: {x: 38.5544, y: 4.3441963, z: 10.096281}
---- !u!114 &513202070
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 513202067}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0917a2336d4343a28368eadbf3039026, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onInteractCallback:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 513202069}
-        m_TargetAssemblyTypeName: Interactivity.BridgeController, Assembly-CSharp
-        m_MethodName: BuildBridge
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!65 &513202071
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 513202067}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 5, y: 5, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
->>>>>>> playerController
 --- !u!1 &571126985
 GameObject:
   m_ObjectHideFlags: 0
@@ -6943,18 +6887,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 446630734652665104, guid: 486deaa7100d25d49952bc306a565d73, type: 3}
-      propertyPath: rerticleLength
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 446630734652665104, guid: 486deaa7100d25d49952bc306a565d73, type: 3}
-      propertyPath: rerticleRadius
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 446630734652665104, guid: 486deaa7100d25d49952bc306a565d73, type: 3}
-      propertyPath: interactionMask.m_Bits
-      value: 512
-      objectReference: {fileID: 0}
     - target: {fileID: 4583123441838222383, guid: 486deaa7100d25d49952bc306a565d73, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -7009,38 +6941,17 @@ PrefabInstance:
       objectReference: {fileID: 2087331152}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 486deaa7100d25d49952bc306a565d73, type: 3}
---- !u!1 &446630734652665102 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8905682184205066642, guid: 486deaa7100d25d49952bc306a565d73, type: 3}
-  m_PrefabInstance: {fileID: 446630734652665101}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &446630734652665103 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8905682184205066640, guid: 486deaa7100d25d49952bc306a565d73, type: 3}
   m_PrefabInstance: {fileID: 446630734652665101}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 446630734652665102}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7e8bfa6c70fa0724e9604df63c9c6c5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &446630734652665104
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 446630734652665102}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c8caca75faf41f4a8aad29d0e18f87a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tentaclePrefabs:
-  - {fileID: 6130919754557841857, guid: 21714fcf55f64b74fa990406212309b7, type: 3}
-  - {fileID: 2974815323099778788, guid: a23e82645699c0f419279462ee436839, type: 3}
-  - {fileID: 6130919754557841857, guid: 21714fcf55f64b74fa990406212309b7, type: 3}
 --- !u!1001 &8970945488582556244
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7096,10 +7007,6 @@ PrefabInstance:
       propertyPath: onInteractCallback.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 446630734652665103}
-    - target: {fileID: 8970945488757845443, guid: 8604311f98be11e438852cc6e50a5fca, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8970945488757845447, guid: 8604311f98be11e438852cc6e50a5fca, type: 3}
       propertyPath: m_Name
       value: Bridge
