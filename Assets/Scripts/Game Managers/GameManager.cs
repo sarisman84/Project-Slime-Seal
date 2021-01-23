@@ -66,5 +66,18 @@ namespace Game_Managers
                 }
             }
         }
+
+        public void ResetData()
+        {
+            m_LatestCheckpoint = Vector3.zero;
+            m_LatestBallSize = 0;
+            m_LatestAffectors = default;
+            foreach (KeyValuePair<Vector3, BallAffector> affector in m_AllKnownAffectors)
+            {
+                affector.Value.GetComponent<Collider>().enabled = true;
+                affector.Value.transform.position = affector.Key;
+                Destroy(affector.Value.GetComponent<Rigidbody>());
+            }
+        }
     }
 }

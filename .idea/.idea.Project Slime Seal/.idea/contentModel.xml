@@ -226,6 +226,37 @@
             <e p="Jellifier.cs" t="Include" />
           </e>
         </e>
+        <e p="TextMesh Pro" t="Include">
+          <e p="Fonts" t="Include">
+            <e p="LiberationSans - OFL.txt" t="Include" />
+          </e>
+          <e p="Resources" t="Include">
+            <e p="LineBreaking Following Characters.txt" t="Include" />
+            <e p="LineBreaking Leading Characters.txt" t="Include" />
+          </e>
+          <e p="Shaders" t="Include">
+            <e p="TMP_Bitmap-Custom-Atlas.shader" t="Include" />
+            <e p="TMP_Bitmap-Mobile.shader" t="Include" />
+            <e p="TMP_Bitmap.shader" t="Include" />
+            <e p="TMP_SDF Overlay.shader" t="Include" />
+            <e p="TMP_SDF SSD.shader" t="Include" />
+            <e p="TMP_SDF-Mobile Masking.shader" t="Include" />
+            <e p="TMP_SDF-Mobile Overlay.shader" t="Include" />
+            <e p="TMP_SDF-Mobile SSD.shader" t="Include" />
+            <e p="TMP_SDF-Mobile.shader" t="Include" />
+            <e p="TMP_SDF-Surface-Mobile.shader" t="Include" />
+            <e p="TMP_SDF-Surface.shader" t="Include" />
+            <e p="TMP_SDF.shader" t="Include" />
+            <e p="TMP_Sprite.shader" t="Include" />
+            <e p="TMPro.cginc" t="Include" />
+            <e p="TMPro_Mobile.cginc" t="Include" />
+            <e p="TMPro_Properties.cginc" t="Include" />
+            <e p="TMPro_Surface.cginc" t="Include" />
+          </e>
+          <e p="Sprites" t="Include">
+            <e p="EmojiOne Attribution.txt" t="Include" />
+          </e>
+        </e>
         <e p="tripolygon" t="Include">
           <e p="UModeler" t="Include">
             <e p="Materials" t="Include">
@@ -3247,7 +3278,7 @@
               </e>
             </e>
           </e>
-          <e p="com.unity.timeline@1.4.4" t="Include">
+          <e p="com.unity.timeline@1.4.6" t="Include">
             <e p="Editor" t="Include">
               <e p="Actions" t="Include">
                 <e p="ActionContext.cs" t="Include" />
@@ -3279,6 +3310,7 @@
               <e p="Animation" t="Include">
                 <e p="AnimationClipActions.cs" t="Include" />
                 <e p="AnimationClipCurveCache.cs" t="Include" />
+                <e p="AnimationClipExtensions.cs" t="Include" />
                 <e p="AnimationOffsetMenu.cs" t="Include" />
                 <e p="AnimationPlayableAssetEditor.cs" t="Include" />
                 <e p="AnimationTrackActions.cs" t="Include" />
@@ -3288,6 +3320,7 @@
                 <e p="ClipCurveEditor.cs" t="Include" />
                 <e p="CurveDataSource.cs" t="Include" />
                 <e p="CurvesProxy.cs" t="Include" />
+                <e p="CurveTreeViewNode.cs" t="Include" />
                 <e p="TimelineAnimationUtilities.cs" t="Include" />
               </e>
               <e p="Attributes" t="Include">
@@ -3520,6 +3553,7 @@
               <e p="Utilities" t="Include">
                 <e p="AnimatedParameterCache.cs" t="Include" />
                 <e p="AnimatedParameterUtility.cs" t="Include" />
+                <e p="AnimatedPropertyUtility.cs" t="Include" />
                 <e p="BindingUtility.cs" t="Include" />
                 <e p="BreadcrumbDrawer.cs" t="Include" />
                 <e p="Clipboard.cs" t="Include" />
@@ -3528,16 +3562,22 @@
                 <e p="CustomTrackDrawerAttribute.cs" t="Include" />
                 <e p="DisplayNameHelper.cs" t="Include" />
                 <e p="Graphics.cs" t="Include" />
-                <e p="GUIColorOverride.cs" t="Include" />
-                <e p="GUIGroupScope.cs" t="Include" />
-                <e p="GUIMixedValueScope.cs" t="Include" />
-                <e p="GUIViewportScope.cs" t="Include" />
                 <e p="KeyTraverser.cs" t="Include" />
                 <e p="MarkerModifier.cs" t="Include" />
                 <e p="ObjectExtension.cs" t="Include" />
                 <e p="ObjectReferenceField.cs" t="Include" />
                 <e p="PropertyCollector.cs" t="Include" />
                 <e p="Range.cs" t="Include" />
+                <e p="Scopes" t="Include">
+                  <e p="GUIColorOverride.cs" t="Include" />
+                  <e p="GUIGroupScope.cs" t="Include" />
+                  <e p="GUIMixedValueScope.cs" t="Include" />
+                  <e p="GUIViewportScope.cs" t="Include" />
+                  <e p="HorizontalScope.cs" t="Include" />
+                  <e p="IndentLevelScope.cs" t="Include" />
+                  <e p="LabelWidthScope.cs" t="Include" />
+                  <e p="PropertyScope.cs" t="Include" />
+                </e>
                 <e p="SequenceSelectorNameFormater.cs" t="Include" />
                 <e p="SpacePartitioner.cs" t="Include" />
                 <e p="StyleManager.cs" t="Include" />
