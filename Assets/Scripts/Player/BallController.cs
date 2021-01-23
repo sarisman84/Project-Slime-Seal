@@ -67,7 +67,8 @@ namespace Player
         {
             m_MainCamera = Camera.main;
             m_Collider = GetComponent<SphereCollider>();
-            ballEnlarger = new BallEnlarger(m_Collider, grabRadius, grabMask, hazardMask, cameraBehaivour, sphereModel);
+            ballEnlarger = new BallEnlarger(m_Collider, grabRadius, grabMask, hazardMask, cameraBehaivour, sphereModel,
+                this);
             m_InputComponent = GetComponent<Input>();
             m_Rigidbody = GetComponent<Rigidbody>();
 
@@ -79,7 +80,6 @@ namespace Player
             m_Input = m_InputComponent.GetInputMovementRaw(AxisType.Axis3D);
             ballEnlarger.PickupNearbyObjectsAndEnlarge();
             ballEnlarger.DecreaseInSizeOnCondition();
-            ballEnlarger.UpdateCaughtObjectsList();
         }
 
         private Vector3 RelativeDirection =>
@@ -153,6 +153,7 @@ namespace Player
         private float m_CurrentSize;
         private float m_PreviousSize;
         private CinemachineFreeLook m_CinemachineFreeLook;
+        private MonoBehaviour m_BehaviourRef;
         private Transform m_SphereModel;
 
         private MeshRenderer m_SphereModelMeshRenderer;
@@ -162,18 +163,20 @@ namespace Player
 
         private float m_SphereModelDefaultVdSpeed, m_SphereModelDefaultVdSize, m_SphereModelDefaultVdStrength;
 
+
+        private Coroutine m_DroppingObjects;
+
         #region StaticDefinitions
 
         private static readonly int SlimeColor = Shader.PropertyToID("Slime_Color");
         private static readonly int VdSpeed = Shader.PropertyToID("VD_Speed");
         private static readonly int VdSize = Shader.PropertyToID("VD_Size");
         private static readonly int VdStrength = Shader.PropertyToID("VD_Strength");
-       
 
         #endregion
 
         public BallEnlarger(SphereCollider collider, float radius, LayerMask layerMask, LayerMask hazardMask,
-            CinemachineFreeLook cinemachineFreeLook, Transform sphereModel)
+            CinemachineFreeLook cinemachineFreeLook, Transform sphereModel, MonoBehaviour behaviourRef)
         {
             m_SphereCollider = collider;
             m_GrabMask = layerMask;
@@ -193,6 +196,8 @@ namespace Player
             m_SphereModelDefaultVdSpeed = SphereModelVertexDisplacementSpeed;
             m_SphereModelDefaultVdSize = SphereModelVertexDisplacementSize;
             m_SphereModelDefaultVdStrength = SphereModelVertexDisplacementStrength;
+
+            m_BehaviourRef = behaviourRef;
         }
 
         private Color PSphereColor
@@ -224,14 +229,14 @@ namespace Player
 
         public void PickupNearbyObjectsAndEnlarge()
         {
-           
             Collider[] foundObjects = Physics.OverlapSphere(m_SphereCollider.transform.position,
                 m_SphereCollider.radius + m_Radius, m_GrabMask);
             Debug.Log($"{foundObjects.Length} were found in {m_Radius} radius.");
             for (int i = 0; i < foundObjects.Length; i++)
             {
                 BallAffector affector = foundObjects[i].GetComponent<BallAffector>();
-                if (affector != null && affector.information.scaleType == BallAffectorInformation.ScaleType.ScaleUp && affector.information.minSizeToGrab <= m_SphereCollider.radius)
+                if (affector != null && affector.information.scaleType == BallAffectorInformation.ScaleType.ScaleUp &&
+                    affector.information.minSizeToGrab <= m_SphereCollider.radius)
                 {
                     GameObject obj = foundObjects[i].gameObject;
                     m_CaughtObjects.Add(obj);
@@ -253,7 +258,7 @@ namespace Player
                 {
                     obj.transform.DOMove(
                         m_SphereCollider.transform.position + (Random.insideUnitSphere *
-                                                               Mathf.Clamp(m_SphereCollider.radius, 2.5f,
+                                                               Mathf.Clamp(m_SphereCollider.radius, 2,
                                                                    float.MaxValue)), 0.15f);
                     obj.transform.SetParent(m_SphereCollider.transform);
                     obj.transform.localScale = Vector3.one * Random.Range(0.25f, 1f);
@@ -263,7 +268,6 @@ namespace Player
 
         public void DecreaseInSizeOnCondition()
         {
-        
             Collider[] foundObjects = Physics.OverlapSphere(m_SphereCollider.transform.position,
                 m_SphereCollider.radius + 0.25f, m_HazardMask);
 
@@ -274,16 +278,25 @@ namespace Player
                     affector.information.scaleType == BallAffectorInformation.ScaleType.ScaleDown)
                 {
                     m_CurrentSize -= affector.information.scaleRate;
-                    UpdateCaughtObjectsList();
+                    UpdateCaughtObjectsList(m_BehaviourRef);
                 }
             }
 
             ChangeCollisionSize(m_CinemachineFreeLook, m_SphereModel);
         }
-    
-        public void UpdateCaughtObjectsList()
+
+        public void UpdateCaughtObjectsList(MonoBehaviour monoBehaviour)
         {
-            if (m_CaughtObjects.Count != 0 && Mathf.Sign(m_CurrentSize) == -1)
+            if (m_DroppingObjects != null)
+                monoBehaviour.StopCoroutine(m_DroppingObjects);
+            m_DroppingObjects = monoBehaviour.StartCoroutine(DropCaughtObjects());
+        }
+
+        private IEnumerator DropCaughtObjects()
+        {
+            while (m_CaughtObjects.Count != 0 && m_CaughtObjects.FindAll(c =>
+                    (c.transform.position - m_SphereCollider.transform.position).magnitude > m_SphereCollider.radius)
+                .Count != 0)
             {
                 GameObject obj = m_CaughtObjects[m_CaughtObjects.Count - 1];
                 if ((m_SphereCollider.transform.position - obj.transform.position).sqrMagnitude >
@@ -304,6 +317,8 @@ namespace Player
                                 });
                     }
                 }
+
+                yield return new WaitForEndOfFrame();
             }
         }
 
@@ -338,10 +353,9 @@ namespace Player
 
             m_PreviousSize = m_CurrentSize;
             m_CurrentSize = 0;
-            
         }
-        
-        private void SetCollisionSize(float size,CinemachineFreeLook cinemachineFreeLook, Transform sphereModel)
+
+        private void SetCollisionSize(float size, CinemachineFreeLook cinemachineFreeLook, Transform sphereModel)
         {
             var radius = m_SphereCollider.radius;
 
@@ -363,7 +377,6 @@ namespace Player
             SphereModelVertexDisplacementSize = size;
             SphereModelVertexDisplacementSize = Mathf.Clamp(SphereModelVertexDisplacementSize,
                 m_SphereModelDefaultVdSize, float.MaxValue);
-            
         }
 
         public void SetBallSize(float size)
