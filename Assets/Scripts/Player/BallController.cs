@@ -84,6 +84,8 @@ namespace Player
         private Vector3 RelativeDirection =>
             m_MainCamera.transform.right * m_Input.x + m_MainCamera.transform.forward * m_Input.z;
 
+        public float CurrentSize => ballEnlarger.CurSize;
+
         // Update is called once per frame
         void FixedUpdate()
         {
@@ -124,6 +126,13 @@ namespace Player
             Gizmos.color = Color.green - new Color(0, 0, 0, 0.5f);
             Gizmos.DrawSphere(transform.position, m_Collider.radius + grabRadius);
         }
+
+
+        public void ChangeBallSize(float value)
+        {
+            Debug.Log("Changing Ball's size!");
+            ballEnlarger.SetBallSize(value);
+        }
     }
 
     [Serializable]
@@ -152,6 +161,7 @@ namespace Player
         private static readonly int VdSpeed = Shader.PropertyToID("VD_Speed");
         private static readonly int VdSize = Shader.PropertyToID("VD_Size");
         private static readonly int VdStrength = Shader.PropertyToID("VD_Strength");
+       
 
         #endregion
 
@@ -202,10 +212,12 @@ namespace Player
             set => m_SphereModelMaterial.SetFloat(VdStrength, value);
         }
 
+        public float CurSize => m_SphereCollider.radius;
+
 
         public void PickupNearbyObjectsAndEnlarge()
         {
-            m_CurrentSize = 0;
+           
             Collider[] foundObjects = Physics.OverlapSphere(m_SphereCollider.transform.position,
                 m_SphereCollider.radius + m_Radius, m_GrabMask);
             Debug.Log($"{foundObjects.Length} were found in {m_Radius} radius.");
@@ -244,7 +256,7 @@ namespace Player
 
         public void DecreaseInSizeOnCondition()
         {
-            m_CurrentSize = 0;
+        
             Collider[] foundObjects = Physics.OverlapSphere(m_SphereCollider.transform.position,
                 m_SphereCollider.radius + 0.25f, m_HazardMask);
 
@@ -283,10 +295,19 @@ namespace Player
             SetCollisionSize(m_CinemachineFreeLook, m_SphereModel);
         }
 
+        public void SetBallSize(float value)
+        {
+            m_CurrentSize = value;
+            SetCollisionSize(m_CinemachineFreeLook, m_SphereModel);
+        }
+
         private void SetCollisionSize(CinemachineFreeLook cinemachineFreeLook, Transform sphereModel)
         {
-            m_SphereCollider.radius += m_CurrentSize;
-            m_SphereCollider.radius = Mathf.Clamp(m_SphereCollider.radius, 1, float.MaxValue);
+            var radius = m_SphereCollider.radius;
+
+            radius += m_CurrentSize;
+            m_SphereCollider.radius = radius;
+            m_SphereCollider.radius = Mathf.Clamp(radius, 1, float.MaxValue);
 
             cinemachineFreeLook.m_Orbits[0].m_Height += m_CurrentSize * 4f;
             cinemachineFreeLook.m_Orbits[0].m_Height = Mathf.Clamp(cinemachineFreeLook.m_Orbits[0].m_Height,
@@ -302,6 +323,8 @@ namespace Player
             SphereModelVertexDisplacementSize += m_CurrentSize;
             SphereModelVertexDisplacementSize = Mathf.Clamp(SphereModelVertexDisplacementSize,
                 m_SphereModelDefaultVdSize, float.MaxValue);
+
+            m_CurrentSize = 0;
         }
     }
 }

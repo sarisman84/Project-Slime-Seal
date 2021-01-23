@@ -7,7 +7,7 @@ using tripolygon.UModeler;
 namespace TPUModelerEditor
 {
     [CanEditMultipleObjects, CustomEditor(typeof(Transform))]
-    public class TransformEditor : Editor
+    public class TransformEditor : UnityEditor.Editor
     {
         private const float FIELD_WIDTH = 212.0f;
         private const bool WIDE_MODE = true;

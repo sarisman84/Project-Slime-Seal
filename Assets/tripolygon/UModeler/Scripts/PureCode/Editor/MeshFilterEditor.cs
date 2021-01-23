@@ -7,7 +7,7 @@ using tripolygon.UModeler;
 namespace TPUModelerEditor
 {
     [CustomEditor(typeof(MeshFilter))]
-    public class MeshFilterEditor : Editor
+    public class MeshFilterEditor : UnityEditor.Editor
     {
         bool foldedOut = true;
         public override void OnInspectorGUI()

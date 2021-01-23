@@ -75,7 +75,7 @@ namespace Player
                 case InputType.Jump:
                     return jumpActionRef.action.ReadValue<float>() > 0 && jumpActionRef.action.triggered;
                 case InputType.Interact:
-                    return interactionActionRef.action.ReadValue<float>() > 0 && jumpActionRef.action.triggered;
+                    return interactionActionRef.action.ReadValue<float>() > 0 && interactionActionRef.action.triggered;
             }
 
             return default;
