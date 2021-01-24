@@ -56,7 +56,6 @@ public class DebugController : MonoBehaviour
     public void OnToggleDebug(InputValue value)
     {
         m_ShowConsole = !m_ShowConsole;
-        inputField.text = "Insert Command Here (or type /help if you dont know the commands).";
     }
 
     private void OnEnable()
@@ -152,6 +151,8 @@ public class DebugController : MonoBehaviour
             _gotoStage,
             _commandReset
         };
+        
+        inputField.placeholder.GetComponent<TextMeshProUGUI>().text = "Insert Command Here (or type /help if you dont know the commands).";
     }
 
     private void Start()
