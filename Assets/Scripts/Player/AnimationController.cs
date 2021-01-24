@@ -23,6 +23,7 @@ namespace Player
         private Vector3 m_CurrentPos;
 
         private Animator m_Animator;
+        private Vector3 m_ShoulderSize, m_HandSize, m_ArmSize;
 
         private void Awake()
         {
@@ -82,7 +83,7 @@ namespace Player
             m_StartingPos.transform.localScale = Vector3.one * 0.01f;
             m_StartingPos.transform.position = startPos;
 
-            yield return m_StartingPos.transform.DOScale(Vector3.one, 0.5f).OnComplete(() =>
+            yield return m_StartingPos.transform.DOScale(m_ShoulderSize, 0.5f).OnComplete(() =>
             {
                 m_EndingPos.SetActive(true);
                 m_EndingPos.transform.position = startPos;
@@ -93,7 +94,7 @@ namespace Player
                 m_ArmPos.transform.rotation =
                     Quaternion.LookRotation(DirectionVector(startPos, targetGrabPosition).normalized, Vector3.up);
                 m_ArmPos.transform.DOScale(
-                    new Vector3(1, 1, DirectionVector(startPos, targetGrabPosition).magnitude), 0.5f);
+                    new Vector3(m_ArmSize.x, m_ArmSize.y, m_ArmSize.z + DirectionVector(startPos, targetGrabPosition).magnitude), 0.5f);
                 m_ArmPos.transform.position = startPos;
                 m_ArmPos.transform.DOMove(targetGrabPosition - (DirectionVector(startPos, targetGrabPosition) / 2f),
                     0.5f);
@@ -134,6 +135,10 @@ namespace Player
             m_StartingPos.SetActive(false);
             m_ArmPos.SetActive(false);
             m_EndingPos.SetActive(false);
+
+            m_ShoulderSize = m_StartingPos.transform.localScale;
+            m_ArmSize = m_ArmPos.transform.localScale;
+            m_HandSize = m_EndingPos.transform.localScale;
         }
     }
 }

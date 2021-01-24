@@ -41,6 +41,7 @@ namespace Player
         private Vector3 m_Input;
 
 
+        public CinemachineFreeLook PlayerCam => cameraBehaivour;
         private float TrueSpeed => accelerationSpeed * 100f;
         private float MaxSpeed => m_CurrentMaxMovementSpeed * 100f;
         private float TotalJumpForce => jumpForce;
