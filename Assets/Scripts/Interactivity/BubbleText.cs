@@ -19,24 +19,20 @@ namespace Interactivity
 
             private GameObject m_CurrentIns;
 
-            public TimelineAsset transitionIn;
-            public TimelineAsset transitionOut;
-
-            private PlayableDirector m_Director;
+         
 
             public void CreateBubbleElement(Transform owner)
             {
                 m_CurrentIns = Instantiate(uiPrefab, owner);
-                m_Director = m_CurrentIns.GetComponent<PlayableDirector>() ??
-                             m_CurrentIns.AddComponent<PlayableDirector>();
+                m_CurrentIns.SetActive(false);
             }
 
 
             public IEnumerator DisplayUIForSecondsAmount()
             {
-                m_Director.Play(transitionIn);
-                yield return new WaitForSeconds((float) (transitionIn.duration + displayDuration));
-                m_Director.Play(transitionOut);
+                m_CurrentIns.SetActive(true);
+                yield return new WaitForSeconds(displayDuration);
+                m_CurrentIns.SetActive(false);
             }
 
             public void DisplayUIText(string text)
