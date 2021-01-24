@@ -5,6 +5,7 @@ using Player;
 using Unity.Mathematics;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Events;
 using Random = UnityEngine.Random;
 
 namespace Interactivity
@@ -17,6 +18,10 @@ namespace Interactivity
         public GameObject bridgeModelPrefab;
         [SerializeField] private Ease bridgeEaseType;
         public Vector3 waypointA, waypointB;
+        public bool useCustomAnimation;
+        public UnityEvent customBridgeAnimation;
+        public GameObject defaultBridgeState;
+        private GameObject m_currentBridge;
 
 
         public void BuildBridge(Collider col)
@@ -30,6 +35,11 @@ namespace Interactivity
             {
                 StartCoroutine(BeginApplyingBridge(col));
             }
+        }
+
+        public void ResetBridge()
+        {
+            
         }
         
         
@@ -49,7 +59,10 @@ namespace Interactivity
             }
 
             yield return animationController.PlayGrabAnimation(startPos, waypointA);
+            if(!useCustomAnimation)
             AddBridgeModel(MidPoint, bridgeWidthSize);
+            else
+                customBridgeAnimation?.Invoke();
             GetComponent<Collider>().enabled = false;
             yield return new WaitForSeconds(1f);
             yield return animationController.DisableGrabModels();
@@ -69,6 +82,8 @@ namespace Interactivity
                 obj.transform.DOScale(obj.transform.localScale + (transform2.forward.normalized * midPoint.magnitude * 2f),
                     bridgeSpawnSpeed);
             }).SetEase(bridgeEaseType);
+
+            m_currentBridge = obj;
         }
 
 

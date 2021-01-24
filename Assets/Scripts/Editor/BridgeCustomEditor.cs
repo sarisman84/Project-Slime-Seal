@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Interactivity;
 using UnityEditor;
 using UnityEditor.SearchService;
@@ -11,6 +12,9 @@ namespace Editor
     {
         private BridgeController m_Controller;
         private Vector3 m_TempPos1, m_TempPos2;
+        private bool m_UseCustomAnim;
+        private float m_TotalHeight;
+
 
         private void OnEnable()
         {
@@ -31,11 +35,16 @@ namespace Editor
 
 
             SceneView.duringSceneGui += SceneViewOnduringSceneGui;
+            
+           
         }
 
+       
         public override void OnInspectorGUI()
         {
-            base.OnInspectorGUI();
+            ManualDraw();
+
+            // base.OnInspectorGUI();
             if (GUILayout.Button("ResetWaypoints"))
             {
                 m_Controller.waypointA =
@@ -44,6 +53,41 @@ namespace Editor
                     m_Controller.transform.position - m_Controller.transform.forward.normalized * 5f;
             }
         }
+
+        
+
+        private void ManualDraw()
+        {
+            SerializedProperty it = serializedObject.GetIterator();
+            it.Next(true);
+            bool hasSkippedFirstElement = false;
+
+            while (it.NextVisible(false))
+            {
+                EditorGUI.BeginDisabledGroup(!hasSkippedFirstElement);
+                switch (it.propertyPath)
+                {
+                    case "useCustomAnimation":
+                        it.boolValue = EditorGUILayout.Toggle(it.displayName, it.boolValue);
+                        m_UseCustomAnim = it.boolValue;
+                        break;
+                    case "customBridgeAnimation":
+                    case "defaultBridgeState":
+                        if (m_UseCustomAnim)
+                            EditorGUILayout.PropertyField(it, new GUIContent(it.displayName));
+                        break;
+
+                    default:
+                        EditorGUILayout.PropertyField(it, new GUIContent(it.displayName));
+                        break;
+                }
+                EditorGUI.EndDisabledGroup();
+                hasSkippedFirstElement = true;
+            }
+        
+            serializedObject.ApplyModifiedProperties();
+        }
+
 
         private void OnDisable()
         {
@@ -54,7 +98,7 @@ namespace Editor
         {
             var rotation = m_Controller.transform.rotation;
 
-            m_Controller.waypointA = Handles.PositionHandle( m_Controller.waypointA, rotation);
+            m_Controller.waypointA = Handles.PositionHandle(m_Controller.waypointA, rotation);
             m_Controller.waypointB = Handles.PositionHandle(m_Controller.waypointB, rotation);
 
             Handles.color = Color.magenta;

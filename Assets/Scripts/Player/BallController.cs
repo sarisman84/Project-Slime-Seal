@@ -44,7 +44,7 @@ namespace Player
 
         public CinemachineFreeLook PlayerCam => cameraBehaivour;
         private float TrueSpeed => accelerationSpeed * 100f;
-        private float MaxSpeed => m_CurrentMaxMovementSpeed * 100f;
+       // private float MaxSpeed => m_CurrentMaxMovementSpeed * 100f;
         private float TotalJumpForce => jumpForce;
         private Vector3 GroundCollisionSize => new Vector3(m_Collider.radius, 0.1f, m_Collider.radius);
 
@@ -110,10 +110,10 @@ namespace Player
         // Update is called once per frame
         void FixedUpdate()
         {
-            m_Rigidbody.AddForce(ClampSpeed(RelativeDirection *
+            m_Rigidbody.AddForce((RelativeDirection *
                                             (TrueSpeed * Time.fixedDeltaTime)) + m_MainCamera.transform.right,
                 ForceMode.Force);
-            m_Rigidbody.velocity = ClampSpeed(m_Rigidbody.velocity);
+            // m_Rigidbody.velocity = ClampSpeed(m_Rigidbody.velocity);
 
             if (m_InputComponent.GetButton(Input.InputType.Jump) && IsTouchingTheGround())
             {
@@ -132,10 +132,10 @@ namespace Player
         }
 
 
-        private Vector3 ClampSpeed(Vector3 direction)
-        {
-            return Vector3.ClampMagnitude(direction, MaxSpeed);
-        }
+        // private Vector3 ClampSpeed(Vector3 direction)
+        // {
+        //     return Vector3.ClampMagnitude(direction, MaxSpeed);
+        // }
 
         private void OnDrawGizmos()
         {
@@ -258,30 +258,45 @@ namespace Player
             {
                 BallAffector affector = foundObjects[i].GetComponent<BallAffector>();
                 if (affector != null && affector.information.scaleType == BallAffectorInformation.ScaleType.ScaleUp &&
-                    affector.information.minSizeToGrab <= m_SphereCollider.radius)
+                    affector.information.minSizeToGrab <= m_SphereCollider.radius && !affector.IsPickedUpByPlayer)
                 {
                     GameObject obj = foundObjects[i].gameObject;
-                    m_CaughtObjects.Add(obj);
-                    Destroy(obj.GetComponent<Collider>());
+                    PickupObject(obj, affector, true);
                     m_CurrentSize += affector.information.scaleRate;
                 }
             }
 
-            OnPickupObject();
+            OnPickupObject(true);
 
             ChangeCollisionSize(m_CinemachineFreeLook, m_SphereModel);
         }
 
-        public void OnPickupObject()
+        private void PickupObject(GameObject obj, BallAffector affector, bool isPickedUp)
+        {
+            m_CaughtObjects.Add(obj);
+            if (obj.GetComponent<Rigidbody>() is { } rigidbody && rigidbody != null)
+                rigidbody.isKinematic = true;
+            obj.GetComponent<Collider>().enabled = false;
+            affector.IsPickedUpByPlayer = isPickedUp;
+        }
+
+        public void OnPickupObject(bool useAnimation)
         {
             foreach (GameObject obj in m_CaughtObjects)
             {
                 if (obj.transform.parent != m_SphereCollider.transform)
                 {
-                    obj.transform.DOMove(
-                        m_SphereCollider.transform.position + (Random.insideUnitSphere *
-                                                               Mathf.Clamp(m_SphereCollider.radius, 2,
-                                                                   float.MaxValue)), 0.15f);
+                    if (useAnimation)
+                        obj.transform.DOMove(
+                            m_SphereCollider.transform.position + (Random.insideUnitSphere *
+                                                                   Mathf.Clamp(m_SphereCollider.radius, 2,
+                                                                       float.MaxValue)), 0.15f);
+                    else
+                        obj.transform.position = m_SphereCollider.transform.position + (Random.insideUnitSphere *
+                            Mathf.Clamp(m_SphereCollider.radius, 2,
+                                float.MaxValue));
+                        
+                    
                     obj.transform.SetParent(m_SphereCollider.transform);
                     // obj.transform.localScale = Vector3.one * Random.Range(0.25f, 1f);
                 }
@@ -324,19 +339,13 @@ namespace Player
             {
                 GameObject obj = outofRangeObjects[index];
 
-                obj.transform.SetParent(null);
-                m_CaughtObjects.Remove(obj);
+                ResetObject(obj);
 
                 if (obj.gameObject.activeSelf)
                 {
                     obj.gameObject.transform
                         .DOMove(obj.gameObject.transform.position, Random.Range(0.2f, 0.5f)).OnComplete(
-                            () =>
-                            {
-                                obj.gameObject.AddComponent<Rigidbody>();
-                                obj.gameObject.AddComponent<BoxCollider>();
-                                obj.gameObject.layer = 0;
-                            });
+                            () => { DropObject(obj, true); });
                 }
 
                 index++;
@@ -344,6 +353,24 @@ namespace Player
 
                 yield return new WaitForEndOfFrame();
             }
+        }
+
+        private void ResetObject(GameObject obj)
+        {
+            obj.transform.SetParent(null);
+            if(m_CaughtObjects.Contains(obj))
+            m_CaughtObjects.Remove(obj);
+        }
+
+        private void DropObject(GameObject obj, bool enableRigidbody)
+        {
+            Rigidbody body = default;
+            if (obj.GetComponent<Rigidbody>() is null)
+            {
+                body = obj.gameObject.AddComponent<Rigidbody>();
+            }
+            
+            if (body is { }) body.isKinematic = !enableRigidbody;
         }
 
         public void ChangeBallSize(float value)
@@ -406,6 +433,25 @@ namespace Player
         public void SetBallSize(float size)
         {
             SetCollisionSize(size, m_CinemachineFreeLook, m_SphereModel);
+        }
+
+        public void ForceDropObject(BallAffector affectorValue, Vector3 keyAffectorPosition, bool keyAffectorState,
+            Quaternion keyAffectorRotation, Transform keyAffectorParent, bool keyObjectCollisionState)
+        {
+            DropObject(affectorValue.gameObject, false);
+            ResetObject(affectorValue.gameObject);
+            affectorValue.IsPickedUpByPlayer = keyAffectorState;
+            affectorValue.transform.position = keyAffectorPosition;
+            affectorValue.transform.rotation = keyAffectorRotation;
+            affectorValue.transform.SetParent(keyAffectorParent);
+            affectorValue.GetComponent<Collider>().enabled = keyObjectCollisionState;
+
+        }
+
+        public void ForcePickupObject(BallAffector affectorValue, bool keyObjectState)
+        {
+            PickupObject(affectorValue.gameObject, affectorValue, keyObjectState);
+            OnPickupObject(false);
         }
     }
 }

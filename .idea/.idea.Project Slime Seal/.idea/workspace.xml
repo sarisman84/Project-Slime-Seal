@@ -2,7 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="71a1ccbe-5d07-4fa5-a2ba-87c32939b4c2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Editor/BridgeDrawer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Editor/BridgeDrawer.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Timeline Asset/Main MenuTimeline.playable" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Timeline Asset/Main MenuTimeline.playable.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Project Slime Seal/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Project Slime Seal/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Project Slime Seal/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Project Slime Seal/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Alex/Prefabs/boot.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Alex/Prefabs/boot.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Resources/Debug Command.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Resources/Debug Command.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Eliott Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Eliott Scene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DebugController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DebugController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Editor/BridgeCustomEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Editor/BridgeCustomEditor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Managers/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game Managers/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interactivity/BallAffector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interactivity/BallAffector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interactivity/BridgeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interactivity/BridgeController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/BallController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/BallController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,29 +40,32 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game Managers/UI/MainMenuManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Editor/BridgeCustomEditor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interactivity/BallAffector.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interactivity/Checkpoint.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/Input.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/InteractionController.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/Scripts/Interactivity/BallAffector.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Vertex Displacement/Jellifier.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/InteractionController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Interactivity/Interactable.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/CameraController.cs" />
       <option value="$PROJECT_DIR$/Assets/tripolygon/UModeler/Scripts/PureCode/Editor/MeshFilterEditor.cs" />
       <option value="$PROJECT_DIR$/Assets/tripolygon/UModeler/Scripts/PureCode/Editor/TransformEditor.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Editor/BridgeCustomEditor.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Interactivity/DetectionArea.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Interactivity/BallAffectorInformation.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/Input.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Game Managers/UI/MainMenuManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Interactivity/BridgeController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/AnimationController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Editor/DebugController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Game Managers/GameManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/BallController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Interactivity/Checkpoint.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Interactivity/BridgeController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Editor/BridgeDrawer.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Editor/BridgeCustomEditor.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/DebugController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/BallController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Interactivity/BallAffector.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Game Managers/GameManager.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1nNxgmNAPVYzVuGw2vBq6TT7Bib" />
@@ -102,7 +119,7 @@
       <workItem from="1611336229762" duration="1515000" />
       <workItem from="1611390736433" duration="9757000" />
       <workItem from="1611422318974" duration="3959000" />
-      <workItem from="1611480952533" duration="2170000" />
+      <workItem from="1611480952533" duration="14522000" />
     </task>
     <servers />
   </component>

@@ -34,6 +34,7 @@ public class DebugController : MonoBehaviour
     private static DebugCommand<float> _playerSetsize;
     private static DebugCommand _help;
     private static DebugCommand _playerResetcheckpoint;
+    private static DebugCommand _playerSetCheckpoint;
     private static DebugCommand<float> _playerAddsize;
     private static DebugCommand<float> _playerRemovesize;
     private static DebugCommand _playerFullReset;
@@ -117,13 +118,17 @@ public class DebugController : MonoBehaviour
         _playerSetsize = new DebugCommand<float>("/p_setballsize", "Sets the size of the player's ball.",
             "/p_setballsize <size_ammount>",
             (x) => { m_Player.SetBallSize(x); });
+
         _playerAddsize = new DebugCommand<float>("/p_addtob", "Increase the player's ball size by an amount.",
             "/p_addballsize <amount_to_add>",
             (x) => { m_Player.ChangeBallSize(Mathf.Abs(x)); });
+
         _playerRemovesize = new DebugCommand<float>("/p_removefromb", "Decreases the player's ball size by an amount.",
             "/p_removefromb <amount_to_remove>",
             (x) => { m_Player.ChangeBallSize(-Mathf.Abs(x)); });
+
         _help = new DebugCommand("/help", "Shows a list of commands", "/help", () => { m_ShowHelp = m_ShowConsole; });
+
         _playerFullReset = new DebugCommand("/p_fullreset", "Resets the player back to the beginning of the game.",
             "/p_fullreset",
             () => { FindObjectOfType<MainMenuManager>().StartGame(); });
@@ -139,13 +144,17 @@ public class DebugController : MonoBehaviour
             "/p_goto <stage_tag_name>",
             s => { m_Player.transform.position = GameObject.FindGameObjectWithTag(s).transform.position; });
 
+        _playerSetCheckpoint = new DebugCommand("/p_save", "Sets a checkpoint at the player's location.", "/p_save",
+            () => { GameManager.SingletonAccess.SetCheckpoint(m_Player.gameObject); });
+
         #endregion
 
         CommandList = new List<object>
         {
             _help,
-            _playerSetsize,
+            _playerSetCheckpoint,
             _playerResetcheckpoint,
+            _playerSetsize,
             _playerAddsize,
             _playerRemovesize,
             _playerFullReset,
@@ -191,7 +200,7 @@ public class DebugController : MonoBehaviour
 
                     case DebugCommand<string> stringCommand:
                         stringCommand.Invoke(properties[1]);
-                        break;
+                        return;
                 }
             }
         }
