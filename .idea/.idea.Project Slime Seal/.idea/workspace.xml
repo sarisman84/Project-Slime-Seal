@@ -2,23 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="71a1ccbe-5d07-4fa5-a2ba-87c32939b4c2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/CameraSwap.signal" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CameraSwap.signal.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Pause Menu.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Pause Menu.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ResetToMainMenu.signal" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ResetToMainMenu.signal.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Timeline Asset/Pause Menu to Main Menu.playable" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Timeline Asset/Pause Menu to Main Menu.playable.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Level Assets/Death Box.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Level Assets/Death Box.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Interactivity/DeathBox.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Interactivity/DeathBox.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Project Slime Seal/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Project Slime Seal/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Main Menu.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Main Menu.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Eliott Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Eliott Scene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Managers/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game Managers/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Managers/UI/MainMenuManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game Managers/UI/MainMenuManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Managers/UI/PauseMenuManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game Managers/UI/PauseMenuManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Input/PlayerControls.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Input/PlayerControls.inputactions" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interactivity/Checkpoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interactivity/Checkpoint.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/BallController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/BallController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Timeline Asset/Main MenuTimeline.playable" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Timeline Asset/Main MenuTimeline.playable" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -43,6 +33,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game Managers/UI/MainMenuManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Editor/BridgeCustomEditor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interactivity/BallAffector.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interactivity/DeathBox.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interactivity/Checkpoint.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/Input.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/InteractionController.cs" root0="FORCE_HIGHLIGHTING" />
@@ -66,10 +57,12 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/CameraController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/DebugController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Game Managers/UI/PauseMenuManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Game Managers/GameManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/BallController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Game Managers/UI/MainMenuManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Interactivity/Checkpoint.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Game Managers/GameManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Interactivity/KillPlayer.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Interactivity/DeathBox.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1nNxgmNAPVYzVuGw2vBq6TT7Bib" />
@@ -123,7 +116,7 @@
       <workItem from="1611336229762" duration="1515000" />
       <workItem from="1611390736433" duration="9757000" />
       <workItem from="1611422318974" duration="3959000" />
-      <workItem from="1611480952533" duration="29013000" />
+      <workItem from="1611480952533" duration="30623000" />
     </task>
     <servers />
   </component>
