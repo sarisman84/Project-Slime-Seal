@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: HUMONGUS
   m_EditorClassIdentifier: 
   scaleType: 1
-  scaleRate: 20
+  scaleRate: 50
   minSizeToGrab: 60
