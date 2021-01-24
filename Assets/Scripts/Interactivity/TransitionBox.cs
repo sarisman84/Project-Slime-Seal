@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Player;
+using UnityEngine;
 
 namespace Interactivity
 {
@@ -7,9 +8,10 @@ namespace Interactivity
         public Transform teleportPos;
         public float minSizeToTeleport = 5f;
 
-        public void TeleportToNewArea(Collider col)
+        public void TeleportToNewArea(BallController col)
         {
-            col.transform.position = teleportPos.position;
+            if (col.CurrentSize >= minSizeToTeleport)
+                col.transform.position = teleportPos.position;
         }
     }
 }
