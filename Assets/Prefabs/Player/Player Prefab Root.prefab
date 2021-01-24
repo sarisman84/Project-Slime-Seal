@@ -5032,6 +5032,24 @@ MonoBehaviour:
     m_Bits: 512
   rerticleRadius: 5
   rerticleLength: 10
+--- !u!114 &3231674782477225067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8905682184205066642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e498d98d847445ee88c3c2e9348271e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bubbleElements:
+  - name: WASD
+    uiPrefab: {fileID: 0}
+    displayDuration: 5
+    transitionIn: {fileID: 0}
+    transitionOut: {fileID: 0}
 --- !u!1001 &446630733520622590
 PrefabInstance:
   m_ObjectHideFlags: 0

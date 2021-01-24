@@ -203,6 +203,7 @@
           <e p="Editor" t="Include">
             <e p="BridgeCustomEditor.cs" t="Include" />
             <e p="BridgeDrawer.cs" t="Include" />
+            <e p="DeleteDupBox.cs" t="Include" />
           </e>
           <e p="Game Managers" t="Include">
             <e p="GameManager.cs" t="Include" />
@@ -215,6 +216,7 @@
             <e p="BallAffector.cs" t="Include" />
             <e p="BallAffectorInformation.cs" t="Include" />
             <e p="BridgeController.cs" t="Include" />
+            <e p="BubbleText.cs" t="Include" />
             <e p="Checkpoint.cs" t="Include" />
             <e p="DeathBox.cs" t="Include" />
             <e p="DetectionArea.cs" t="Include" />

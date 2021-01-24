@@ -45,6 +45,11 @@ namespace Interactivity
                     m_CurrentIns.SetActive(true);
                 m_CurrentIns.GetComponentInChildren<TextMeshProUGUI>().text = text;
             }
+
+            public void ResetUI()
+            {
+                // m_CurrentIns.
+            }
         }
 
 

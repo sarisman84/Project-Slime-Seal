@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="71a1ccbe-5d07-4fa5-a2ba-87c32939b4c2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interactivity/TransitionBox.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interactivity/TransitionBox.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Editor/DeleteDupBox.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Editor/DeleteDupBox.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Project Slime Seal/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Project Slime Seal/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Project Slime Seal/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Project Slime Seal/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/Player Prefab Root.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/Player Prefab Root.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/WASD Bubble.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/WASD Bubble.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interactivity/BubbleText.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interactivity/BubbleText.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,11 +59,14 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Game Managers/GameManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Interactivity/KillPlayer.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Interactivity/DeathBox.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Interactivity/BallAffector.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/BallController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/DebugController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Interactivity/Transition Box.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Interactivity/TransitionBox.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/AudioPlayer.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Interactivity/BallAffector.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Interactivity/BubbleText.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Editor/DeleteDupBox.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1nNxgmNAPVYzVuGw2vBq6TT7Bib" />
@@ -111,7 +120,7 @@
       <workItem from="1611336229762" duration="1515000" />
       <workItem from="1611390736433" duration="9757000" />
       <workItem from="1611422318974" duration="3959000" />
-      <workItem from="1611480952533" duration="33807000" />
+      <workItem from="1611480952533" duration="37974000" />
     </task>
     <servers />
   </component>
