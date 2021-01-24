@@ -2,28 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="71a1ccbe-5d07-4fa5-a2ba-87c32939b4c2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/End Point.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/End Point.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Start Point.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Start Point.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/DebugController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/DebugController.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Text (TMP).prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Text (TMP).prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Project Slime Seal/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Project Slime Seal/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Project Slime Seal/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Project Slime Seal/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Extending_Arm/Test_parts/Arm_v1.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Extending_Arm/Test_parts/Arm_v1.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Extending_Arm/Test_parts/Hand_v1.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Extending_Arm/Test_parts/Hand_v1.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Extending_Arm/Test_parts/Shoulder_v1.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Extending_Arm/Test_parts/Shoulder_v1.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Arm.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Arm.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/Player Prefab Root.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/Player Prefab Root.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Start_End Points.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Start_End Points.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/PlayerControllerScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/PlayerControllerScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Input/PlayerControls.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Input/PlayerControls.inputactions" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/AnimationController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/AnimationController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/BallController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/BallController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Text (TMP).prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Text (TMP).prefab.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
