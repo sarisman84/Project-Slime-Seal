@@ -19,10 +19,16 @@ namespace Interactivity
         [SerializeField] private Ease bridgeEaseType;
         public Vector3 waypointA, waypointB;
         public bool useCustomAnimation;
-        public UnityEvent customBridgeAnimation;
-        public GameObject defaultBridgeState;
+        public UnityEvent onBuildBridgeAnimation;
+        public UnityEvent onResetBridgeAnimation;
         private GameObject m_currentBridge;
+        private Collider m_Collider;
 
+
+        private void Awake()
+        {
+            m_Collider = GetComponent<Collider>();
+        }
 
         public void BuildBridge(Collider col)
         {
@@ -34,15 +40,24 @@ namespace Interactivity
             if (ballController.CurrentSize >= minSizeRequirement)
             {
                 StartCoroutine(BeginApplyingBridge(col));
+                m_Collider.enabled = false;
+                IsBridgeBuilt = true;
             }
         }
 
         public void ResetBridge()
         {
-            
+            IsBridgeBuilt = false;
+            m_Collider.enabled = true;
+            if (!useCustomAnimation)
+            {
+                Destroy(m_currentBridge);
+                return;
+            }
+
+            onResetBridgeAnimation?.Invoke();
         }
-        
-        
+
 
         private IEnumerator BeginApplyingBridge(Collider col)
         {
@@ -50,7 +65,7 @@ namespace Interactivity
             Vector3 startPos = Vector3.zero;
             float dot = -1;
             int attempts = 0;
-            while (Mathf.Sign(dot) == -1 && attempts <= 500 )
+            while (Mathf.Sign(dot) == -1 && attempts <= 500)
             {
                 startPos = col.transform.position + Random.insideUnitSphere;
                 dot = Vector3.Dot((animationController.transform.position - waypointB).normalized,
@@ -59,11 +74,11 @@ namespace Interactivity
             }
 
             yield return animationController.PlayGrabAnimation(startPos, waypointA);
-            if(!useCustomAnimation)
-            AddBridgeModel(MidPoint, bridgeWidthSize);
+            if (!useCustomAnimation)
+                AddBridgeModel(MidPoint, bridgeWidthSize);
             else
-                customBridgeAnimation?.Invoke();
-            GetComponent<Collider>().enabled = false;
+                onBuildBridgeAnimation?.Invoke();
+            m_Collider.enabled = false;
             yield return new WaitForSeconds(1f);
             yield return animationController.DisableGrabModels();
         }
@@ -79,11 +94,13 @@ namespace Interactivity
             {
                 obj.transform.localRotation = quaternion.LookRotation(midPoint.normalized, Vector3.up);
                 obj.transform.localScale += transform2.right.normalized * width;
-                obj.transform.DOScale(obj.transform.localScale + (transform2.forward.normalized * midPoint.magnitude * 2f),
+                obj.transform.DOScale(
+                    obj.transform.localScale + (transform2.forward.normalized * midPoint.magnitude * 2f),
                     bridgeSpawnSpeed);
             }).SetEase(bridgeEaseType);
 
             m_currentBridge = obj;
+            IsBridgeBuilt = true;
         }
 
 
@@ -100,5 +117,6 @@ namespace Interactivity
         }
 
         private Vector3 MidPoint => (waypointB - waypointA) / 2f;
+        public bool IsBridgeBuilt { get; private set; }
     }
 }

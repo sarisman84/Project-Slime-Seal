@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Interactivity;
 using Player;
@@ -31,6 +32,8 @@ namespace Game_Managers
             public bool ObjectCollisionState;
         }
 
+        private Dictionary<BridgeState, BridgeController> m_AllKnownBridges;
+
         private Dictionary<AffectorState, BallAffector> m_defaultAffectors;
         private Dictionary<AffectorState, BallAffector> m_AllKnownAffectors;
         private List<AffectorState> m_LatestAffectors = new List<AffectorState>();
@@ -58,34 +61,63 @@ namespace Game_Managers
             m_Player = FindObjectOfType<BallController>();
             m_defaultAffectors = new Dictionary<AffectorState, BallAffector>();
             m_AllKnownAffectors = new Dictionary<AffectorState, BallAffector>();
-            m_AllKnownAffectors = FetchSceneObjects();
+            m_AllKnownAffectors = (Dictionary<AffectorState, BallAffector>)FetchSceneObjects(WorldAsset.Affectors);
+
+            m_AllKnownBridges = new Dictionary<BridgeState, BridgeController>();
+            m_AllKnownBridges = ( Dictionary<BridgeState, BridgeController>)FetchSceneObjects(WorldAsset.Bridges);
 
 
             m_defaultAffectors = m_AllKnownAffectors;
         }
 
-        private Dictionary<AffectorState, BallAffector> FetchSceneObjects()
+        private object FetchSceneObjects(WorldAsset worldAsset)
         {
-            List<BallAffector> foundObjs = FindObjectsOfType<BallAffector>().Where(b =>
-                b.information.scaleType == BallAffectorInformation.ScaleType.ScaleUp).ToList();
-
-
-            Dictionary<AffectorState, BallAffector> results = new Dictionary<AffectorState, BallAffector>();
-
-            AffectorState previousKey = default;
-            foreach (var obj in foundObjs)
+            switch (worldAsset)
             {
-                var transform1 = obj.transform;
-                AffectorState key = new AffectorState(transform1.position, obj.IsPickedUpByPlayer,
-                    transform1.rotation, transform1.parent, transform1.GetComponent<Collider>().enabled);
-                if (previousKey.Equals(key) || results.ContainsKey(key)) continue;
-                results.Add(key, obj);
-                previousKey = key;
+                case WorldAsset.Affectors:
+                    List<BallAffector> foundObjs = FindObjectsOfType<BallAffector>().Where(b =>
+                        b.information.scaleType == BallAffectorInformation.ScaleType.ScaleUp).ToList();
 
-                Debug.Log($"Registered Ball Affector:{obj.name} to the Game Manager", obj);
+
+                    Dictionary<AffectorState, BallAffector> results = new Dictionary<AffectorState, BallAffector>();
+
+                    AffectorState previousKey = default;
+                    foreach (var obj in foundObjs)
+                    {
+                        var transform1 = obj.transform;
+                        AffectorState key = new AffectorState(transform1.position, obj.IsPickedUpByPlayer,
+                            transform1.rotation, transform1.parent, transform1.GetComponent<Collider>().enabled);
+                        if (previousKey.Equals(key) || results.ContainsKey(key)) continue;
+                        results.Add(key, obj);
+                        previousKey = key;
+
+                        Debug.Log($"Registered Ball Affector:{obj.name} to the Game Manager", obj);
+                    }
+
+                    return results;
+                case WorldAsset.Bridges:
+                    List<BridgeController> foundObjs1 = FindObjectsOfType<BridgeController>().ToList();
+
+
+                    Dictionary<BridgeState, BridgeController> results1 = new Dictionary<BridgeState, BridgeController>();
+
+                    BridgeState previousKey1 = default;
+                    foreach (var obj in foundObjs1)
+                    {
+                        var transform1 = obj.transform;
+                        BridgeState key = new BridgeState(obj, obj.IsBridgeBuilt);
+                        if (previousKey1.Equals(key) || results1.ContainsKey(key)) continue;
+                        results1.Add(key, obj);
+                        previousKey1 = key;
+
+                        Debug.Log($"Registered Bridge Builder:{obj.name} to the Game Manager", obj);
+                    }
+
+                    return results1;
+              
             }
 
-            return results;
+            return default;
         }
 
 
@@ -93,26 +125,47 @@ namespace Game_Managers
         {
             m_LatestCheckpoint = checkPointPos.transform.position;
             m_LatestBallSize = m_Player.CurrentSize;
-            m_AllKnownAffectors = UpdateWorldState(m_AllKnownAffectors);
+            m_AllKnownAffectors =
+                (Dictionary<AffectorState, BallAffector>) UpdateWorldState(m_AllKnownAffectors, WorldAsset.Affectors);
+            m_AllKnownBridges =
+                (Dictionary<BridgeState, BridgeController>) UpdateWorldState(m_AllKnownBridges, WorldAsset.Bridges);
         }
 
-        private Dictionary<AffectorState, BallAffector> UpdateWorldState(
-            Dictionary<AffectorState, BallAffector> allKnownAffectors)
+        private object UpdateWorldState(
+            object dictionary, WorldAsset worldAsset)
         {
-            Dictionary<AffectorState, BallAffector> results = new Dictionary<AffectorState, BallAffector>();
-            foreach (var pair in allKnownAffectors)
+            switch (worldAsset)
             {
-                var transform1 = pair.Value.transform;
-                results.Add(
-                    new AffectorState(transform1.position, pair.Value.IsPickedUpByPlayer,
-                        transform1.rotation, transform1.parent,
-                        pair.Value.GetComponent<Collider>().enabled),
-                    pair.Value);
+                case WorldAsset.Affectors:
+                    Dictionary<AffectorState, BallAffector> results = new Dictionary<AffectorState, BallAffector>();
+                    foreach (var pair in (Dictionary<AffectorState, BallAffector>) dictionary)
+                    {
+                        var transform1 = pair.Value.transform;
+                        results.Add(
+                            new AffectorState(transform1.position, pair.Value.IsPickedUpByPlayer,
+                                transform1.rotation, transform1.parent,
+                                pair.Value.GetComponent<Collider>().enabled),
+                            pair.Value);
 
-                //Debug.Log($"Saved Current state of {pair.Value.gameObject.name}");
+                        //Debug.Log($"Saved Current state of {pair.Value.gameObject.name}");
+                    }
+
+                    return results;
+                case WorldAsset.Bridges:
+                    Dictionary<BridgeState, BridgeController> result1 = new Dictionary<BridgeState, BridgeController>();
+                    foreach (var pair in (Dictionary<BridgeState, BridgeController>) dictionary)
+                    {
+                        result1.Add(
+                            new BridgeState(pair.Value, pair.Value.IsBridgeBuilt),
+                            pair.Value);
+
+                        //Debug.Log($"Saved Current state of {pair.Value.gameObject.name}");
+                    }
+
+                    return result1;
             }
 
-            return results;
+            return default;
         }
 
 
@@ -125,7 +178,7 @@ namespace Game_Managers
                     $"Current Saved State: IsPickedUp;{affector.Key.ObjectState},Parent:{affector.Key.AffectorParent.name},CollisionState:{affector.Key.ObjectCollisionState}");
                 if (affector.Value.IsPickedUpByPlayer && affector.Key.ObjectState)
                 {
-                   // Debug.Break();
+                    // Debug.Break();
                     continue;
                 }
 
@@ -143,9 +196,20 @@ namespace Game_Managers
                 }
             }
 
+            foreach (KeyValuePair<BridgeState, BridgeController> bridgeController in m_AllKnownBridges)
+            {
+                if (!bridgeController.Key.IsBridgeBuilt && bridgeController.Value.IsBridgeBuilt)
+                {
+                    bridgeController.Value.ResetBridge();
+                } else if (bridgeController.Key.IsBridgeBuilt && !bridgeController.Value.IsBridgeBuilt)
+                {
+                    bridgeController.Value.BuildBridge(m_Player.GetComponent<Collider>());
+                }
+            }
+
             m_Player.transform.position = m_LatestCheckpoint;
             m_Player.SetBallSize(m_LatestBallSize);
-           // m_Player.m_BallEnlarger.UpdateCaughtObjectsList(m_Player);
+            // m_Player.m_BallEnlarger.UpdateCaughtObjectsList(m_Player);
         }
 
         public void ResetData()
@@ -163,5 +227,23 @@ namespace Game_Managers
                         affector.Key.ObjectCollisionState);
             }
         }
+    }
+
+    public enum WorldAsset
+    {
+        Affectors,
+        Bridges
+    }
+
+    internal struct BridgeState
+    {
+        public BridgeState(BridgeController controller, bool isBridgeBuilt)
+        {
+            Controller = controller;
+            IsBridgeBuilt = isBridgeBuilt;
+        }
+
+        public BridgeController Controller;
+        public bool IsBridgeBuilt;
     }
 }

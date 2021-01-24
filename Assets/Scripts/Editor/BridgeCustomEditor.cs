@@ -71,8 +71,8 @@ namespace Editor
                         it.boolValue = EditorGUILayout.Toggle(it.displayName, it.boolValue);
                         m_UseCustomAnim = it.boolValue;
                         break;
-                    case "customBridgeAnimation":
-                    case "defaultBridgeState":
+                    case "onBuildBridgeAnimation":
+                    case "onResetBridgeAnimation":
                         if (m_UseCustomAnim)
                             EditorGUILayout.PropertyField(it, new GUIContent(it.displayName));
                         break;
