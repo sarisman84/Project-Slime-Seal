@@ -33,12 +33,14 @@ namespace Game_Managers
         }
 
         private Dictionary<BridgeState, BridgeController> m_AllKnownBridges;
+        private Dictionary<BridgeState, BridgeController> m_DefaultBridgeControllers;
 
-        private Dictionary<AffectorState, BallAffector> m_defaultAffectors;
+        private Dictionary<AffectorState, BallAffector> m_DefaultAffectors;
         private Dictionary<AffectorState, BallAffector> m_AllKnownAffectors;
         private List<AffectorState> m_LatestAffectors = new List<AffectorState>();
 
         private static GameManager _ins;
+
 
         public static GameManager SingletonAccess
         {
@@ -59,15 +61,16 @@ namespace Game_Managers
         private void Awake()
         {
             m_Player = FindObjectOfType<BallController>();
-            m_defaultAffectors = new Dictionary<AffectorState, BallAffector>();
+            m_DefaultAffectors = new Dictionary<AffectorState, BallAffector>();
             m_AllKnownAffectors = new Dictionary<AffectorState, BallAffector>();
-            m_AllKnownAffectors = (Dictionary<AffectorState, BallAffector>)FetchSceneObjects(WorldAsset.Affectors);
+            m_AllKnownAffectors = (Dictionary<AffectorState, BallAffector>) FetchSceneObjects(WorldAsset.Affectors);
 
             m_AllKnownBridges = new Dictionary<BridgeState, BridgeController>();
-            m_AllKnownBridges = ( Dictionary<BridgeState, BridgeController>)FetchSceneObjects(WorldAsset.Bridges);
+            m_AllKnownBridges = (Dictionary<BridgeState, BridgeController>) FetchSceneObjects(WorldAsset.Bridges);
 
 
-            m_defaultAffectors = m_AllKnownAffectors;
+            m_DefaultAffectors = m_AllKnownAffectors;
+            m_DefaultBridgeControllers = m_AllKnownBridges;
         }
 
         private object FetchSceneObjects(WorldAsset worldAsset)
@@ -99,7 +102,8 @@ namespace Game_Managers
                     List<BridgeController> foundObjs1 = FindObjectsOfType<BridgeController>().ToList();
 
 
-                    Dictionary<BridgeState, BridgeController> results1 = new Dictionary<BridgeState, BridgeController>();
+                    Dictionary<BridgeState, BridgeController>
+                        results1 = new Dictionary<BridgeState, BridgeController>();
 
                     BridgeState previousKey1 = default;
                     foreach (var obj in foundObjs1)
@@ -114,7 +118,6 @@ namespace Game_Managers
                     }
 
                     return results1;
-              
             }
 
             return default;
@@ -201,7 +204,8 @@ namespace Game_Managers
                 if (!bridgeController.Key.IsBridgeBuilt && bridgeController.Value.IsBridgeBuilt)
                 {
                     bridgeController.Value.ResetBridge();
-                } else if (bridgeController.Key.IsBridgeBuilt && !bridgeController.Value.IsBridgeBuilt)
+                }
+                else if (bridgeController.Key.IsBridgeBuilt && !bridgeController.Value.IsBridgeBuilt)
                 {
                     bridgeController.Value.BuildBridge(m_Player.GetComponent<Collider>());
                 }
@@ -220,11 +224,19 @@ namespace Game_Managers
             foreach (KeyValuePair<AffectorState, BallAffector> affector in m_AllKnownAffectors)
             {
                 KeyValuePair<AffectorState, BallAffector> pair =
-                    m_defaultAffectors.First(p => p.Key.Equals(affector.Key));
+                    m_DefaultAffectors.First(p => p.Key.Equals(affector.Key));
                 if (pair.Key.ObjectState)
                     m_Player.m_BallEnlarger.ForceDropObject(affector.Value, affector.Key.AffectorPosition,
                         affector.Key.ObjectState, affector.Key.AffectorRotation, affector.Key.AffectorParent,
                         affector.Key.ObjectCollisionState);
+            }
+
+            foreach (var bridgeController in m_AllKnownBridges)
+            {
+                var pair = m_DefaultBridgeControllers.First(b => b.Key.Equals(bridgeController.Key));
+
+                if (pair.Key.IsBridgeBuilt)
+                    pair.Value.ResetBridge();
             }
         }
     }
