@@ -15,7 +15,7 @@ namespace Player
         
         private void Awake()
         {
-            SetCursorState(false);
+            // SetCursorState(false);
         }
 
         public void Update()

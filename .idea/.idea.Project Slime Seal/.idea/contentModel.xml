@@ -208,6 +208,7 @@
             <e p="GameManager.cs" t="Include" />
             <e p="UI" t="Include">
               <e p="MainMenuManager.cs" t="Include" />
+              <e p="PauseMenuManager.cs" t="Include" />
             </e>
           </e>
           <e p="Interactivity" t="Include">

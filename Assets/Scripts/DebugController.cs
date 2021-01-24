@@ -81,7 +81,7 @@ public class DebugController : MonoBehaviour
         m_PlayerInput.enabled = !m_ShowConsole;
         inputField.gameObject.SetActive(m_ShowConsole);
         helpRect.gameObject.SetActive(m_ShowHelp);
-        m_PlayerCamera.SetCursorState(m_ShowConsole);
+        m_PlayerCamera.SetCursorState(Cursor.visible || m_ShowConsole);
         m_CinemachineInputProvider.enabled = !m_ShowConsole;
         Time.timeScale = m_ShowConsole ? 0 : m_OriginalTimeScale;
 

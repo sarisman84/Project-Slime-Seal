@@ -58,7 +58,7 @@ namespace Game_Managers
             }
         }
 
-        private void Awake()
+        private void Start()
         {
             m_Player = FindObjectOfType<BallController>();
             m_DefaultAffectors = new Dictionary<AffectorState, BallAffector>();
@@ -79,7 +79,7 @@ namespace Game_Managers
             {
                 case WorldAsset.Affectors:
                     List<BallAffector> foundObjs = FindObjectsOfType<BallAffector>().Where(b =>
-                        b.information.scaleType == BallAffectorInformation.ScaleType.ScaleUp).ToList();
+                        b.information != null && b.information.scaleType == BallAffectorInformation.ScaleType.ScaleUp).ToList();
 
 
                     Dictionary<AffectorState, BallAffector> results = new Dictionary<AffectorState, BallAffector>();

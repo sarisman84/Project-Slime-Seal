@@ -377,6 +377,7 @@ namespace Player
         {
             m_CurrentSize = value;
             ChangeCollisionSize(m_CinemachineFreeLook, m_SphereModel);
+            UpdateCaughtObjectsList(m_BehaviourRef);
         }
 
         private void ChangeCollisionSize(CinemachineFreeLook cinemachineFreeLook, Transform sphereModel)
@@ -433,6 +434,7 @@ namespace Player
         public void SetBallSize(float size)
         {
             SetCollisionSize(size, m_CinemachineFreeLook, m_SphereModel);
+            UpdateCaughtObjectsList(m_BehaviourRef);
         }
 
         public void ForceDropObject(BallAffector affectorValue, Vector3 keyAffectorPosition, bool keyAffectorState,
