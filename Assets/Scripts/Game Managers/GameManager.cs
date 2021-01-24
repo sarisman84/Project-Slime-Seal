@@ -56,6 +56,7 @@ namespace Game_Managers
         {
             m_Player.transform.position = m_LatestCheckpoint;
             m_Player.SetBallSize(m_LatestBallSize);
+            m_Player.m_BallEnlarger.UpdateCaughtObjectsList(m_Player);
             foreach (KeyValuePair<Vector3, BallAffector> affector in m_AllKnownAffectors)
             {
                 if (m_LatestAffectors.Contains(affector.Value))

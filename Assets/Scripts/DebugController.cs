@@ -134,7 +134,8 @@ public class DebugController : MonoBehaviour
             m_ShowHelp = false;
         });
 
-        _gotoStage = new DebugCommand<string>("/p_goto", "Teleports the player at the start of a stage using a gameObject's tag (make sure you have a tag to teleport to).",
+        _gotoStage = new DebugCommand<string>("/p_goto",
+            "Teleports the player at the start of a stage using a gameObject's tag (make sure you have a tag to teleport to).",
             "/p_goto <stage_tag_name>",
             s => { m_Player.transform.position = GameObject.FindGameObjectWithTag(s).transform.position; });
 
@@ -151,8 +152,9 @@ public class DebugController : MonoBehaviour
             _gotoStage,
             _commandReset
         };
-        
-        inputField.placeholder.GetComponent<TextMeshProUGUI>().text = "Insert Command Here (or type /help if you dont know the commands).";
+
+        inputField.placeholder.GetComponent<TextMeshProUGUI>().text =
+            "Insert Command Here (or type /help if you dont know the commands).";
     }
 
     private void Start()
@@ -186,6 +188,10 @@ public class DebugController : MonoBehaviour
                     case DebugCommand<float> floatCommand:
                         floatCommand.Invoke(float.Parse(properties[1]));
                         return;
+
+                    case DebugCommand<string> stringCommand:
+                        stringCommand.Invoke(properties[1]);
+                        break;
                 }
             }
         }

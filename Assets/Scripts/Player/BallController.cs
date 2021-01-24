@@ -26,7 +26,8 @@ namespace Player
 
         [SerializeField] private Transform sphereModel;
         [SerializeField] private CinemachineFreeLook cameraBehaivour;
-        [SerializeField] private BallEnlarger ballEnlarger;
+        [SerializeField] private ParticleSystem sphereParticles;
+        internal BallEnlarger m_BallEnlarger;
 
         [SerializeField] float accelerationSpeed = 4f;
         [SerializeField] private float defaultMaxMovementSpeed;
@@ -68,7 +69,8 @@ namespace Player
         {
             m_MainCamera = Camera.main;
             m_Collider = GetComponent<SphereCollider>();
-            ballEnlarger = new BallEnlarger(m_Collider, grabRadius, grabMask, hazardMask, cameraBehaivour, sphereModel,
+            m_BallEnlarger = new BallEnlarger(m_Collider, grabRadius, grabMask, hazardMask, cameraBehaivour,
+                sphereModel,
                 this);
             m_InputComponent = GetComponent<Input>();
             m_Rigidbody = GetComponent<Rigidbody>();
@@ -79,14 +81,31 @@ namespace Player
         private void Update()
         {
             m_Input = m_InputComponent.GetInputMovementRaw(AxisType.Axis3D);
-            ballEnlarger.PickupNearbyObjectsAndEnlarge();
-            ballEnlarger.DecreaseInSizeOnCondition();
+            m_BallEnlarger.PickupNearbyObjectsAndEnlarge();
+            m_BallEnlarger.DecreaseInSizeOnCondition();
+
+            UpdateParticleEmitter();
+        }
+
+        private void UpdateParticleEmitter()
+        {
+            var sphereParticlesShape = sphereParticles.shape;
+            sphereParticlesShape.radius = m_BallEnlarger.CurrentSize - 0.5f;
+
+            var sphereParticlesMain = sphereParticles.main;
+            sphereParticlesMain.startLifetime =
+                new ParticleSystem.MinMaxCurve(0.1f + (m_BallEnlarger.CurrentSize - 0.5f),
+                    1.5f + (m_BallEnlarger.CurrentSize - 0.5f));
+
+            var sphereParticlesEmission = sphereParticles.emission;
+            sphereParticlesEmission.rateOverTime = new ParticleSystem.MinMaxCurve(15f + m_BallEnlarger.CurrentSize,
+                20f + m_BallEnlarger.CurrentSize);
         }
 
         private Vector3 RelativeDirection =>
             m_MainCamera.transform.right * m_Input.x + m_MainCamera.transform.forward * m_Input.z;
 
-        public float CurrentSize => ballEnlarger.CurSize;
+        public float CurrentSize => m_BallEnlarger.CurSize;
 
         // Update is called once per frame
         void FixedUpdate()
@@ -133,12 +152,12 @@ namespace Player
         public void ChangeBallSize(float value)
         {
             Debug.Log("Changing Ball's size!");
-            ballEnlarger.ChangeBallSize(value);
+            m_BallEnlarger.ChangeBallSize(value);
         }
 
         public void SetBallSize(float size)
         {
-            ballEnlarger.SetBallSize(size);
+            m_BallEnlarger.SetBallSize(size);
         }
     }
 
@@ -175,6 +194,8 @@ namespace Player
         private static readonly int VdStrength = Shader.PropertyToID("VD_Strength");
 
         #endregion
+
+        public float CurrentSize => m_SphereCollider.radius;
 
         public BallEnlarger(SphereCollider collider, float radius, LayerMask layerMask, LayerMask hazardMask,
             CinemachineFreeLook cinemachineFreeLook, Transform sphereModel, MonoBehaviour behaviourRef)
@@ -295,29 +316,31 @@ namespace Player
 
         private IEnumerator DropCaughtObjects()
         {
-            while (m_CaughtObjects.Count != 0 && m_CaughtObjects.FindAll(c =>
-                    (c.transform.position - m_SphereCollider.transform.position).magnitude > m_SphereCollider.radius)
-                .Count != 0)
+            List<GameObject> outofRangeObjects = m_CaughtObjects.FindAll(c =>
+                (m_SphereCollider.transform.position - c.transform.position).magnitude > m_SphereCollider.radius);
+            int index = 0;
+            while (m_CaughtObjects.Count != 0 &&
+                   outofRangeObjects.Count != 0)
             {
-                GameObject obj = m_CaughtObjects[m_CaughtObjects.Count - 1];
-                if ((m_SphereCollider.transform.position - obj.transform.position).sqrMagnitude >
-                    m_SphereCollider.radius)
-                {
-                    obj.transform.SetParent(null);
-                    m_CaughtObjects.Remove(obj);
+                GameObject obj = outofRangeObjects[index];
 
-                    if (obj.gameObject.activeSelf)
-                    {
-                        obj.gameObject.transform
-                            .DOMove(obj.gameObject.transform.position, Random.Range(0.2f, 0.5f)).OnComplete(
-                                () =>
-                                {
-                                    obj.gameObject.AddComponent<Rigidbody>();
-                                    obj.gameObject.AddComponent<BoxCollider>();
-                                    obj.gameObject.layer = 0;
-                                });
-                    }
+                obj.transform.SetParent(null);
+                m_CaughtObjects.Remove(obj);
+
+                if (obj.gameObject.activeSelf)
+                {
+                    obj.gameObject.transform
+                        .DOMove(obj.gameObject.transform.position, Random.Range(0.2f, 0.5f)).OnComplete(
+                            () =>
+                            {
+                                obj.gameObject.AddComponent<Rigidbody>();
+                                obj.gameObject.AddComponent<BoxCollider>();
+                                obj.gameObject.layer = 0;
+                            });
                 }
+
+                index++;
+                index = Mathf.Clamp(index, 0, outofRangeObjects.Count - 1);
 
                 yield return new WaitForEndOfFrame();
             }
