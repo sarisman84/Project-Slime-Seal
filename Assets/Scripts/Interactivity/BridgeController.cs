@@ -65,8 +65,8 @@ namespace Interactivity
             obj.transform.DOMove(waypointA + (midPoint), bridgeSpawnSpeed).OnStart(() =>
             {
                 obj.transform.localRotation = quaternion.LookRotation(midPoint.normalized, Vector3.up);
-                obj.transform.localScale += transform2.right * width;
-                obj.transform.DOScale(obj.transform.localScale + (transform2.forward * midPoint.magnitude * 2f),
+                obj.transform.localScale += transform2.right.normalized * width;
+                obj.transform.DOScale(obj.transform.localScale + (transform2.forward.normalized * midPoint.magnitude * 2f),
                     bridgeSpawnSpeed);
             }).SetEase(bridgeEaseType);
         }
