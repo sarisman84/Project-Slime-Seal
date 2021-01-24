@@ -177,8 +177,8 @@ namespace Game_Managers
             Debug.Log("Resetting back to checkpoint");
             foreach (KeyValuePair<AffectorState, BallAffector> affector in m_AllKnownAffectors)
             {
-                Debug.Log(
-                    $"Current Saved State: IsPickedUp;{affector.Key.ObjectState},Parent:{affector.Key.AffectorParent.name},CollisionState:{affector.Key.ObjectCollisionState}");
+                //Debug.Log(
+                    //$"Current Saved State: IsPickedUp;{affector.Key.ObjectState},Parent:{affector.Key.AffectorParent.name},CollisionState:{affector.Key.ObjectCollisionState}");
                 if (affector.Value.IsPickedUpByPlayer && affector.Key.ObjectState)
                 {
                     // Debug.Break();
