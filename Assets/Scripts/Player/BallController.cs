@@ -43,8 +43,10 @@ namespace Player
 
 
         public CinemachineFreeLook PlayerCam => cameraBehaivour;
+
         private float TrueSpeed => accelerationSpeed * 100f;
-       // private float MaxSpeed => m_CurrentMaxMovementSpeed * 100f;
+
+        // private float MaxSpeed => m_CurrentMaxMovementSpeed * 100f;
         private float TotalJumpForce => jumpForce;
         private Vector3 GroundCollisionSize => new Vector3(m_Collider.radius, 0.1f, m_Collider.radius);
 
@@ -111,7 +113,7 @@ namespace Player
         void FixedUpdate()
         {
             m_Rigidbody.AddForce((RelativeDirection *
-                                            (TrueSpeed * Time.fixedDeltaTime)) + m_MainCamera.transform.right,
+                                  (TrueSpeed * Time.fixedDeltaTime)) + m_MainCamera.transform.right,
                 ForceMode.Force);
             // m_Rigidbody.velocity = ClampSpeed(m_Rigidbody.velocity);
 
@@ -295,8 +297,8 @@ namespace Player
                         obj.transform.position = m_SphereCollider.transform.position + (Random.insideUnitSphere *
                             Mathf.Clamp(m_SphereCollider.radius, 2,
                                 float.MaxValue));
-                        
-                    
+
+
                     obj.transform.SetParent(m_SphereCollider.transform);
                     // obj.transform.localScale = Vector3.one * Random.Range(0.25f, 1f);
                 }
@@ -358,18 +360,18 @@ namespace Player
         private void ResetObject(GameObject obj)
         {
             obj.transform.SetParent(null);
-            if(m_CaughtObjects.Contains(obj))
-            m_CaughtObjects.Remove(obj);
+            if (m_CaughtObjects.Contains(obj))
+                m_CaughtObjects.Remove(obj);
         }
 
         private void DropObject(GameObject obj, bool enableRigidbody)
         {
             Rigidbody body = default;
-            if (obj.GetComponent<Rigidbody>() is null)
+            if (obj.GetComponent<Rigidbody>() == null)
             {
-                body = obj.gameObject.AddComponent<Rigidbody>();
+                body = obj.AddComponent<Rigidbody>();
             }
-            
+            obj.GetComponent<Collider>().enabled = true;
             if (body is { }) body.isKinematic = !enableRigidbody;
         }
 
@@ -447,7 +449,6 @@ namespace Player
             affectorValue.transform.rotation = keyAffectorRotation;
             affectorValue.transform.SetParent(keyAffectorParent);
             affectorValue.GetComponent<Collider>().enabled = keyObjectCollisionState;
-
         }
 
         public void ForcePickupObject(BallAffector affectorValue, bool keyObjectState)

@@ -119,12 +119,12 @@ public class DebugController : MonoBehaviour
             "/p_setballsize <size_ammount>",
             (x) => { m_Player.SetBallSize(x); });
 
-        _playerAddsize = new DebugCommand<float>("/p_addtob", "Increase the player's ball size by an amount.",
+        _playerAddsize = new DebugCommand<float>("/p_addballsize", "Increase the player's ball size by an amount.",
             "/p_addballsize <amount_to_add>",
             (x) => { m_Player.ChangeBallSize(Mathf.Abs(x)); });
 
-        _playerRemovesize = new DebugCommand<float>("/p_removefromb", "Decreases the player's ball size by an amount.",
-            "/p_removefromb <amount_to_remove>",
+        _playerRemovesize = new DebugCommand<float>("/p_subtractballsize", "Decreases the player's ball size by an amount.",
+            "/p_subtractballsize <amount_to_remove>",
             (x) => { m_Player.ChangeBallSize(-Mathf.Abs(x)); });
 
         _help = new DebugCommand("/help", "Shows a list of commands", "/help", () => { m_ShowHelp = m_ShowConsole; });

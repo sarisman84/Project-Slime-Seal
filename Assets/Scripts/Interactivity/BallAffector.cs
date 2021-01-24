@@ -12,11 +12,13 @@ namespace Interactivity
         public bool debugPrintThisObjectsState;
         
         
+        
         private void OnValidate()
         {
-            if (GetComponent<Collider>() == null)
+            if (GetComponent<Collider>() == null && GetComponent<MeshFilter>() != null && GetComponent<MeshRenderer>() != null)
                 gameObject.AddComponent<MeshCollider>();
-
+            else if (GetComponent<Collider>() == null || GetComponent<MeshCollider>() != null)
+                gameObject.AddComponent<BoxCollider>();
             if (gameObject.layer != 6)
                 gameObject.layer = 6;
 
