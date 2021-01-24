@@ -28,6 +28,9 @@ public class DebugController : MonoBehaviour
     private bool m_ShowConsole;
     private bool m_ShowHelp;
     private string m_Input;
+
+    #region Commands
+
     private static DebugCommand<float> _playerSetsize;
     private static DebugCommand _help;
     private static DebugCommand _playerResetcheckpoint;
@@ -35,6 +38,11 @@ public class DebugController : MonoBehaviour
     private static DebugCommand<float> _playerRemovesize;
     private static DebugCommand _playerFullReset;
     private static DebugCommand _commandReset;
+
+    private static DebugCommand<string> _gotoStage;
+
+    #endregion
+
     public List<object> CommandList;
     public TMP_Text textPrefab;
 
@@ -101,6 +109,7 @@ public class DebugController : MonoBehaviour
         m_PlayerInput = m_Player.GetComponent<Input>();
         m_PlayerCamera = m_Player.GetComponent<CameraController>();
 
+        #region Implement Commands
 
         _playerResetcheckpoint = new DebugCommand("/p_reset",
             "Resets the player and the world back to the latest check point.", "/p_reset",
@@ -125,14 +134,22 @@ public class DebugController : MonoBehaviour
             m_ShowConsole = false;
             m_ShowHelp = false;
         });
+
+        _gotoStage = new DebugCommand<string>("/p_goto", "Teleports the player at the start of a stage using a gameObject's tag (make sure you have a tag to teleport to).",
+            "/p_goto <stage_tag_name>",
+            s => { m_Player.transform.position = GameObject.FindGameObjectWithTag(s).transform.position; });
+
+        #endregion
+
         CommandList = new List<object>
         {
-            _playerSetsize,
             _help,
+            _playerSetsize,
             _playerResetcheckpoint,
             _playerAddsize,
             _playerRemovesize,
             _playerFullReset,
+            _gotoStage,
             _commandReset
         };
     }
