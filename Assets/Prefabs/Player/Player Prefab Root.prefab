@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4583123441838222383}
   - component: {fileID: 446630734652665104}
+  - component: {fileID: 1819403495}
   m_Layer: 0
   m_Name: Player Prefab Root
   m_TagString: Untagged
@@ -166,7 +167,7 @@ Animator:
   m_GameObject: {fileID: 5361643570666316516}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cda86cac22c3a6e45b54cb0ee78d95ce, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -175,6 +176,60 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1819403495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5361643570666316516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 178bc0ed2e5c14b48b1011f4bdd970a4, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: Game_Managers.UI.MainMenuManager, Assembly-CSharp
+          m_MethodName: ResetPlayer
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: Cinemachine.CinemachineVirtualCameraBase, Cinemachine
+          m_MethodName: set_Priority
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 3231674782477225067}
+          m_TargetAssemblyTypeName: Interactivity.BubbleText, Assembly-CSharp
+          m_MethodName: TemporaryShowUI
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: WASD
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &6780121815283019775
 GameObject:
   m_ObjectHideFlags: 0
@@ -1105,7 +1160,7 @@ ParticleSystem:
     serializedVersion: 4
     rateOverTime:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 15
       minScalar: 10
       maxCurve:
@@ -4998,6 +5053,28 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3231674782477225067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8905682184205066642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e498d98d847445ee88c3c2e9348271e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bubbleElements:
+  - name: WASD
+    uiPrefab: {fileID: 6500997817309889931, guid: a7c59b60a97b5e947b3e0ede98ccf01f, type: 3}
+    displayDuration: 5
+  - name: Space
+    uiPrefab: {fileID: 5608147467632853063, guid: 2af441968d894164a8e0d1ff60cdf132, type: 3}
+    displayDuration: 5
+  - name: Bridge Building
+    uiPrefab: {fileID: 5671061581107157534, guid: 65f2d7fc3b6d7d646bcbd88b69f029ef, type: 3}
+    displayDuration: 5
 --- !u!114 &4106860718434276190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5032,24 +5109,6 @@ MonoBehaviour:
     m_Bits: 512
   rerticleRadius: 5
   rerticleLength: 10
---- !u!114 &3231674782477225067
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8905682184205066642}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e498d98d847445ee88c3c2e9348271e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bubbleElements:
-  - name: WASD
-    uiPrefab: {fileID: 0}
-    displayDuration: 5
-    transitionIn: {fileID: 0}
-    transitionOut: {fileID: 0}
 --- !u!1001 &446630733520622590
 PrefabInstance:
   m_ObjectHideFlags: 0
