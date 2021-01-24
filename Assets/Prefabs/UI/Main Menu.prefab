@@ -910,6 +910,8 @@ GameObject:
   - component: {fileID: 8027393076671092482}
   - component: {fileID: 8027393076671092483}
   - component: {fileID: 8027393076671092484}
+  - component: {fileID: 484395194}
+  - component: {fileID: 484395193}
   m_Layer: 0
   m_Name: Main Menu
   m_TagString: Untagged
@@ -995,8 +997,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f927d37ee57d1a41bec53677fb4fdce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuDirector: {fileID: 8027393076671092484}
-  playerInput: {fileID: 0}
+  spawnPos: {fileID: 0}
 --- !u!320 &8027393076671092484
 PlayableDirector:
   m_ObjectHideFlags: 0
@@ -1006,11 +1007,57 @@ PlayableDirector:
   m_GameObject: {fileID: 8027393076671092485}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 0}
+  m_PlayableAsset: {fileID: 11400000, guid: d222239515eb71549bc2499aaf5c2325, type: 2}
   m_InitialState: 0
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
-  m_SceneBindings: []
+  m_SceneBindings:
+  - key: {fileID: -3192387560105467255, guid: d222239515eb71549bc2499aaf5c2325, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -521908787824571668, guid: d222239515eb71549bc2499aaf5c2325, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -729165166717751435, guid: d222239515eb71549bc2499aaf5c2325, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 7170288258687688570, guid: d222239515eb71549bc2499aaf5c2325, type: 2}
+    value: {fileID: 484395193}
+  - key: {fileID: -1726114682775967275, guid: d222239515eb71549bc2499aaf5c2325, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 656353992589253502, guid: d222239515eb71549bc2499aaf5c2325, type: 2}
+    value: {fileID: 0}
   m_ExposedReferences:
-    m_References: []
+    m_References:
+    - b2d168407196df14e945810ffb099ad0: {fileID: 0}
+    - 541d40ba4b5012d4da8b60cc45a54e4a: {fileID: 0}
+    - 73e5955dfe14d9f4da801faaaff21eef: {fileID: 0}
+--- !u!225 &484395194
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8027393076671092485}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!95 &484395193
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8027393076671092485}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

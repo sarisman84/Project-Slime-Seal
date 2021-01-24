@@ -2,24 +2,35 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Playables;
+using UnityEngine.UI;
 
 namespace Game_Managers.UI
 {
     [RequireComponent(typeof(PlayableDirector))]
     public class PauseMenuManager : MonoBehaviour
     {
-        public Canvas menuUI;
+        public CanvasGroup menuUI;
         public InputActionReference pauseMenuToggle;
-        private PlayableDirector m_PlayableDirector;
 
 
-        private bool m_ToggleMenu;
-        private float m_OriginalTimeScale;
+        internal bool m_ToggleMenu;
+        internal float OriginalTimeScale;
+        private GraphicRaycaster m_GraphicRaycaster;
+
+        private void OnEnable()
+        {
+            pauseMenuToggle.action.Enable();
+        }
+
+        private void OnDisable()
+        {
+            pauseMenuToggle.action.Disable();
+        }
 
         private void Awake()
         {
-            m_PlayableDirector = GetComponent<PlayableDirector>();
-            m_OriginalTimeScale = Time.timeScale;
+            m_GraphicRaycaster = menuUI.GetComponent<GraphicRaycaster>();
+            OriginalTimeScale = Time.timeScale;
         }
 
         private void Update()
@@ -28,15 +39,17 @@ namespace Game_Managers.UI
             {
                 m_ToggleMenu = !m_ToggleMenu;
             }
-            
-            menuUI.gameObject.SetActive(m_ToggleMenu);
-            Time.timeScale = m_ToggleMenu ? 0 : m_OriginalTimeScale;
+
+            menuUI.alpha = m_ToggleMenu ? Mathf.Lerp(menuUI.alpha, 1, 0.5f) : Mathf.Lerp(menuUI.alpha, 0, 0.5f);
+            m_GraphicRaycaster.enabled = m_ToggleMenu;
+            Time.timeScale = m_ToggleMenu ? 0 : OriginalTimeScale;
         }
 
-        public void ToMainMenu()
+        public void CloseMenu()
         {
-            m_PlayableDirector.Play();
+            m_ToggleMenu = false;
         }
+
 
         public void Quit()
         {

@@ -238,6 +238,9 @@ namespace Game_Managers
                 if (pair.Key.IsBridgeBuilt)
                     pair.Value.ResetBridge();
             }
+
+            m_Player.m_BallEnlarger.ForceDropAllObjects();
+            ResetToCheckpoint();
         }
     }
 

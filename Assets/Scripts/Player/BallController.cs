@@ -455,5 +455,15 @@ namespace Player
             PickupObject(affectorValue.gameObject, affectorValue, keyObjectState);
             OnPickupObject(false);
         }
+
+        public void ForceDropAllObjects()
+        {
+            for (var index = 0; index < m_CaughtObjects.Count; index++)
+            {
+                var obj = m_CaughtObjects[index];
+                DropObject(obj, false);
+                ResetObject(obj.gameObject);
+            }
+        }
     }
 }

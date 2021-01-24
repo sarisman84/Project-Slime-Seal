@@ -5,9 +5,10 @@ namespace Interactivity
 {
     public class Checkpoint : MonoBehaviour
     {
+        public Transform checkpointPos;
         public void SetCheckpoint(Collider col)
         {
-            GameManager.SingletonAccess.SetCheckpoint(gameObject);
+            GameManager.SingletonAccess.SetCheckpoint(checkpointPos.gameObject);
         }
     }
 }
