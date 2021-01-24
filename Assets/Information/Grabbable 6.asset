@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Grabbable 6
   m_EditorClassIdentifier: 
   scaleType: 1
-  scaleRate: 0.3
-  minSizeToGrab: 3
+  scaleRate: 0.4
+  minSizeToGrab: 2

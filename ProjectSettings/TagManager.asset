@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Spawn
   - Level2
+  - level3
   layers:
   - Default
   - TransparentFX
