@@ -17,8 +17,12 @@ namespace Interactivity
         {
             if (GetComponent<Collider>() == null && GetComponent<MeshFilter>() != null && GetComponent<MeshRenderer>() != null)
                 gameObject.AddComponent<MeshCollider>();
-            else if (GetComponent<Collider>() == null || GetComponent<MeshCollider>() != null)
+            else if (GetComponent<Collider>() == null || GetComponent<MeshCollider>() != null && Application.isPlaying)
+            {
                 gameObject.AddComponent<BoxCollider>();
+                Destroy(GetComponent<MeshCollider>());
+            }
+             
             if (gameObject.layer != 6)
                 gameObject.layer = 6;
 
