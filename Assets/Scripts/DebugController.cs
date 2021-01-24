@@ -12,6 +12,16 @@ using Input = Player.Input;
 
 public class DebugController : MonoBehaviour
 {
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
+    public static void OnGameStart()
+    {
+        if (FindObjectOfType<DebugController>() == null)
+        {
+            Instantiate(Resources.Load<DebugController>("Debug Command"));
+        }
+    }
+
+
     public TMP_InputField inputField;
     public ScrollRect helpRect;
     public RectTransform helpField;
@@ -39,7 +49,6 @@ public class DebugController : MonoBehaviour
     {
         m_ShowConsole = !m_ShowConsole;
         inputField.text = "Insert Command Here (or type /help if you dont know the commands).";
-        
     }
 
     private void OnEnable()
@@ -91,8 +100,8 @@ public class DebugController : MonoBehaviour
         m_CinemachineInputProvider = m_Player.PlayerCam.GetComponent<CinemachineInputProvider>();
         m_PlayerInput = m_Player.GetComponent<Input>();
         m_PlayerCamera = m_Player.GetComponent<CameraController>();
-        
-        
+
+
         _playerResetcheckpoint = new DebugCommand("/p_reset",
             "Resets the player and the world back to the latest check point.", "/p_reset",
             () => { GameManager.SingletonAccess.ResetToCheckpoint(); });
@@ -102,23 +111,14 @@ public class DebugController : MonoBehaviour
             (x) => { m_Player.SetBallSize(x); });
         _playerAddsize = new DebugCommand<float>("/p_addtob", "Increase the player's ball size by an amount.",
             "/p_addballsize <amount_to_add>",
-            (x) =>
-            {
-                m_Player.ChangeBallSize(Mathf.Abs(x));
-            });
+            (x) => { m_Player.ChangeBallSize(Mathf.Abs(x)); });
         _playerRemovesize = new DebugCommand<float>("/p_removefromb", "Decreases the player's ball size by an amount.",
             "/p_removefromb <amount_to_remove>",
-            (x) =>
-            {
-                m_Player.ChangeBallSize(-Mathf.Abs(x));
-            });
+            (x) => { m_Player.ChangeBallSize(-Mathf.Abs(x)); });
         _help = new DebugCommand("/help", "Shows a list of commands", "/help", () => { m_ShowHelp = m_ShowConsole; });
         _playerFullReset = new DebugCommand("/p_fullreset", "Resets the player back to the beginning of the game.",
             "/p_fullreset",
-            () =>
-            {
-                FindObjectOfType<MainMenuManager>().StartGame();
-            });
+            () => { FindObjectOfType<MainMenuManager>().StartGame(); });
 
         _commandReset = new DebugCommand("/c_close", "Fully closes the console.", "/c_close", () =>
         {
