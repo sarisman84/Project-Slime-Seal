@@ -45,7 +45,7 @@ PlayableDirector:
   m_Enabled: 1
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: 7c49e1733b458924393cb1fb1852662b, type: 2}
-  m_InitialState: 1
+  m_InitialState: 0
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
@@ -116,7 +116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teleportPos: {fileID: 0}
-  minSizeToTeleport: 5
+  minSizeToTeleport: 200
 --- !u!1 &1923231316798215439
 GameObject:
   m_ObjectHideFlags: 0
