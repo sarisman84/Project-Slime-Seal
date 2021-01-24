@@ -213,6 +213,7 @@
             <e p="BallAffector.cs" t="Include" />
             <e p="BallAffectorInformation.cs" t="Include" />
             <e p="BridgeController.cs" t="Include" />
+            <e p="Checkpoint.cs" t="Include" />
             <e p="DetectionArea.cs" t="Include" />
             <e p="Interactable.cs" t="Include" />
           </e>
