@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6255199295562402682}
   - component: {fileID: 1227779073}
   - component: {fileID: 1227779072}
+  - component: {fileID: -1884408069444328042}
   m_Layer: 6
   m_Name: boot
   m_TagString: Untagged
@@ -111,3 +112,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   information: {fileID: 11400000, guid: f91e7819e4cfd4a44ad4adfea915e7cc, type: 2}
   debugPrintThisObjectsState: 0
+--- !u!65 &-1884408069444328042
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5606439400036297391}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.6510136, y: 0.73793167, z: 1.2847166}
+  m_Center: {x: 0.000000014901161, y: 0, z: 0.000000029802322}
