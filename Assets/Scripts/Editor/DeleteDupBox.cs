@@ -6,7 +6,7 @@ using UnityEngine;
 
 public static class DeleteDupBox
 {
-    [MenuItem("Tools/Extra/Delete Duplicate Colliders on selected GameObjects")]
+    [MenuItem("Tools/Extra/Delete Duplicates/Delete Duplicate Colliders on selected GameObjects")]
     public static void DeleteDuplicateSelectedColliders()
     {
         List<Collider> confirmedDupes =
@@ -32,7 +32,7 @@ public static class DeleteDupBox
         Debug.Log($"Deleted {dupCount} duplicate colliders");
     }
 
-    [MenuItem("Tools/Extra/Delete Duplicate Colliders on all GameObjects in the current Scene.")]
+    [MenuItem("Tools/Extra/Delete Duplicates/Delete Duplicate Colliders on all GameObjects in the current Scene.")]
     public static void DeleteAllDuplicateColliders()
     {
         DeleteDuplicates(Object.FindObjectsOfType<Collider>());

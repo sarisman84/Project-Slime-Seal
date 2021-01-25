@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 1986716965989602161}
   - component: {fileID: 4356893732622935995}
   - component: {fileID: 509740170}
-  - component: {fileID: 509740169}
   m_Layer: 6
   m_Name: Smol Branch
   m_TagString: Untagged
@@ -97,17 +96,3 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4068373912626513877, guid: 14e9026261a44bc42913f8c04132c61a, type: 3}
---- !u!114 &509740169
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2843521461764884078}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d34d65d4f33e86e4cbb95b6ffa1a2752, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  information: {fileID: 11400000, guid: 33c125bb05ec3f94797c33b0a6b6993c, type: 2}
-  debugPrintThisObjectsState: 0
