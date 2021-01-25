@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Interactivity
 {
-    public class TransitionBox : MonoBehaviour
+    public class TransitionComponent : MonoBehaviour
     {
         public Transform teleportPos;
         public float minSizeToTeleport = 5f;

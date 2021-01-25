@@ -1,39 +1,40 @@
-﻿using UnityEditor;
+﻿using System.Collections.Generic;
+using System.Linq;
+using UnityEditor;
 using UnityEngine;
 
-namespace Editor
+
+public static class DeleteDupBox
 {
-    public class DeleteDupBox : ScriptableWizard
+    [MenuItem("Tools/Extra/Delete Duplicate Colliders on selected GameObjects")]
+    public static void DeleteDuplicateSelectedColliders()
     {
-        [MenuItem("Tools/Remove dupe box colliders")]
-        public static void CreateWizard()
-        {
-            DisplayWizard<DeleteDupBox>("Box Erazer 2000", "Delete Selected BoxColliders", "Delete All BoxColliders");
-        }
+        List<Collider> confirmedDupes =
+            Selection.gameObjects.Where(g => g.GetComponents<Collider>().Length > 1).ToList().ConvertAll(
+                g => g.GetComponent<Collider>());
 
-        public void OnWizardCreate()
+        DeleteDuplicates(confirmedDupes);
+    }
+
+    private static void DeleteDuplicates<TList>(TList confirmedDupes) where TList : IEnumerable<Component>
+    {
+        int dupCount = 0;
+        foreach (var dupe in confirmedDupes)
         {
-            foreach (var obj in Selection.gameObjects)
-            {
-                if (obj.GetComponent<BoxCollider>() is { } boxCollider && boxCollider != null)
+            var colliders = dupe.GetComponents<Collider>();
+            if (colliders != null)
+                for (int i = 0; i < colliders.Length - 1; i++)
                 {
-                    DestroyImmediate(boxCollider);
+                    GameObject.DestroyImmediate(colliders[i]);
+                    dupCount++;
                 }
-            }
         }
+        Debug.Log($"Deleted {dupCount} duplicate colliders");
+    }
 
-        public void OnWizardUpdate()
-        {
-            // EditorGUILayout.LabelField("Select a set amount of objects or just press Delete All.");
-        }
-
-        public void OnWizardOtherButton()
-        {
-            foreach (var box in FindObjectsOfType<BoxCollider>())
-            {
-                DestroyImmediate(box);
-            }
-           
-        }
+    [MenuItem("Tools/Extra/Delete Duplicate Colliders on all GameObjects in the current Scene.")]
+    public static void DeleteAllDuplicateColliders()
+    {
+        DeleteDuplicates(Object.FindObjectsOfType<Collider>());
     }
 }
