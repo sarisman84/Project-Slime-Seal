@@ -23,6 +23,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6573832162320611228}
+  - component: {fileID: 6055279854050151848}
   m_Layer: 0
   m_Name: Drum_Anim
   m_TagString: Untagged
@@ -45,6 +46,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &6055279854050151848
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7599510619130853669}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: ba53d80643b461e44840827332370983, type: 3}
+  m_Controller: {fileID: 9100000, guid: a8d1746aaea61804d92ed28c3755cede, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &3336490066038825292
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -108,6 +128,18 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: a8d1746aaea61804d92ed28c3755cede, type: 2}
+    - target: {fileID: 7871701702548139395, guid: ba53d80643b461e44840827332370983, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7871701702548139395, guid: ba53d80643b461e44840827332370983, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -1.3201904e-15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7871701702548139395, guid: ba53d80643b461e44840827332370983, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -1.1939172e-16
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba53d80643b461e44840827332370983, type: 3}
 --- !u!1 &2489630606104730653 stripped

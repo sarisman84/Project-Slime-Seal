@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b93daf5ebb7f644cb0e638b6b240d4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_BoxCollider: {fileID: 3304518070929172475}
   onTriggerEnter:
     m_PersistentCalls:
       m_Calls: []

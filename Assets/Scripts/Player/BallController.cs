@@ -107,7 +107,7 @@ namespace Player
         private Vector3 RelativeDirection =>
             m_MainCamera.transform.right * m_Input.x + m_MainCamera.transform.forward * m_Input.z;
 
-        public float CurrentSize => m_BallEnlarger.CurSize;
+        public float CurrentSize => m_BallEnlarger?.CurSize ?? 1;
 
         // Update is called once per frame
         void FixedUpdate()

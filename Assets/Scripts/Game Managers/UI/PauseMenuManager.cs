@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Playables;
 using UnityEngine.UI;
+using DG.Tweening;
 
 namespace Game_Managers.UI
 {
@@ -13,9 +15,12 @@ namespace Game_Managers.UI
         public InputActionReference pauseMenuToggle;
 
 
-        internal bool m_ToggleMenu;
+        internal bool ToggleMenu;
         internal float OriginalTimeScale;
         private GraphicRaycaster m_GraphicRaycaster;
+        public float timeScaleDuringPause = 0.01f;
+
+        private Coroutine m_TimeTrans;
 
         private void OnEnable()
         {
@@ -37,17 +42,55 @@ namespace Game_Managers.UI
         {
             if (pauseMenuToggle.action.ReadValue<float>() > 0 && pauseMenuToggle.action.triggered)
             {
-                m_ToggleMenu = !m_ToggleMenu;
+                ToggleMenu = !ToggleMenu;
             }
 
-            menuUI.alpha = m_ToggleMenu ? Mathf.Lerp(menuUI.alpha, 1, 0.5f) : Mathf.Lerp(menuUI.alpha, 0, 0.5f);
-            m_GraphicRaycaster.enabled = m_ToggleMenu;
-            Time.timeScale = m_ToggleMenu ? 0 : OriginalTimeScale;
+            if (ToggleMenu)
+                menuUI.DOFade(1, 0.5f).OnStart(() =>
+                {
+                    if (m_TimeTrans != null)
+                        StopCoroutine(m_TimeTrans);
+                    m_TimeTrans = StartCoroutine(FadeTime(Fade.In));
+                });
+            else
+                menuUI.DOFade(0, 0.5f).OnStart(() =>
+                {
+                    if (m_TimeTrans != null)
+                        StopCoroutine(m_TimeTrans);
+                    m_TimeTrans = StartCoroutine(FadeTime(Fade.Out));
+                });
+            m_GraphicRaycaster.enabled = ToggleMenu;
+        }
+
+        private IEnumerator FadeTime(Fade fade)
+        {
+            switch (fade)
+            {
+                case Fade.In:
+                    while (Time.timeScale != timeScaleDuringPause)
+                    {
+                        Time.timeScale = Mathf.Lerp(Time.timeScale, timeScaleDuringPause, 0.05f);
+                        yield return new WaitForEndOfFrame();
+                    }
+
+                    break;
+
+                case Fade.Out:
+                    while (Time.timeScale != OriginalTimeScale)
+                    {
+                        Time.timeScale = Mathf.Lerp(Time.timeScale, OriginalTimeScale, 0.05f);
+                        yield return new WaitForEndOfFrame();
+                    }
+
+                    break;
+            }
+
+            yield return null;
         }
 
         public void CloseMenu()
         {
-            m_ToggleMenu = false;
+            ToggleMenu = false;
         }
 
 
@@ -59,5 +102,11 @@ namespace Game_Managers.UI
          Application.Quit();
 #endif
         }
+    }
+
+    internal enum Fade
+    {
+        In,
+        Out
     }
 }

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8139670706020227882}
   - component: {fileID: 8139670706020227885}
   - component: {fileID: 767208015}
+  - component: {fileID: 2080442681}
   m_Layer: 0
   m_Name: Main Camera 1
   m_TagString: MainCamera
@@ -113,7 +114,7 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  m_CustomBlends: {fileID: 0}
+  m_CustomBlends: {fileID: 11400000, guid: 891c554ac56be1c4c8aee0bab00b8d3b, type: 2}
   m_CameraCutEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -152,6 +153,36 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!114 &2080442681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8139670706020227881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 1ee487a62b44a624c93d972177d5ea05, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: Cinemachine.CinemachineVirtualCameraBase, Cinemachine
+          m_MethodName: set_Priority
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &8139670706042772702
 GameObject:
   m_ObjectHideFlags: 0
@@ -210,7 +241,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: 1.77, z: -7.5}
+  m_FollowOffset: {x: 0, y: 3.99, z: -7.5}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -302,8 +333,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8139670706149981157}
-  m_LocalRotation: {x: 0.2805603, y: -0.3047356, z: 0.094443984, w: 0.9052638}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.020843942, y: -0.94614416, z: -0.060370907, w: -0.31738314}
+  m_LocalPosition: {x: -0.0000039874362, y: -0.000003913448, z: 0.0000052823084}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8139670706042772703}
@@ -376,8 +407,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8139670706158746673}
-  m_LocalRotation: {x: 0.33210328, y: -0.29880658, z: 0.1117947, w: 0.88765085}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.0025762294, y: -0.9480499, z: -0.0059163272, w: -0.31805643}
+  m_LocalPosition: {x: -0.0000039874362, y: -0.000003913448, z: 0.0000052823084}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8139670707435332391}
@@ -437,6 +468,7 @@ GameObject:
   - component: {fileID: 8139670707052068810}
   - component: {fileID: 8139670707052068809}
   - component: {fileID: 3410818854383405040}
+  - component: {fileID: 8139670706565131560}
   m_Layer: 0
   m_Name: CM FreeLook1
   m_TagString: Untagged
@@ -452,7 +484,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8139670707052068808}
   m_LocalRotation: {x: -0.3063729, y: 0.3019056, z: -0.10313318, w: 0.89685684}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.01748424, y: 5.1107445, z: 23.146772}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8139670706158746675}
@@ -460,7 +492,7 @@ Transform:
   - {fileID: 8139670706149981159}
   m_Father: {fileID: 8139670706020227884}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 359.9883, y: 0.02498021, z: 0.01538549}
 --- !u!114 &8139670707052068809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -477,7 +509,7 @@ MonoBehaviour:
   - m_Script
   m_LockStageInInspector: 
   m_StreamingVersion: 20170927
-  m_Priority: 1
+  m_Priority: 2
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
@@ -523,7 +555,7 @@ MonoBehaviour:
   m_XAxis:
     Value: 0
     m_SpeedMode: 0
-    m_MaxSpeed: 300
+    m_MaxSpeed: 10
     m_AccelTime: 0.1
     m_DecelTime: 0.1
     m_InputAxisName: Mouse X
@@ -551,9 +583,9 @@ MonoBehaviour:
   m_BindingMode: 4
   m_SplineCurvature: 1
   m_Orbits:
-  - m_Height: 3.87
+  - m_Height: 3.76
     m_Radius: 1.75
-  - m_Height: 1.77
+  - m_Height: 3.99
     m_Radius: 7.5
   - m_Height: -1.07
     m_Radius: 4.46
@@ -577,6 +609,25 @@ MonoBehaviour:
   PlayerIndex: -1
   XYAxis: {fileID: -7052035838017625568, guid: 1d36282dd2719094d8ace6b9e53c6e9a, type: 3}
   ZAxis: {fileID: 0}
+--- !u!95 &8139670706565131560
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8139670707052068808}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8139670707435332390
 GameObject:
   m_ObjectHideFlags: 0
@@ -635,7 +686,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: 1.77, z: -7.5}
+  m_FollowOffset: {x: 0, y: 3.99, z: -7.5}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -761,7 +812,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: 1.77, z: -7.5}
+  m_FollowOffset: {x: 0, y: 3.99, z: -7.5}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -853,8 +904,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8139670707671808718}
-  m_LocalRotation: {x: 0.3063729, y: -0.3019056, z: 0.10313318, w: 0.89685684}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.011745191, y: -0.94748515, z: -0.033247557, w: -0.3178499}
+  m_LocalPosition: {x: -0.0000039874362, y: -0.000003913448, z: 0.0000052823084}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8139670707574979815}

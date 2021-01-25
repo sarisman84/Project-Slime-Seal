@@ -1,0 +1,95 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4157449431231598076
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1569780898693546759, guid: 33d4fe23f48a9214c8c517a118acfc4f, type: 3}
+      propertyPath: m_Name
+      value: Bridge Announcenr
+      objectReference: {fileID: 0}
+    - target: {fileID: 4439588378538653251, guid: 33d4fe23f48a9214c8c517a118acfc4f, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4439588378538653251, guid: 33d4fe23f48a9214c8c517a118acfc4f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 23.615053
+      objectReference: {fileID: 0}
+    - target: {fileID: 4439588378538653251, guid: 33d4fe23f48a9214c8c517a118acfc4f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 6.062
+      objectReference: {fileID: 0}
+    - target: {fileID: 4439588378538653251, guid: 33d4fe23f48a9214c8c517a118acfc4f, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 19.625599
+      objectReference: {fileID: 0}
+    - target: {fileID: 4439588378538653251, guid: 33d4fe23f48a9214c8c517a118acfc4f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -17.92
+      objectReference: {fileID: 0}
+    - target: {fileID: 4439588378538653251, guid: 33d4fe23f48a9214c8c517a118acfc4f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.39
+      objectReference: {fileID: 0}
+    - target: {fileID: 4439588378538653251, guid: 33d4fe23f48a9214c8c517a118acfc4f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 62.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 4439588378538653251, guid: 33d4fe23f48a9214c8c517a118acfc4f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4439588378538653251, guid: 33d4fe23f48a9214c8c517a118acfc4f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4439588378538653251, guid: 33d4fe23f48a9214c8c517a118acfc4f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4439588378538653251, guid: 33d4fe23f48a9214c8c517a118acfc4f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4439588378538653251, guid: 33d4fe23f48a9214c8c517a118acfc4f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4439588378538653251, guid: 33d4fe23f48a9214c8c517a118acfc4f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4439588378538653251, guid: 33d4fe23f48a9214c8c517a118acfc4f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7601515346858179965, guid: 33d4fe23f48a9214c8c517a118acfc4f, type: 3}
+      propertyPath: triggerBoxColor.b
+      value: 0.9537358
+      objectReference: {fileID: 0}
+    - target: {fileID: 7601515346858179965, guid: 33d4fe23f48a9214c8c517a118acfc4f, type: 3}
+      propertyPath: triggerBoxColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7601515346858179965, guid: 33d4fe23f48a9214c8c517a118acfc4f, type: 3}
+      propertyPath: triggerBoxColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7601515346858179965, guid: 33d4fe23f48a9214c8c517a118acfc4f, type: 3}
+      propertyPath: onTriggerEnter.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7601515346858179965, guid: 33d4fe23f48a9214c8c517a118acfc4f, type: 3}
+      propertyPath: onTriggerEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7601515346858179965, guid: 33d4fe23f48a9214c8c517a118acfc4f, type: 3}
+      propertyPath: onTriggerEnter.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 33d4fe23f48a9214c8c517a118acfc4f, type: 3}
