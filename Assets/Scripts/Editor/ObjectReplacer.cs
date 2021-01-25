@@ -17,10 +17,11 @@ namespace Editor
 
         public void OnWizardCreate()
         {
-            GameObject[] foundObjects = FindObjectsOfType<GameObject>();
+            Object[] foundObjects = Selection.objects;
 
-            foreach (GameObject obj in foundObjects)
+            foreach (var o in foundObjects)
             {
+                var obj = (GameObject) o;
                 if (DoesObjectContainPrefabName(obj))
                 {
                     GameObject newObj = Instantiate(prefab, obj.transform.parent);
