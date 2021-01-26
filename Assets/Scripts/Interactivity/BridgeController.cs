@@ -18,9 +18,15 @@ namespace Interactivity
         public GameObject bridgeModelPrefab;
         [SerializeField] private Ease bridgeEaseType;
         public Vector3 waypointA, waypointB;
+        public UnityEvent onBridgeBuilding;
+
         public bool useCustomAnimation;
         public UnityEvent onBuildBridgeAnimation;
         public UnityEvent onResetBridgeAnimation;
+
+        public bool showDebugMessages;
+
+
         private GameObject m_currentBridge;
         private Collider m_Collider;
 
@@ -32,17 +38,28 @@ namespace Interactivity
 
         public void BuildBridge(Collider col)
         {
-            Debug.Log("Attempting to build bridge!");
+          
             BallController ballController = col.GetComponent<BallController>();
+            if (showDebugMessages)
+            {
+                Debug.Log("Attempting to build bridge!");
+                Debug.Log(
+                    $"{(ballController == null ? "Cant find player" : $"Player ({ballController.name}) has been found! Building bridge!")}");
+            }
+
             if (ballController == null) return;
 
-            Debug.Log($"Current Ball Size: {ballController.CurrentSize}");
+            if (showDebugMessages)
+                Debug.Log($"Current Ball Size: {ballController.CurrentSize}");
             if (ballController.CurrentSize >= minSizeRequirement)
             {
+                
                 StartCoroutine(BeginApplyingBridge(col));
                 m_Collider.enabled = false;
                 IsBridgeBuilt = true;
             }
+            
+            onBridgeBuilding?.Invoke();
         }
 
         public void ResetBridge()
@@ -106,14 +123,31 @@ namespace Interactivity
 
         private void OnDrawGizmosSelected()
         {
-            Gizmos.color = Color.yellow;
+            if (m_Collider == null) m_Collider = GetComponent<Collider>();
+            Color yellow = Color.yellow;
+            Color sphereSizeColor = Color.green - new Color(0, 0, 0, 0.7f);
+            Color collisionColor = Color.cyan - new Color(0, 0, 0, 0.7f);
+            DrawBridgeGizmos(yellow, sphereSizeColor, collisionColor);
+        }
+
+        private void OnDrawGizmos()
+        {
+            if (m_Collider == null) m_Collider = GetComponent<Collider>();
+            Color yellow = Color.yellow - new Color(0.2f, 0.2f, 0.2f, 0);
+            Color sphereSizeColor = Color.green - new Color(0.2f, 0.2f, 0.2f, 0.7f);
+            Color collisionColor = Color.cyan - new Color(0.2f, 0.2f, 0.2f, 0.7f);
+            DrawBridgeGizmos(yellow, sphereSizeColor, collisionColor);
+        }
+
+        private void DrawBridgeGizmos(Color midPointColor, Color sphereSizeColor, Color collisionColor)
+        {
+            Gizmos.color = midPointColor;
             Gizmos.DrawCube(waypointA + MidPoint, Vector3.one / 2f);
 
-            Gizmos.color = Color.green - new Color(0, 0, 0, 0.7f);
+            Gizmos.color = sphereSizeColor;
             Gizmos.DrawSphere(transform.position - transform.forward.normalized * 5f, minSizeRequirement);
-
-            Gizmos.color = Color.cyan - new Color(0, 0, 0, 0.7f);
-            Gizmos.DrawCube(transform.position, GetComponent<Collider>().bounds.size);
+            
+            DetectionArea.DrawBoxCollider(collisionColor, m_Collider);
         }
 
         private Vector3 MidPoint => (waypointB - waypointA) / 2f;

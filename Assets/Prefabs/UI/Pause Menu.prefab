@@ -1185,7 +1185,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menuUI: {fileID: 1501626441310337282}
   pauseMenuToggle: {fileID: -4000736286834429724, guid: 1d36282dd2719094d8ace6b9e53c6e9a, type: 3}
-  timeScaleDuringPause: 0.01
+  player: {fileID: 0}
+  timeScaleDuringPause: 0
+  timeTransitionRate: 0.1
 --- !u!1 &8354542679824096494
 GameObject:
   m_ObjectHideFlags: 0

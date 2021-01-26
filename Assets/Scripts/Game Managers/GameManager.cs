@@ -13,6 +13,8 @@ namespace Game_Managers
         private Vector3 m_LatestCheckpoint;
         private float m_LatestBallSize;
 
+        public bool showRegistrationDebugLogs;
+
         private struct AffectorState
         {
             public AffectorState(Vector3 affectorPosition, bool affectorState, Quaternion affectorRotation,
@@ -79,7 +81,9 @@ namespace Game_Managers
             {
                 case WorldAsset.Affectors:
                     List<BallAffector> foundObjs = FindObjectsOfType<BallAffector>().Where(b =>
-                        b.information != null && b.information.scaleType == BallAffectorInformation.ScaleType.ScaleUp).ToList();
+                            b.information != null &&
+                            b.information.scaleType == BallAffectorInformation.ScaleType.ScaleUp)
+                        .ToList();
 
 
                     Dictionary<AffectorState, BallAffector> results = new Dictionary<AffectorState, BallAffector>();
@@ -93,8 +97,8 @@ namespace Game_Managers
                         if (previousKey.Equals(key) || results.ContainsKey(key)) continue;
                         results.Add(key, obj);
                         previousKey = key;
-
-                        Debug.Log($"Registered Ball Affector:{obj.name} to the Game Manager", obj);
+                        if (showRegistrationDebugLogs)
+                            Debug.Log($"Registered Ball Affector:{obj.name} to the Game Manager", obj);
                     }
 
                     return results;
@@ -113,8 +117,8 @@ namespace Game_Managers
                         if (previousKey1.Equals(key) || results1.ContainsKey(key)) continue;
                         results1.Add(key, obj);
                         previousKey1 = key;
-
-                        Debug.Log($"Registered Bridge Builder:{obj.name} to the Game Manager", obj);
+                        if (showRegistrationDebugLogs)
+                            Debug.Log($"Registered Bridge Builder:{obj.name} to the Game Manager", obj);
                     }
 
                     return results1;
@@ -178,7 +182,7 @@ namespace Game_Managers
             foreach (KeyValuePair<AffectorState, BallAffector> affector in m_AllKnownAffectors)
             {
                 //Debug.Log(
-                    //$"Current Saved State: IsPickedUp;{affector.Key.ObjectState},Parent:{affector.Key.AffectorParent.name},CollisionState:{affector.Key.ObjectCollisionState}");
+                //$"Current Saved State: IsPickedUp;{affector.Key.ObjectState},Parent:{affector.Key.AffectorParent.name},CollisionState:{affector.Key.ObjectCollisionState}");
                 if (affector.Value.IsPickedUpByPlayer && affector.Key.ObjectState)
                 {
                     // Debug.Break();

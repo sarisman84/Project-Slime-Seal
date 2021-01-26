@@ -221,6 +221,8 @@
             <e p="Checkpoint.cs" t="Include" />
             <e p="DeathBox.cs" t="Include" />
             <e p="DetectionArea.cs" t="Include" />
+            <e p="EventSequence.cs" t="Include" />
+            <e p="GizmoDrawMethods.cs" t="Include" />
             <e p="Interactable.cs" t="Include" />
             <e p="TransitionComponent.cs" t="Include" />
           </e>

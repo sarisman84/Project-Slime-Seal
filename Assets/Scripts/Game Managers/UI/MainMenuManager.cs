@@ -87,6 +87,7 @@ namespace Game_Managers.UI
 
         public void ToMainMenu(PauseMenuManager manager)
         {
+            Debug.Log("Opening Main Menu!");
             GameManager.SingletonAccess.ResetData();
             Time.timeScale = manager.OriginalTimeScale;
 

@@ -67,7 +67,8 @@ MonoBehaviour:
   onTriggerExit:
     m_PersistentCalls:
       m_Calls: []
-  triggerBoxColor: {r: 1, g: 0, b: 0, a: 0.6862745}
+  onSelectTriggerBoxColor: {r: 1, g: 0, b: 0, a: 0.7647059}
+  triggerBoxColor: {r: 1, g: 0, b: 0, a: 0.28235295}
 --- !u!65 &2337821195374942988
 BoxCollider:
   m_ObjectHideFlags: 0

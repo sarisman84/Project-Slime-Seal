@@ -5057,21 +5057,45 @@ MonoBehaviour:
   - name: Tutorial_Movement
     uiPrefab: {fileID: 6500997817309889931, guid: a7c59b60a97b5e947b3e0ede98ccf01f, type: 3}
     hasDuration: 1
-    displayDuration: 1
+    displayDuration: 5
+    displayDelayDuration: 0
     hasTransition: 1
-    transitionTime: 1
+    transitionTime: 0.5
+    useCustomEvents: 1
+    onEnableUIElement:
+      m_PersistentCalls:
+        m_Calls: []
+    onDisableUIElement:
+      m_PersistentCalls:
+        m_Calls: []
   - name: Tutorial_Jump
     uiPrefab: {fileID: 5608147467632853063, guid: 2af441968d894164a8e0d1ff60cdf132, type: 3}
     hasDuration: 1
-    displayDuration: 1
+    displayDuration: 5
+    displayDelayDuration: 0
     hasTransition: 1
-    transitionTime: 1
+    transitionTime: 0.5
+    useCustomEvents: 0
+    onEnableUIElement:
+      m_PersistentCalls:
+        m_Calls: []
+    onDisableUIElement:
+      m_PersistentCalls:
+        m_Calls: []
   - name: Tutorial_Bridge
     uiPrefab: {fileID: 5671061581107157534, guid: 65f2d7fc3b6d7d646bcbd88b69f029ef, type: 3}
     hasDuration: 1
-    displayDuration: 1
+    displayDuration: 4
+    displayDelayDuration: 1
     hasTransition: 1
-    transitionTime: 1
+    transitionTime: 0.5
+    useCustomEvents: 0
+    onEnableUIElement:
+      m_PersistentCalls:
+        m_Calls: []
+    onDisableUIElement:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!114 &4106860718434276190
 MonoBehaviour:
   m_ObjectHideFlags: 0

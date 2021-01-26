@@ -32,15 +32,51 @@ namespace Interactivity
             if (gameObject.layer != 6)
                 gameObject.layer = 6;
 
-            // if (ContainsMoreThanOneCollider() && Application.isPlaying)
-            //     RemoveAllButOneCollider();
+            if (Application.isPlaying)
+            {
+                if (ContainsMoreThanOneCollider())
+                    RemoveAllButOneCollider();
+
+                // if (GetComponent<MeshFilter>() != null && GetComponent<MeshRenderer>() != null)
+                // {
+                //     if (ContainsMoreThanOneCollider())
+                //         RemoveAllButOneCollider();
+                //     
+                //     if(GetComponent<Collider>() != GetComponent<MeshCollider>())
+                //         Destroy(GetComponent<Collider>());
+                //     gameObject.AddComponent<MeshCollider>();
+                // }
+                // else
+                // {
+                //     MeshCollider[] col = GetComponents<MeshCollider>();
+                //     if (col.Length != 0)
+                //     {
+                //         for (int i = 0; i < col.Length; i++)
+                //         {
+                //             Destroy(col[i]);
+                //         }
+                //     }
+                //
+                //     gameObject.AddComponent<BoxCollider>();
+                // }
+
+                if (GetComponent<MeshCollider>() == null)
+                    gameObject.AddComponent<MeshCollider>();
+            }
+
+            if (!GetComponent<MeshCollider>().convex)
+            {
+                GetComponent<MeshCollider>().convex = true;
+            }
         }
 
         private void RemoveAllButOneCollider()
         {
-            for (int i = 0; i < GetComponents<Collider>().Length - 1; i++)
+            Collider[] col = GetComponents<Collider>();
+            for (int i = 0; i < col.Length; i++)
             {
-                Destroy(GetComponent<Collider>());
+                if (col[i] is MeshCollider meshCollider) continue;
+                Destroy(col[i]);
             }
         }
 
@@ -55,7 +91,7 @@ namespace Interactivity
 
         private void Update()
         {
-            if(information == null)
+            if (information == null)
             {
                 var o = gameObject;
                 Debug.LogError($"Information variable on {o.name} is missing", o);

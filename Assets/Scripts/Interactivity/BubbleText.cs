@@ -19,6 +19,7 @@ namespace Interactivity
             public GameObject uiPrefab;
             public bool hasDuration;
             public float displayDuration = 3f;
+            public float displayDelayDuration = 0f;
 
             public bool hasTransition;
             public float transitionTime;
@@ -48,6 +49,7 @@ namespace Interactivity
             private IEnumerator DisplayUIForSecondsAmount()
             {
                 float duration = hasTransition ? transitionTime + displayDuration : displayDuration;
+                yield return new WaitForSeconds(displayDelayDuration);
                 SetUIActive(true);
                 yield return new WaitForSeconds(duration);
                 SetUIActive(false);

@@ -4,11 +4,12 @@ using UnityEngine.Events;
 
 namespace Interactivity
 {
-    public class DetectionArea : MonoBehaviour
+    public partial class DetectionArea : MonoBehaviour
     {
         public BoxCollider m_BoxCollider;
 
         public UnityEvent<Collider> onTriggerEnter, onTriggerStay, onTriggerExit;
+        public Color onSelectTriggerBoxColor;
         public Color triggerBoxColor;
 
         private void OnTriggerEnter(Collider other)
@@ -28,8 +29,19 @@ namespace Interactivity
 
         private void OnDrawGizmosSelected()
         {
-            Gizmos.color = triggerBoxColor;
-            Gizmos.DrawCube(transform.position, Vector3.Max(m_BoxCollider.bounds.size, transform.localScale));
+            DrawCube(onSelectTriggerBoxColor);
+        }
+
+        private void DrawCube(Color boxColor)
+        {
+            DrawBoxCollider(boxColor, m_BoxCollider);
+        }
+
+        //Source: Paalo: https://forum.unity.com/threads/gizmo-rotation.4817/#post-5299893
+
+        private void OnDrawGizmos()
+        {
+            DrawCube(triggerBoxColor);
         }
 
         private void OnValidate()
@@ -39,7 +51,6 @@ namespace Interactivity
                 m_BoxCollider = gameObject.AddComponent<BoxCollider>();
                 m_BoxCollider.isTrigger = true;
             }
-               
         }
     }
 }
