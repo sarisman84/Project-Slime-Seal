@@ -10,7 +10,7 @@ using UnityEngine.Timeline;
 
 namespace Interactivity
 {
-    public class BubbleText : MonoBehaviour
+    public class BubbleRenderer : MonoBehaviour
     {
         [Serializable]
         public class BubbleUI

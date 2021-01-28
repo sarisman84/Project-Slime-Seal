@@ -62,6 +62,15 @@ namespace Interactivity
 
                 if (GetComponent<MeshCollider>() == null)
                     gameObject.AddComponent<MeshCollider>();
+               
+                BallAffector[] affectors = GetComponents<BallAffector>();
+                if (affectors.Length != 1)
+                {
+                    for (int i = 0; i < affectors.Length - 1; i++)
+                    {
+                        Destroy(affectors[i]);
+                    }
+                }
             }
 
             if (!GetComponent<MeshCollider>().convex)

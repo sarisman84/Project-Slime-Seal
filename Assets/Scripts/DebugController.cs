@@ -74,13 +74,10 @@ public class DebugController : MonoBehaviour
 
     private void Update()
     {
-        m_ShowConsole = debugToggle.action.ReadValue<float>() > 0 && debugToggle.action.triggered
-            ? !m_ShowConsole
-            : m_ShowConsole;
-
+        
         if (debugToggle.action.ReadValue<float>() > 0 && debugToggle.action.triggered)
         {
-            Time.timeScale = m_ShowConsole ? 0 : m_OriginalTimeScale;
+            ToggleConsole(!m_ShowConsole);
         }
 
         m_PlayerInput.enabled = !m_ShowConsole;
@@ -100,9 +97,15 @@ public class DebugController : MonoBehaviour
                 HandleInput();
                 m_Input = "";
                 inputField.text = m_Input;
-                m_ShowConsole = false;
+                ToggleConsole(false);
             }
         }
+    }
+
+    private void ToggleConsole(bool console)
+    {
+        m_ShowConsole = console;
+        Time.timeScale = m_ShowConsole ? 0 : m_OriginalTimeScale;
     }
 
 

@@ -5,7 +5,7 @@
 //
 // namespace Editor
 // {
-//     [CustomPropertyDrawer(typeof(BubbleText.BubbleUI))]
+//     [CustomPropertyDrawer(typeof(BubbleRenderer.BubbleUI))]
 //     public class BubbleTextDrawer : PropertyDrawer
 //     {
 //         private bool m_ValDur, m_ValTrans, m_ValEvent;
@@ -13,38 +13,28 @@
 //         public override void OnGUI(Rect position, SerializedProperty property,
 //             GUIContent label)
 //         {
-//             Rect r = position;
-//             SerializedProperty it = property.serializedObject.GetIterator();
-//             it.Next(true);
-//             bool disableFirstElement = true;
-//             while (it.NextVisible(false))
+//             property.isExpanded = EditorGUI.Foldout(position, property.isExpanded, property.displayName);
+//             if (property.isExpanded)
 //             {
-//                 EditorGUI.BeginDisabledGroup(disableFirstElement);
-//                 r.height = EditorGUI.GetPropertyHeight(it, it.isExpanded);
-//                 switch (it.propertyPath)
+//                 Rect r = position;
+//                 SerializedProperty it = property.serializedObject.GetIterator();
+//                 it.Next(true);
+//                 bool disableFirstElement = true;
+//                 while (it.NextVisible(false))
 //                 {
-//                     case "hasDuration":
-//                     case "hasTransition":
-//                     case "useCustomEvents":
-//                         it.boolValue = EditorGUI.Toggle(r, new GUIContent(it.displayName), it.boolValue,
-//                             GUIStyles.defaultButtonStyle);
-//                         StoreBoolean(it.Copy());
+//                     if (disableFirstElement)
+//                     {
+//                         disableFirstElement = false;
 //                         continue;
+//                     }
 //
-//                     case "displayDuration":
-//                     case "transitionTime":
-//                     case "onEnableUIElement":
-//                     case "onDisableUIElement":
-//                         if (GetBoolean(it.Copy()))
-//                             EditorGUI.PropertyField(r, it, new GUIContent(it.displayName), false);
-//                         continue;
+//                     r.height = EditorGUI.GetPropertyHeight(it.Copy(), it.Copy().isExpanded);
+//                     EditorGUI.PropertyField(r, it.Copy(), new GUIContent(it.Copy().displayName), it.Copy().isExpanded);
+//                     r.y += r.height;
 //                 }
-//
-//                 EditorGUI.PropertyField(r, it, new GUIContent(it.displayName), false);
-//                 r.y += r.height;
-//                 EditorGUI.EndDisabledGroup();
-//                 disableFirstElement = false;
 //             }
+//
+//             property.serializedObject.ApplyModifiedProperties();
 //         }
 //
 //         private void DrawProperty(Rect r, SerializedProperty it)
@@ -82,19 +72,22 @@
 //             }
 //         }
 //
+//         private float totalHeight = 0;
 //
 //         public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
 //         {
-//             float totalHeight = base.GetPropertyHeight(property, label);
-//
-//             SerializedProperty it = property.serializedObject.GetIterator();
-//             it.Next(true);
-//             while (it.NextVisible(false))
+//             totalHeight = 0;
+//             if (property.isExpanded)
 //             {
-//                 totalHeight += EditorGUI.GetPropertyHeight(it, it.isExpanded);
+//                 SerializedProperty it = property.serializedObject.GetIterator();
+//                 it.Next(true);
+//                 while (it.NextVisible(true))
+//                 {
+//                     totalHeight += EditorGUI.GetPropertyHeight(it.Copy(), it.Copy().isExpanded);
+//                 }
 //             }
 //
-//             return totalHeight;
+//             return totalHeight + base.GetPropertyHeight(property, label);
 //         }
 //     }
 // }
