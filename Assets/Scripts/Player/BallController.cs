@@ -255,7 +255,6 @@ namespace Player
         {
             Collider[] foundObjects = Physics.OverlapSphere(m_SphereCollider.transform.position,
                 m_SphereCollider.radius + m_Radius, m_GrabMask);
-            Debug.Log($"{foundObjects.Length} were found in {m_Radius} radius.");
             for (int i = 0; i < foundObjects.Length; i++)
             {
                 BallAffector affector = foundObjects[i].GetComponent<BallAffector>();

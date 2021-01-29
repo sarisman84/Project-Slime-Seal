@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BoxCollider: {fileID: 2337821195374942988}
+  targetTag: Player
   onTriggerEnter:
     m_PersistentCalls:
       m_Calls:
@@ -78,9 +79,9 @@ BoxCollider:
   m_GameObject: {fileID: 8231897479070041799}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 100, y: 1, z: 50}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &8723470054986123961
 MonoBehaviour:

@@ -4,6 +4,7 @@ namespace Interactivity
 {
     public partial class DetectionArea
     {
+        //Source: Paalo: https://forum.unity.com/threads/gizmo-rotation.4817/#post-5299893
         public static void DrawBoxCollider(Color gizmoColor, Collider boxCollider, float alphaForInsides = 0.3f)
         {
             //Save the color in a temporary variable to not overwrite changes in the inspector (if the sent-in color is a serialized variable).
