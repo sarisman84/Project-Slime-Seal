@@ -8,6 +8,7 @@ TagManager:
   - Level2
   - level3
   - level4
+  - Level1_CaveEntrance
   layers:
   - Default
   - TransparentFX
@@ -20,8 +21,8 @@ TagManager:
   - Jumpable
   - Interactable
   - Uninteractable
-  - 
-  - 
+  - UM_Layer
+  - Player
   - 
   - 
   - 

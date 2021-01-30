@@ -14,6 +14,8 @@ namespace Game_Managers
         private float m_LatestBallSize;
 
         public bool showRegistrationDebugLogs;
+        public bool showResetDebugLogs;
+        public bool breakOnReset;
 
         private struct AffectorState
         {
@@ -178,7 +180,10 @@ namespace Game_Managers
 
         public void ResetToCheckpoint()
         {
-            Debug.Log("Resetting back to checkpoint");
+            if (breakOnReset)
+                Debug.Break();
+            if (showResetDebugLogs)
+                Debug.Log("Resetting back to checkpoint");
             foreach (KeyValuePair<AffectorState, BallAffector> affector in m_AllKnownAffectors)
             {
                 //Debug.Log(
@@ -194,12 +199,14 @@ namespace Game_Managers
                     m_Player.m_BallEnlarger.ForceDropObject(affector.Value, affector.Key.AffectorPosition,
                         affector.Key.ObjectState, affector.Key.AffectorRotation, affector.Key.AffectorParent,
                         affector.Key.ObjectCollisionState);
-                    Debug.Log($"Dropping  {affector.Value.gameObject.name}");
+                    if (showResetDebugLogs)
+                        Debug.Log($"Dropping  {affector.Value.gameObject.name}");
                 }
                 else if (!affector.Value.IsPickedUpByPlayer && affector.Key.ObjectState)
                 {
                     m_Player.m_BallEnlarger.ForcePickupObject(affector.Value, affector.Key.ObjectState);
-                    Debug.Log($"Picking up {affector.Value.gameObject.name}");
+                    if (showResetDebugLogs)
+                        Debug.Log($"Picking up {affector.Value.gameObject.name}");
                 }
             }
 

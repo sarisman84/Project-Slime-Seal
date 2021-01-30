@@ -63,3 +63,5 @@ crashlytics-build.properties
 
 .vsconfig
 *.unity
+
+ProjectSettings/EditorSettings.asset
