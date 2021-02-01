@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scaleType: 1
   scaleRate: 0.25
-  minSizeToGrab: 24
-  sizeLimit: 5
+  minSizeToGrab: 7
+  sizeLimit: 24
