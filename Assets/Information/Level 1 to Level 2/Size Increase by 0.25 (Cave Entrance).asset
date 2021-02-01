@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Size Increase by 0.25 (Cave Entrance)
   m_EditorClassIdentifier: 
   scaleType: 1
-  scaleRate: 0.005
-  minSizeToGrab: 7
+  scaleRate: 0.25
+  minSizeToGrab: 24
+  sizeLimit: 5

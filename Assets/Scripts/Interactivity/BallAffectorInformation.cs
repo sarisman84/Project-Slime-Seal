@@ -7,11 +7,22 @@ namespace Interactivity
     {
         public enum ScaleType
         {
-            ScaleDown, ScaleUp
+            ScaleDown,
+            ScaleUp
         }
 
         public ScaleType scaleType;
-        public float scaleRate;
+        [SerializeField] private float scaleRate;
         public float minSizeToGrab = 0;
+        public float sizeLimit = 0;
+
+        public float ScaleRate(SphereCollider currentSize, bool ingoreSizeLimit = false)
+        {
+            bool v = currentSize.radius + scaleRate > sizeLimit && !ingoreSizeLimit && sizeLimit > 0;
+
+            if (v)
+                currentSize.radius = Mathf.Clamp(currentSize.radius, 0, sizeLimit);
+            return v ? 0 : scaleRate;
+        }
     }
 }

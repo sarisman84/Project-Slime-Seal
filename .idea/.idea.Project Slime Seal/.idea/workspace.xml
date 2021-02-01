@@ -2,17 +2,50 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="71a1ccbe-5d07-4fa5-a2ba-87c32939b4c2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Graphics/VFX.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Graphics/VFX/Waterfall.vfx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Graphics/VFX/Waterfall.vfx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Material/Droplet Trail.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Material/Droplet Trail.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Material/Simple Water.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Material/Simple Water.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Eliott Scene/OcclusionCullingData.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Eliott Scene/OcclusionCullingData.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Editor/AffectRigidbodiesEditor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Editor/AffectRigidbodiesEditor.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Interactivity/AffectRigidbodies.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Project Slime Seal/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Project Slime Seal/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Project Slime Seal/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Project Slime Seal/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Project Slime Seal/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Project Slime Seal/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Information/+20.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Information/+20.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Information/BIG 1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Information/BIG 1.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Information/BIG.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Information/BIG.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Information/Big Scale up 6.5.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Information/Big Scale up 6.5.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Information/Grabbable 0.25.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Information/Grabbable 0.25.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Information/Grabbable 10.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Information/Grabbable 10.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Information/Grabbable 2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Information/Grabbable 2.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Information/Grabbable 5.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Information/Grabbable 5.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Information/Grabbable 6.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Information/Grabbable 6.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Information/Grabbable 7.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Information/Grabbable 7.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Information/Grabbable 8.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Information/Grabbable 8.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Information/Grabbable Min 2 0.4.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Information/Grabbable Min 2 0.4.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Information/Grabbable big scaleup 2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Information/Grabbable big scaleup 2.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Information/HUMONGUS 1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Information/HUMONGUS 1.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Information/HUMONGUS.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Information/HUMONGUS.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Information/Hazard 01.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Information/Hazard 01.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Information/Level 1 to Level 2/Size Increase by 0.15 (Cave Entrance).asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Information/Level 1 to Level 2/Size Increase by 0.15 (Cave Entrance).asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Information/Level 1 to Level 2/Size Increase by 0.25 (Cave Entrance).asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Information/Level 1 to Level 2/Size Increase by 0.25 (Cave Entrance).asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Information/Small Scale up.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Information/Small Scale up.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Level Assets/Death Box.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Level Assets/Death Box.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Level Assets/Level 1 Meadow.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Level Assets/Level 1 Meadow.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Level Assets/Trigger Box.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Level Assets/Trigger Box.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/Player Prefab Root.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/Player Prefab Root.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Managers/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game Managers/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interactivity/DetectionArea.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interactivity/DetectionArea.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interactivity/GizmoDrawMethods.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interactivity/GizmoDrawMethods.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Level Assets/Level 2 Mushroom Hills.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Level Assets/Level 2 Mushroom Hills.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Managers/UI/PauseMenuManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game Managers/UI/PauseMenuManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interactivity/BallAffectorInformation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interactivity/BallAffectorInformation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interactivity/EventSequence.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interactivity/EventSequence.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/BallController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/BallController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/VFXManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/VFXManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +91,6 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Interactivity/Interactable.cs" />
       <option value="$PROJECT_DIR$/Assets/tripolygon/UModeler/Scripts/PureCode/Editor/MeshFilterEditor.cs" />
       <option value="$PROJECT_DIR$/Assets/tripolygon/UModeler/Scripts/PureCode/Editor/TransformEditor.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Interactivity/BallAffectorInformation.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/Input.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/AnimationController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Editor/DebugController.cs" />
@@ -75,10 +107,8 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Interactivity/TransitionComponent.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/DeleteDupBox.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Interactivity/BridgeController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Interactivity/EventSequence.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Interactivity/BubbleText.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Game Managers/UI/MainMenuManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Game Managers/UI/PauseMenuManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Interactivity/BallAffector.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/DebugController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Interactivity/BubbleRenderer.cs" />
@@ -86,8 +116,14 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/BallSizeDisplay.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Interactivity/GizmoDrawMethods.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Interactivity/DetectionArea.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/BallController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Game Managers/GameManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Interactivity/PushRigidbodies.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Editor/AffectRigidbodiesEditor.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Interactivity/AffectRigidbodies.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Interactivity/EventSequence.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Game Managers/UI/PauseMenuManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Interactivity/BallAffectorInformation.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/BallController.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1nNxgmNAPVYzVuGw2vBq6TT7Bib" />
@@ -147,7 +183,9 @@
       <workItem from="1611663663889" duration="10641000" />
       <workItem from="1611754890147" duration="5528000" />
       <workItem from="1611923201169" duration="918000" />
-      <workItem from="1611935922187" duration="2433000" />
+      <workItem from="1611935922187" duration="3028000" />
+      <workItem from="1612033906816" duration="4832000" />
+      <workItem from="1612141282631" duration="2276000" />
     </task>
     <servers />
   </component>

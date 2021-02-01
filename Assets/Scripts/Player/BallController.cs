@@ -119,7 +119,7 @@ namespace Player
 
             if (m_InputComponent.GetButton(Input.InputType.Jump) && IsTouchingTheGround())
             {
-                m_Rigidbody.AddForce(Vector3.up * TotalJumpForce, ForceMode.Impulse);
+                m_Rigidbody.AddForce(Vector3.up * TotalJumpForce, ForceMode.VelocityChange);
             }
 
             Debug.DrawRay(transform.position, m_Rigidbody.velocity, Color.green);
@@ -263,7 +263,7 @@ namespace Player
                 {
                     GameObject obj = foundObjects[i].gameObject;
                     PickupObject(obj, affector, true);
-                    m_CurrentSize += affector.information.scaleRate;
+                    m_CurrentSize += affector.information.ScaleRate(m_SphereCollider);
                 }
             }
 
@@ -315,7 +315,7 @@ namespace Player
                 if (foundObjects[i] != null && affector != null &&
                     affector.information.scaleType == BallAffectorInformation.ScaleType.ScaleDown)
                 {
-                    m_CurrentSize -= affector.information.scaleRate;
+                    m_CurrentSize -= affector.information.ScaleRate(m_SphereCollider, true);
                     UpdateCaughtObjectsList(m_BehaviourRef);
                 }
             }
@@ -370,6 +370,7 @@ namespace Player
             {
                 body = obj.AddComponent<Rigidbody>();
             }
+
             obj.GetComponent<Collider>().enabled = true;
             if (body is { }) body.isKinematic = !enableRigidbody;
         }

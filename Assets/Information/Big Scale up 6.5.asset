@@ -15,3 +15,4 @@ MonoBehaviour:
   scaleType: 1
   scaleRate: 1
   minSizeToGrab: 6.5
+  sizeLimit: 0

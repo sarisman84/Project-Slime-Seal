@@ -15,7 +15,7 @@ namespace Game_Managers.UI
     {
         public CanvasGroup menuUI;
         public InputActionReference pauseMenuToggle;
-        public BallController player;
+        BallController m_Player;
 
 
         internal bool ToggleMenu;
@@ -40,10 +40,13 @@ namespace Game_Managers.UI
 
         private void Awake()
         {
-            m_Input = player.GetComponent<Input>();
-            m_CameraController = player.GetComponent<CameraController>();
+            m_Player = FindObjectOfType<BallController>();
+            m_Input = m_Player.GetComponent<Input>();
+            m_CameraController = m_Player.GetComponent<CameraController>();
             m_GraphicRaycaster = menuUI.GetComponent<GraphicRaycaster>();
             OriginalTimeScale = Time.timeScale;
+
+       
         }
 
         private void Update()
@@ -52,10 +55,10 @@ namespace Game_Managers.UI
             {
                 ToggleMenu = !ToggleMenu;
                 Transition();
+                m_GraphicRaycaster.enabled = ToggleMenu;
+                m_Input.enabled = !ToggleMenu;
+                m_CameraController.SetCursorState(ToggleMenu);
             }
-
-
-            m_GraphicRaycaster.enabled = ToggleMenu;
         }
 
         private void Transition()

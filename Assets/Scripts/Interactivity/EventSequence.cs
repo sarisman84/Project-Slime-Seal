@@ -10,7 +10,7 @@ namespace Interactivity
     {
         public List<SequenceInfo> events = new List<SequenceInfo>();
 
-
+        public bool CanBeExecuted { get; set; } = true;
         private Coroutine m_EventSequencer;
 
         public void PlaySequence()
@@ -18,7 +18,8 @@ namespace Interactivity
             if (m_EventSequencer != null)
                 StopCoroutine(m_EventSequencer);
 
-            m_EventSequencer = StartCoroutine(RunSequence());
+            if (CanBeExecuted)
+                m_EventSequencer = StartCoroutine(RunSequence());
         }
 
         private IEnumerator RunSequence()
