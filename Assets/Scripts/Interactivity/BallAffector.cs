@@ -107,8 +107,11 @@ namespace Interactivity
             }
 
             if (debugPrintThisObjectsState)
+            {
+                var o = gameObject;
                 Debug.Log(
-                    $"{gameObject.name} {(IsPickedUpByPlayer ? "is currently picked up (or has been picked up) by the player" : "hasn't been picked up yet")}");
+                    $"{o.name} {(IsPickedUpByPlayer ? "is currently picked up (or has been picked up) by the player" : "hasn't been picked up yet")}", o);
+            }
         }
     }
 }
