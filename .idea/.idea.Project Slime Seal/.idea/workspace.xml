@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="71a1ccbe-5d07-4fa5-a2ba-87c32939b4c2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Project Slime Seal/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Project Slime Seal/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Project Slime Seal/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Project Slime Seal/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Level Assets/Level 1 Meadow.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Level Assets/Level 1 Meadow.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Level Assets/Level 2 Mushroom Hills.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Level Assets/Level 2 Mushroom Hills.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Eliott Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Eliott Scene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Editor/DeleteDupBox.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Editor/DeleteDupBox.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Managers/UI/PauseMenuManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game Managers/UI/PauseMenuManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interactivity/BallAffector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interactivity/BallAffector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Eliott Scene/OcclusionCullingData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Eliott Scene/OcclusionCullingData.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Input.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Input.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +53,6 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Interactivity/Interactable.cs" />
       <option value="$PROJECT_DIR$/Assets/tripolygon/UModeler/Scripts/PureCode/Editor/MeshFilterEditor.cs" />
       <option value="$PROJECT_DIR$/Assets/tripolygon/UModeler/Scripts/PureCode/Editor/TransformEditor.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/Input.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/AnimationController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Editor/DebugController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Editor/BridgeDrawer.cs" />
@@ -89,6 +85,7 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Editor/DeleteDupBox.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Interactivity/BallAffector.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Game Managers/UI/PauseMenuManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/Input.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1nNxgmNAPVYzVuGw2vBq6TT7Bib" />
@@ -160,7 +157,8 @@
       <workItem from="1612033906816" duration="4832000" />
       <workItem from="1612141282631" duration="2276000" />
       <workItem from="1612203089805" duration="2112000" />
-      <workItem from="1612276711811" duration="3355000" />
+      <workItem from="1612276711811" duration="3944000" />
+      <workItem from="1612466898794" duration="1334000" />
     </task>
     <servers />
   </component>

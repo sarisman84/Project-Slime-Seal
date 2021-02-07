@@ -27,7 +27,7 @@ namespace Player
                 {
                     inputAction[i].action.Enable();
                     continue;
-                    ;
+                    
                 }
 
                 inputAction[i].action.Disable();
