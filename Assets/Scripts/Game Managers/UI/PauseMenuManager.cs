@@ -87,7 +87,7 @@ namespace Game_Managers.UI
                 case Fade.In:
                     while (Time.timeScale > timeScaleDuringPause)
                     {
-                        Debug.Log($"Slowing time down: {Time.timeScale}");
+                        //Debug.Log($"Slowing time down: {Time.timeScale}");
                         Time.timeScale = Mathf.Lerp(Time.timeScale, timeScaleDuringPause, timeTransitionRate);
                         Time.fixedDeltaTime = Time.timeScale * 0.02f;
                         yield return new WaitForEndOfFrame();
@@ -100,7 +100,7 @@ namespace Game_Managers.UI
                 case Fade.Out:
                     while (Time.timeScale < OriginalTimeScale - 0.1)
                     {
-                        Debug.Log($"Accelerating time: {Time.timeScale}");
+                        //Debug.Log($"Accelerating time: {Time.timeScale}");
                         Time.timeScale = Mathf.Lerp(Time.timeScale, OriginalTimeScale, timeTransitionRate);
                         Time.fixedDeltaTime = Time.timeScale * 0.02f;
                         yield return new WaitForEndOfFrame();

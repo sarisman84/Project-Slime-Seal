@@ -125,15 +125,15 @@ public class DebugController : MonoBehaviour
 
         _playerSetsize = new DebugCommand<float>("/p_setballsize", "Sets the size of the player's ball.",
             "/p_setballsize <size_ammount>",
-            (x) => { m_Player.SetBallSize(x); });
+            (x) => { m_Player.SizeController.SetBallSize(x); });
 
         _playerAddsize = new DebugCommand<float>("/p_addballsize", "Increase the player's ball size by an amount.",
             "/p_addballsize <amount_to_add>",
-            (x) => { m_Player.ChangeBallSize(Mathf.Abs(x)); });
+            (x) => { m_Player.SizeController.ChangeBallSize(Mathf.Abs(x)); });
 
         _playerRemovesize = new DebugCommand<float>("/p_subtractballsize", "Decreases the player's ball size by an amount.",
             "/p_subtractballsize <amount_to_remove>",
-            (x) => { m_Player.ChangeBallSize(-Mathf.Abs(x)); });
+            (x) => { m_Player.SizeController.ChangeBallSize(-Mathf.Abs(x)); });
 
         _help = new DebugCommand("/help", "Shows a list of commands", "/help", () => { m_ShowHelp = m_ShowConsole; });
 
@@ -213,7 +213,7 @@ public class DebugController : MonoBehaviour
             }
         }
 
-        Debug.LogWarning($"'{m_Input}' is an invalid debug command!");
+        Debug.LogWarning($"'{m_Input}' is an invalid debug command! (Try /help)");
     }
 }
 

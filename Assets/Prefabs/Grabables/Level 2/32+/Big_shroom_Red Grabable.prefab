@@ -1,0 +1,86 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &8427667406833134732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1159641695980485997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d34d65d4f33e86e4cbb95b6ffa1a2752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  information: {fileID: 11400000, guid: e77a6331318846645811373de422820b, type: 2}
+  debugPrintThisObjectsState: 0
+--- !u!1001 &387479323808331034
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1546781542582487159, guid: 10d62c8112621594e980d450e30775a4, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4665541930688009589, guid: 10d62c8112621594e980d450e30775a4, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4989735823445156768, guid: 10d62c8112621594e980d450e30775a4, type: 3}
+      propertyPath: m_Name
+      value: Big_shroom_Red Grabable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5152661497399739655, guid: 10d62c8112621594e980d450e30775a4, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5152661497399739655, guid: 10d62c8112621594e980d450e30775a4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5152661497399739655, guid: 10d62c8112621594e980d450e30775a4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5152661497399739655, guid: 10d62c8112621594e980d450e30775a4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5152661497399739655, guid: 10d62c8112621594e980d450e30775a4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5152661497399739655, guid: 10d62c8112621594e980d450e30775a4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5152661497399739655, guid: 10d62c8112621594e980d450e30775a4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5152661497399739655, guid: 10d62c8112621594e980d450e30775a4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5152661497399739655, guid: 10d62c8112621594e980d450e30775a4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5152661497399739655, guid: 10d62c8112621594e980d450e30775a4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5152661497399739655, guid: 10d62c8112621594e980d450e30775a4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 10d62c8112621594e980d450e30775a4, type: 3}
+--- !u!1 &1159641695980485997 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1546781542582487159, guid: 10d62c8112621594e980d450e30775a4, type: 3}
+  m_PrefabInstance: {fileID: 387479323808331034}
+  m_PrefabAsset: {fileID: 0}

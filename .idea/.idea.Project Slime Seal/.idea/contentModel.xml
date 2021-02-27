@@ -240,6 +240,10 @@
             <e p="BubbleTextDrawer.cs" t="Include" />
             <e p="DeleteDupBox.cs" t="Include" />
           </e>
+          <e p="Extensions" t="Include">
+            <e p="CustomMathExtensions.cs" t="Include" />
+            <e p="RigidbodyExtensions.cs" t="Include" />
+          </e>
           <e p="Game Managers" t="Include">
             <e p="GameManager.cs" t="Include" />
             <e p="UI" t="Include">
@@ -254,6 +258,7 @@
             <e p="BridgeController.cs" t="Include" />
             <e p="BubbleRenderer.cs" t="Include" />
             <e p="Checkpoint.cs" t="Include" />
+            <e p="CustomSurface.cs" t="Include" />
             <e p="DeathBox.cs" t="Include" />
             <e p="DetectionArea.cs" t="Include" />
             <e p="EventSequence.cs" t="Include" />
@@ -267,6 +272,7 @@
             <e p="CameraController.cs" t="Include" />
             <e p="Input.cs" t="Include" />
             <e p="InteractionController.cs" t="Include" />
+            <e p="SizeController.cs" t="Include" />
           </e>
           <e p="UI" t="Include">
             <e p="BallSizeDisplay.cs" t="Include" />

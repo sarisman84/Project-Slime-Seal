@@ -109,3 +109,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   information: {fileID: 11400000, guid: f91e7819e4cfd4a44ad4adfea915e7cc, type: 2}
+  debugPrintThisObjectsState: 0

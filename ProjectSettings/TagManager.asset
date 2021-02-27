@@ -9,6 +9,7 @@ TagManager:
   - level3
   - level4
   - Level1_CaveEntrance
+  - Level2_CaveEntrance
   layers:
   - Default
   - TransparentFX

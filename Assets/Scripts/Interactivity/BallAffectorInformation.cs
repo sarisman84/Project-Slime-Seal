@@ -22,7 +22,7 @@ namespace Interactivity
 
             if (v)
                 currentSize.radius = Mathf.Clamp(currentSize.radius, 0, sizeLimit);
-            return v ? 0 : scaleRate;
+            return v ? 0.01f : scaleRate;
         }
     }
 }

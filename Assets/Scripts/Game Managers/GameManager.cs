@@ -196,7 +196,7 @@ namespace Game_Managers
 
                 if (affector.Value.IsPickedUpByPlayer && !affector.Key.ObjectState)
                 {
-                    m_Player.m_BallEnlarger.ForceDropObject(affector.Value, affector.Key.AffectorPosition,
+                    m_Player.SizeController.ForceDropObject(affector.Value, affector.Key.AffectorPosition,
                         affector.Key.ObjectState, affector.Key.AffectorRotation, affector.Key.AffectorParent,
                         affector.Key.ObjectCollisionState);
                     if (showResetDebugLogs)
@@ -204,7 +204,7 @@ namespace Game_Managers
                 }
                 else if (!affector.Value.IsPickedUpByPlayer && affector.Key.ObjectState)
                 {
-                    m_Player.m_BallEnlarger.ForcePickupObject(affector.Value, affector.Key.ObjectState);
+                    m_Player.SizeController.ForcePickupObject(affector.Value, affector.Key.ObjectState);
                     if (showResetDebugLogs)
                         Debug.Log($"Picking up {affector.Value.gameObject.name}");
                 }
@@ -223,7 +223,7 @@ namespace Game_Managers
             }
 
             m_Player.transform.position = m_LatestCheckpoint;
-            m_Player.SetBallSize(m_LatestBallSize);
+            m_Player.SizeController.SetBallSize(m_LatestBallSize);
             // m_Player.m_BallEnlarger.UpdateCaughtObjectsList(m_Player);
         }
 
@@ -237,7 +237,7 @@ namespace Game_Managers
                 KeyValuePair<AffectorState, BallAffector> pair =
                     m_DefaultAffectors.First(p => p.Key.Equals(affector.Key));
                 if (pair.Key.ObjectState)
-                    m_Player.m_BallEnlarger.ForceDropObject(affector.Value, affector.Key.AffectorPosition,
+                    m_Player.SizeController.ForceDropObject(affector.Value, affector.Key.AffectorPosition,
                         affector.Key.ObjectState, affector.Key.AffectorRotation, affector.Key.AffectorParent,
                         affector.Key.ObjectCollisionState);
             }
@@ -250,7 +250,7 @@ namespace Game_Managers
                     pair.Value.ResetBridge();
             }
 
-            m_Player.m_BallEnlarger.ForceDropAllObjects();
+            m_Player.SizeController.ForceDropAllObjects();
             ResetToCheckpoint();
         }
     }
