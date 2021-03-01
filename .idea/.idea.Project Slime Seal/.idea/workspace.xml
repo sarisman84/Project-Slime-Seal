@@ -2,111 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="71a1ccbe-5d07-4fa5-a2ba-87c32939b4c2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Information/Level 2.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Information/Level 2/Size 1-4 Grabable.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Information/Level 2/Size 1-4 Grabable.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Information/Level 2/Size 12 to 32 Grabable.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Information/Level 2/Size 12 to 32 Grabable.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Information/Level 2/Size 32 to 52 Grabable.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Information/Level 2/Size 32 to 52 Grabable.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Information/Level 2/Size 4-7 Grabable.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Information/Level 2/Size 4-7 Grabable.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Information/Level 2/Size 52+ Grabable.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Information/Level 2/Size 52+ Grabable.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Information/Level 2/Size 7 to 12 Grabable.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Information/Level 2/Size 7 to 12 Grabable.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Material/Temp.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Material/Temp/Floor 1.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Material/Temp/Floor 1.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Material/Temp/Floor 2.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Material/Temp/Floor 2.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Material/Temp/Rock.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Material/Temp/Rock.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Polybrush Data/Color Palette.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Polybrush Data/Color Palette/ColorPalette-Default.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Polybrush Data/Color Palette/ColorPalette-Default.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Polybrush Data/Prefab Palette.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Polybrush Data/Prefab Palette/New Prefab Palette.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Polybrush Data/Prefab Palette/New Prefab Palette.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Polybrush Data/Prefab Palette/PrefabPalette-Default.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Polybrush Data/Prefab Palette/PrefabPalette-Default.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Grabables/Level 2.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Grabables/Level 2/1+.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Grabables/Level 2/1+/Temp Block (1 to 4) Slope.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Grabables/Level 2/1+/Temp Block (1 to 4) Slope.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Grabables/Level 2/1+/Temp Block (1 to 4).prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Grabables/Level 2/1+/Temp Block (1 to 4).prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Grabables/Level 2/12+.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Grabables/Level 2/12+/Temp Block (12 to 32) Rectangle.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Grabables/Level 2/12+/Temp Block (12 to 32) Rectangle.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Grabables/Level 2/12+/Temp Block (12 to 32).prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Grabables/Level 2/12+/Temp Block (12 to 32).prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Grabables/Level 2/32+.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Grabables/Level 2/32+/Temp Block (32 to 52) Rectangle.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Grabables/Level 2/32+/Temp Block (32 to 52) Rectangle.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Grabables/Level 2/32+/Temp Block (32 to 52).prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Grabables/Level 2/32+/Temp Block (32 to 52).prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Grabables/Level 2/4+.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Grabables/Level 2/4+/Temp Block (4 to 7) Slope.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Grabables/Level 2/4+/Temp Block (4 to 7) Slope.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Grabables/Level 2/4+/Temp Block (4 to 7).prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Grabables/Level 2/4+/Temp Block (4 to 7).prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Grabables/Level 2/52+.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Grabables/Level 2/52+/Temp Block (52+).prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Grabables/Level 2/52+/Temp Block (52+).prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Grabables/Level 2/7+.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Grabables/Level 2/7+/Temp Block (7 to 12) Slope.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Grabables/Level 2/7+/Temp Block (7 to 12) Slope.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Grabables/Level 2/7+/Temp Block (7 to 12).prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Grabables/Level 2/7+/Temp Block (7 to 12).prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Grabables/Level 2/7+/Temp Wall (7 to 12) Wall.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Grabables/Level 2/7+/Temp Wall (7 to 12) Wall.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Level Assets/Affectors/Push Force Constant.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Level Assets/Affectors/Push Force Constant.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Level Assets/Affectors/Push Force.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Level Assets/Affectors/Push Force.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Mechanics Test.unity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Mechanics Test.unity.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Extensions.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Extensions/CustomMathExtensions.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Extensions/CustomMathExtensions.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Extensions/RigidbodyExtensions.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Extensions/RigidbodyExtensions.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Interactivity/CustomSurface.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Interactivity/CustomSurface.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Player/SizeController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Player/SizeController.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Project Slime Seal/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Project Slime Seal/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Project Slime Seal/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Project Slime Seal/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Level Assets/Bridge Announcer Variant.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Level Assets/Bridge Announcer Variant.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Level Assets/Bridge.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Level Assets/Bridge.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Level Assets/Checkpoint.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Level Assets/Checkpoint.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Level Assets/Death Box.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Level Assets/Death Box.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Level Assets/Grabable (1).prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Level Assets/Grabable (1).prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Level Assets/Lethal Ball of Death.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Level Assets/Lethal Ball of Death.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Level Assets/Level 1 Meadow.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Level Assets/Level 1 Meadow.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Level Assets/Level 2 Mushroom Hills (Altenative).prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Level Assets/Level 2 Mushroom Hills (Altenative).prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Level Assets/Trigger Box.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Level Assets/Trigger Box.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/Player 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/Player 1.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/Player Prefab Root.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/Player Prefab Root.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Eliott Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Eliott Scene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Eliott Scene/OcclusionCullingData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Eliott Scene/OcclusionCullingData.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DebugController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DebugController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Editor/AffectRigidbodiesEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Editor/AffectRigidbodiesEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Managers/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game Managers/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Managers/UI/PauseMenuManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game Managers/UI/PauseMenuManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interactivity/AffectRigidbodies.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interactivity/AffectRigidbodies.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interactivity/BallAffectorInformation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interactivity/BallAffectorInformation.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/BallController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/BallController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/DynamicsManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/DynamicsManager.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.polybrush/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.polybrush/Settings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Editor/BridgeCustomEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Editor/BridgeCustomEditor.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,7 +55,6 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/AnimationController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Editor/DebugController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Editor/BridgeDrawer.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Editor/BridgeCustomEditor.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/CameraController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Interactivity/Checkpoint.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Interactivity/KillPlayer.cs" />
@@ -190,6 +88,7 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/BallController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/SizeController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Interactivity/BallAffectorInformation.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Editor/BridgeCustomEditor.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1nNxgmNAPVYzVuGw2vBq6TT7Bib" />
@@ -271,7 +170,8 @@
       <workItem from="1614085636310" duration="7572000" />
       <workItem from="1614255735071" duration="4383000" />
       <workItem from="1614361412499" duration="1467000" />
-      <workItem from="1614440723721" duration="623000" />
+      <workItem from="1614440723721" duration="1217000" />
+      <workItem from="1614636534037" duration="607000" />
     </task>
     <servers />
   </component>

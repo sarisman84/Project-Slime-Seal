@@ -4,6 +4,7 @@ using Interactivity;
 using UnityEditor;
 using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.XR;
 
 namespace Editor
 {
@@ -35,11 +36,9 @@ namespace Editor
 
 
             SceneView.duringSceneGui += SceneViewOnduringSceneGui;
-            
-           
         }
 
-       
+
         public override void OnInspectorGUI()
         {
             ManualDraw();
@@ -54,7 +53,6 @@ namespace Editor
             }
         }
 
-        
 
         private void ManualDraw()
         {
@@ -81,10 +79,11 @@ namespace Editor
                         EditorGUILayout.PropertyField(it, new GUIContent(it.displayName));
                         break;
                 }
+
                 EditorGUI.EndDisabledGroup();
                 hasSkippedFirstElement = true;
             }
-        
+
             serializedObject.ApplyModifiedProperties();
         }
 
@@ -99,10 +98,18 @@ namespace Editor
             var rotation = m_Controller.transform.rotation;
 
             m_Controller.waypointA = Handles.PositionHandle(m_Controller.waypointA, rotation);
+            Handles.color = Color.cyan;
+            Handles.CubeHandleCap(GUIUtility.GetControlID(FocusType.Passive),m_Controller.waypointA, m_Controller.transform.rotation, 1f, EventType.Repaint);
             m_Controller.waypointB = Handles.PositionHandle(m_Controller.waypointB, rotation);
+            Handles.CubeHandleCap(GUIUtility.GetControlID(FocusType.Passive),m_Controller.waypointB, m_Controller.transform.rotation, 1f, EventType.Repaint);
 
             Handles.color = Color.magenta;
             Handles.DrawLine(m_Controller.waypointA, m_Controller.waypointB);
+            Vector3 center = (m_Controller.waypointB - m_Controller.waypointA) / 2f;
+            Handles.DrawWireCube(
+                new Vector3(center.x, -center.y, center.z) + m_Controller.transform.position,
+                new Vector3((m_Controller.waypointA - m_Controller.waypointB).magnitude, 1,
+                    m_Controller.bridgeWidthSize));
         }
     }
 }
